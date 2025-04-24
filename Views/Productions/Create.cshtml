@@ -1,0 +1,71 @@
+@model StageCraft.Models.Production
+
+@{
+    ViewData["Title"] = "Create Production";
+}
+
+<div class="card form-card text-white">
+    <h2 class="text-center border-bottom pb-3 text-white">Create Production</h2>
+
+    <form asp-action="Create" method="post" enctype="multipart/form-data">
+        <div class="form-group mb-3">
+            <label asp-for="Title" class="form-label">Title</label>
+            <input asp-for="Title" class="form-control" placeholder="Enter a title" />
+        </div>
+
+        <div class="form-group mb-3">
+            <label asp-for="Description" class="form-label">Description</label>
+            <textarea asp-for="Description" class="form-control" placeholder="Enter a short description"></textarea>
+        </div>
+
+        <div class="form-group mb-3">
+            <label asp-for="Playwright" class="form-label">Playwright</label>
+            <input asp-for="Playwright" class="form-control" placeholder="Enter playwright name" />
+        </div>
+
+        <div class="form-group mb-3">
+            <label asp-for="Runtime" class="form-label">Runtime (minutes)</label>
+            <input asp-for="Runtime" class="form-control" placeholder="e.g., 120" />
+        </div>
+
+        <div class="form-group mb-3">
+            <label asp-for="OpeningDay" class="form-label">Opening Day</label>
+            <input asp-for="OpeningDay" type="date" class="form-control" />
+        </div>
+
+        <div class="form-group mb-3">
+            <label asp-for="ClosingDay" class="form-label">Closing Day</label>
+            <input asp-for="ClosingDay" type="date" class="form-control" />
+        </div>
+
+        <div class="form-group mb-3">
+            <label asp-for="ShowTimeEve" class="form-label">Evening Show Time</label>
+            <input asp-for="ShowTimeEve" type="datetime-local" class="form-control" />
+        </div>
+
+        <div class="form-group mb-3">
+            <label asp-for="Season" class="form-label">Season</label>
+            <input asp-for="Season" class="form-control" placeholder="e.g., 1 = Spring, 2 = Summer..." />
+        </div>
+
+        <div class="form-group form-check mb-3">
+            <input asp-for="IsWorldPremiere" class="form-check-input" />
+            <label asp-for="IsWorldPremiere" class="form-check-label">World Premiere?</label>
+        </div>
+
+        <div class="form-group mb-3">
+            <label asp-for="TicketLink" class="form-label">Ticket Link</label>
+            <input asp-for="TicketLink" class="form-control" placeholder="https://tickets.example.com" />
+        </div>
+
+        <div class="form-group mb-4">
+            <label class="form-label">Upload Poster</label>
+            <input type="file" name="posterFile" class="form-control" />
+        </div>
+
+        <div class="d-flex justify-content-between">
+            <button type="submit" class="btn btn-danger">Create</button>
+            <a asp-action="Index" class="btn btn-warning text-dark">Back to List</a>
+        </div>
+    </form>
+</div>

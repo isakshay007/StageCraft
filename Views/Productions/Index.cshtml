@@ -1,0 +1,55 @@
+@model IEnumerable<StageCraft.Models.Production>
+
+@{
+    ViewData["Title"] = "All Productions";
+}
+
+<div class="container mt-5">
+    <h2 class="text-white mb-4 text-center">🎭 All Productions</h2>
+
+    <div class="text-center mb-4">
+        <a class="btn btn-danger" asp-controller="Productions" asp-action="Create">+ Add New Production</a>
+    </div>
+
+    <p class="text-light text-end">Showing @Model.Count() production@(Model.Count() == 1 ? "" : "s")</p>
+
+    <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
+        @foreach (var item in Model)
+        {
+            <div class="col">
+                <div class="card bg-dark text-white border border-danger h-100 shadow-sm prod-card">
+
+                    @if (!string.IsNullOrEmpty(item.PosterImagePath))
+                    {
+                        <a asp-action="Edit" asp-route-id="@item.Id">
+                            <img src="@item.PosterImagePath" class="card-img-top" alt="Poster for @item.Title" style="height: 280px; object-fit: cover;" />
+                        </a>
+                    }
+                    else
+                    {
+                        <div class="card-img-top d-flex align-items-center justify-content-center bg-secondary" style="height: 280px;">
+                            <span class="text-light">No Poster</span>
+                        </div>
+                    }
+
+                    <div class="card-body">
+                        <h5 class="card-title">@item.Title</h5>
+                        <p class="card-text">@item.Description</p>
+                        <p class="card-text">
+                            <small class="text-light">
+                                <strong>Opening:</strong> @item.OpeningDay.ToShortDateString()<br />
+                                <strong>Closing:</strong> @item.ClosingDay.ToShortDateString()
+                            </small>
+                        </p>
+                    </div>
+
+                    <div class="card-footer bg-transparent d-flex justify-content-center gap-3">
+                        <a asp-action="Edit" asp-route-id="@item.Id" class="btn btn-sm btn-outline-warning">Edit</a>
+                        <a asp-action="Delete" asp-route-id="@item.Id" class="btn btn-sm btn-outline-danger">Delete</a>
+                    </div>
+
+                </div>
+            </div>
+        }
+    </div>
+</div>
