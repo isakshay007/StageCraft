@@ -1,4 +1,6 @@
-@model IEnumerable<StageCraft.Models.Production>
+@using X.PagedList.Mvc.Core
+@using X.PagedList.Web.Common
+@model X.PagedList.IPagedList<StageCraft.Models.Production>
 
 @{
     ViewData["Title"] = "All Productions";
@@ -11,48 +13,99 @@
         <a class="btn btn-danger" asp-controller="Productions" asp-action="Create">+ Add New Production</a>
     </div>
 
-    <p class="text-light text-end">Showing @Model.Count() production@(Model.Count() == 1 ? "" : "s")</p>
-
-    <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
-        @foreach (var item in Model)
-        {
-            <div class="col">
-                <div class="card bg-dark text-white border border-danger h-100 shadow-sm prod-card">
-
-                    @if (!string.IsNullOrEmpty(item.PosterImagePath))
-                    {
-                        <a asp-action="Details" asp-route-id="@item.Id">
-                            <img src="@item.PosterImagePath" class="card-img-top" alt="Poster for @item.Title" style="height: 280px; object-fit: cover;" />
-                        </a>
-                    }
-                    else
-                    {
-                        <div class="card-img-top d-flex align-items-center justify-content-center bg-secondary" style="height: 280px;">
-                            <span class="text-light">No Poster</span>
-                        </div>
-                    }
-
-                    <div class="card-body text-center">
-                        <h5 class="card-title">@item.Title</h5>
-                        <p class="card-text">@item.Description</p>
-                        <p class="card-text">
-                            <small class="text-light">
-                                <strong>Opening:</strong> @item.OpeningDay.ToShortDateString()<br />
-                                <strong>Closing:</strong> @item.ClosingDay.ToShortDateString()
-                            </small>
-                        </p>
-                    </div>
-
-                    <div class="card-footer bg-transparent text-center position-relative">
-                        <div class="overlay-buttons d-flex justify-content-center gap-3">
-                            <a asp-action="Edit" asp-route-id="@item.Id" class="btn btn-sm btn-warning">Edit</a>
-                            <a asp-action="Delete" asp-route-id="@item.Id" class="btn btn-sm btn-danger">Delete</a>
-                        </div>
-                    </div>
-
-                </div>
-            </div>
-        }
+    <!-- Search bar -->
+    <div class="row mb-4">
+        <div class="col-md-6 offset-md-3">
+            <form asp-action="Index" method="get" class="d-flex">
+                <input type="text" name="searchString" value="@ViewBag.CurrentFilter" class="form-control me-2" placeholder="Search by title..." />
+                <button type="submit" class="btn btn-outline-light">Search</button>
+                @if (!string.IsNullOrEmpty(ViewBag.CurrentFilter))
+                {
+                    <a asp-action="Index" class="btn btn-outline-secondary ms-2">Clear</a>
+                }
+            </form>
+        </div>
     </div>
+
+    <p class="text-light text-end">
+        @if (Model.TotalItemCount > 0)
+        {
+            <span>Showing @Model.FirstItemOnPage to @Model.LastItemOnPage of @Model.TotalItemCount production@(Model.TotalItemCount == 1 ? "" : "s")</span>
+        }
+        else
+        {
+            <span>No productions found</span>
+        }
+    </p>
+
+    @if (Model.Count > 0)
+    {
+        <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
+            @foreach (var item in Model)
+            {
+                <div class="col">
+                    <div class="card bg-dark text-white border border-danger h-100 shadow-sm prod-card">
+                        @if (!string.IsNullOrEmpty(item.PosterImagePath))
+                        {
+                            <a asp-action="Details" asp-route-id="@item.Id">
+                                <img src="@item.PosterImagePath" class="card-img-top" alt="Poster for @item.Title" style="height: 280px; object-fit: cover;" />
+                            </a>
+                        }
+                        else
+                        {
+                            <div class="card-img-top d-flex align-items-center justify-content-center bg-secondary" style="height: 280px;">
+                                <span class="text-light">No Poster</span>
+                            </div>
+                        }
+
+                        <div class="card-body text-center">
+                            <h5 class="card-title">@item.Title</h5>
+                            <p class="card-text text-truncate" style="max-height: 60px;">@item.Description</p>
+                            <p class="card-text">
+                                <small class="text-light">
+                                    <strong>Opening:</strong> @item.OpeningDay.ToShortDateString()<br />
+                                    <strong>Closing:</strong> @item.ClosingDay.ToShortDateString()
+                                </small>
+                            </p>
+                        </div>
+
+                        <div class="card-footer bg-transparent text-center position-relative">
+                            <div class="overlay-buttons d-flex justify-content-center gap-3">
+                                <a asp-action="Edit" asp-route-id="@item.Id" class="btn btn-sm btn-warning">Edit</a>
+                                <a asp-action="Delete" asp-route-id="@item.Id" class="btn btn-sm btn-danger">Delete</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            }
+        </div>
+    }
+    else
+    {
+        <div class="alert alert-info text-center">
+            No productions found. <a asp-action="Create" class="alert-link">Create a new production</a>.
+        </div>
+    }
+
+    <!-- Pagination controls -->
+    @if (Model.PageCount > 1)
+    {
+        <div class="row mt-4">
+            <div class="col-md-12 d-flex justify-content-center">
+                @Html.PagedListPager(Model, page => Url.Action("Index", new { page, searchString = ViewBag.CurrentFilter }),
+                new PagedListRenderOptions {
+                    LiElementClasses = new string[] { "page-item" },
+                    PageClasses = new string[] { "page-link" },
+                    Display = PagedListDisplayMode.IfNeeded,
+                    DisplayLinkToFirstPage = PagedListDisplayMode.IfNeeded,
+                    DisplayLinkToLastPage = PagedListDisplayMode.IfNeeded,
+                    DisplayLinkToPreviousPage = PagedListDisplayMode.Always,
+                    DisplayLinkToNextPage = PagedListDisplayMode.Always,
+                    MaximumPageNumbersToDisplay = 5,
+                    ContainerDivClasses = new[] { "pagination" }
+                })
+            </div>
+        </div>
+    }
 </div>
 

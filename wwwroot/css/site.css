@@ -225,4 +225,37 @@ input[type="datetime-local"] {
   .overlay-buttons {
     opacity: 1;
   }
+
+  .pagination-container {
+      margin-top: 20px;
+  }
+
+  .pagination-container .pagination {
+      justify-content: center;
+  }
+
+  .pagination-container .pagination li {
+      display: inline;
+      margin: 0 2px;
+  }
+
+  .pagination-container .pagination .active a {
+      font-weight: bold;
+      color: #fff;
+      background-color: #dc3545;
+      border-color: #dc3545;
+  }
+
+  .pagination-container .pagination a {
+      padding: 5px 10px;
+      border: 1px solid #dc3545;
+      text-decoration: none;
+      color: #dc3545;
+      background-color: #212529;
+  }
+
+  .pagination-container .pagination a:hover {
+      background-color: #dc3545;
+      color: white;
+  }
 }

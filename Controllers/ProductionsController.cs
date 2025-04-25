@@ -2,6 +2,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using StageCraft.Data;
 using StageCraft.Models;
+using X.PagedList;
 
 namespace StageCraft.Controllers
 {
@@ -9,6 +10,7 @@ namespace StageCraft.Controllers
     {
         private readonly AppDbContext _context;
         private readonly IWebHostEnvironment _environment;
+        private const int PageSize = 9; // Items per page
 
         public ProductionsController(AppDbContext context, IWebHostEnvironment environment)
         {
@@ -16,14 +18,24 @@ namespace StageCraft.Controllers
             _environment = environment;
         }
 
-        // GET: Productions
-        public async Task<IActionResult> Index()
+        // GET: Productions (with search and pagination)
+        public async Task<IActionResult> Index(string searchString, int? page)
         {
-            var productions = await _context.Productions
-                .OrderByDescending(p => p.OpeningDay)
-                .ToListAsync();
+            ViewBag.CurrentFilter = searchString;
 
-            return View(productions);
+            var productions = _context.Productions.AsQueryable();
+
+            if (!string.IsNullOrEmpty(searchString))
+            {
+                productions = productions.Where(p => p.Title.Contains(searchString));
+            }
+
+            productions = productions.OrderByDescending(p => p.OpeningDay);
+
+            int pageNumber = page ?? 1;
+            var pagedProductions = await productions.ToPagedListAsync(pageNumber, PageSize);
+            
+            return View(pagedProductions);
         }
 
         // GET: Productions/Create
@@ -39,7 +51,6 @@ namespace StageCraft.Controllers
         {
             if (!ModelState.IsValid)
             {
-                // Provide validation feedback in the view
                 return View(production);
             }
 
@@ -59,7 +70,6 @@ namespace StageCraft.Controllers
 
             _context.Add(production);
             await _context.SaveChangesAsync();
-
             return RedirectToAction(nameof(Index));
         }
 
@@ -85,7 +95,6 @@ namespace StageCraft.Controllers
             if (!ModelState.IsValid)
                 return View(updated);
 
-            // Update fields
             existing.Title = updated.Title;
             existing.Description = updated.Description;
             existing.Playwright = updated.Playwright;
@@ -97,7 +106,6 @@ namespace StageCraft.Controllers
             existing.IsWorldPremiere = updated.IsWorldPremiere;
             existing.TicketLink = updated.TicketLink;
 
-            // Optional poster update
             if (posterFile != null && posterFile.Length > 0)
             {
                 string uploadsFolder = Path.Combine(_environment.WebRootPath, "images");
@@ -114,7 +122,6 @@ namespace StageCraft.Controllers
 
             _context.Update(existing);
             await _context.SaveChangesAsync();
-
             return RedirectToAction(nameof(Index));
         }
 
@@ -136,11 +143,10 @@ namespace StageCraft.Controllers
                 _context.Productions.Remove(production);
                 await _context.SaveChangesAsync();
             }
-
             return RedirectToAction(nameof(Index));
         }
 
-                // GET: Productions/Details/5
+        // GET: Productions/Details/5
         public async Task<IActionResult> Details(int id)
         {
             var production = await _context.Productions.FindAsync(id);
@@ -150,6 +156,5 @@ namespace StageCraft.Controllers
             }
             return View(production);
         }
-
     }
 }

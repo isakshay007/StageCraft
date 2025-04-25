@@ -1,20 +1,21 @@
 using Microsoft.EntityFrameworkCore;
-using StageCraft.Data; // ✅ your AppDbContext namespace
+using StageCraft.Data;
 
 var builder = WebApplication.CreateBuilder(args);
 
-// ✅ Register AppDbContext with MySQL
+// Register services
 builder.Services.AddDbContext<AppDbContext>(options =>
     options.UseMySql(
         builder.Configuration.GetConnectionString("DefaultConnection"),
-        new MySqlServerVersion(new Version(8, 0, 32)) // Adjust version if needed
+        new MySqlServerVersion(new Version(8, 0, 32))
     ));
 
+// ✅ Important: Use AddControllersWithViews without AddMvc (which can cause duplicates)
 builder.Services.AddControllersWithViews();
 
 var app = builder.Build();
 
-// Configure the HTTP request pipeline.
+// Configure pipeline
 if (!app.Environment.IsDevelopment())
 {
     app.UseExceptionHandler("/Home/Error");
@@ -22,14 +23,13 @@ if (!app.Environment.IsDevelopment())
 }
 
 app.UseHttpsRedirection();
-app.UseStaticFiles(); // ✅ This is needed to serve CSS/JS from wwwroot
-
+app.UseStaticFiles();
 app.UseRouting();
-
 app.UseAuthorization();
 
+// ✅ Simplified endpoint routing (only one mapping)
 app.MapControllerRoute(
     name: "default",
-    pattern: "{controller=Productions}/{action=Index}/{id?}"); // 👈 Start with Productions by default
+    pattern: "{controller=Productions}/{action=Index}/{id?}");
 
 app.Run();
