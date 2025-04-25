@@ -21,7 +21,7 @@
 
                     @if (!string.IsNullOrEmpty(item.PosterImagePath))
                     {
-                        <a asp-action="Edit" asp-route-id="@item.Id">
+                        <a asp-action="Details" asp-route-id="@item.Id">
                             <img src="@item.PosterImagePath" class="card-img-top" alt="Poster for @item.Title" style="height: 280px; object-fit: cover;" />
                         </a>
                     }
@@ -32,7 +32,7 @@
                         </div>
                     }
 
-                    <div class="card-body">
+                    <div class="card-body text-center">
                         <h5 class="card-title">@item.Title</h5>
                         <p class="card-text">@item.Description</p>
                         <p class="card-text">
@@ -43,9 +43,11 @@
                         </p>
                     </div>
 
-                    <div class="card-footer bg-transparent d-flex justify-content-center gap-3">
-                        <a asp-action="Edit" asp-route-id="@item.Id" class="btn btn-sm btn-outline-warning">Edit</a>
-                        <a asp-action="Delete" asp-route-id="@item.Id" class="btn btn-sm btn-outline-danger">Delete</a>
+                    <div class="card-footer bg-transparent text-center position-relative">
+                        <div class="overlay-buttons d-flex justify-content-center gap-3">
+                            <a asp-action="Edit" asp-route-id="@item.Id" class="btn btn-sm btn-warning">Edit</a>
+                            <a asp-action="Delete" asp-route-id="@item.Id" class="btn btn-sm btn-danger">Delete</a>
+                        </div>
                     </div>
 
                 </div>
@@ -53,3 +55,4 @@
         }
     </div>
 </div>
+

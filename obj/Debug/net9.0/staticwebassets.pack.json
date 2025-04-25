@@ -13,12 +13,24 @@
       "PackagePath": "staticwebassets/favicon.ico"
     },
     {
+      "Id": "/Users/akshay/Desktop/StageCraft/wwwroot/images/01c2cab8-6793-4a86-944c-0cc6556bad44.png",
+      "PackagePath": "staticwebassets/images/01c2cab8-6793-4a86-944c-0cc6556bad44.png"
+    },
+    {
       "Id": "/Users/akshay/Desktop/StageCraft/wwwroot/images/15a0f0f2-2586-435c-a4ba-6edd4a3d3c69.png",
       "PackagePath": "staticwebassets/images/15a0f0f2-2586-435c-a4ba-6edd4a3d3c69.png"
     },
     {
       "Id": "/Users/akshay/Desktop/StageCraft/wwwroot/images/23aba93a-c676-4b6c-a726-d4c336642d0b.png",
       "PackagePath": "staticwebassets/images/23aba93a-c676-4b6c-a726-d4c336642d0b.png"
+    },
+    {
+      "Id": "/Users/akshay/Desktop/StageCraft/wwwroot/images/29d793ed-f397-457f-94f6-f7ca365e44c3.png",
+      "PackagePath": "staticwebassets/images/29d793ed-f397-457f-94f6-f7ca365e44c3.png"
+    },
+    {
+      "Id": "/Users/akshay/Desktop/StageCraft/wwwroot/images/3245a47a-99b8-416d-a786-1e356cabe304.png",
+      "PackagePath": "staticwebassets/images/3245a47a-99b8-416d-a786-1e356cabe304.png"
     },
     {
       "Id": "/Users/akshay/Desktop/StageCraft/wwwroot/images/456b9148-284a-4b08-b7e5-70b595a8e7df.jpg",
@@ -29,8 +41,16 @@
       "PackagePath": "staticwebassets/images/495e362d-e64e-4da5-911f-b0afaac1d328.png"
     },
     {
+      "Id": "/Users/akshay/Desktop/StageCraft/wwwroot/images/4ff96332-17b1-4b11-82db-14effd35bd4a.png",
+      "PackagePath": "staticwebassets/images/4ff96332-17b1-4b11-82db-14effd35bd4a.png"
+    },
+    {
       "Id": "/Users/akshay/Desktop/StageCraft/wwwroot/images/6624ae93-7989-4522-83ca-39d355c437cb.png",
       "PackagePath": "staticwebassets/images/6624ae93-7989-4522-83ca-39d355c437cb.png"
+    },
+    {
+      "Id": "/Users/akshay/Desktop/StageCraft/wwwroot/images/81a37ed8-a6fd-4a6c-9141-74bcaa357132.png",
+      "PackagePath": "staticwebassets/images/81a37ed8-a6fd-4a6c-9141-74bcaa357132.png"
     },
     {
       "Id": "/Users/akshay/Desktop/StageCraft/wwwroot/images/8cbdebfe-4d38-4a39-acdf-e3506ef4dfa2.JPG",
@@ -51,6 +71,18 @@
     {
       "Id": "/Users/akshay/Desktop/StageCraft/wwwroot/images/ad58d2fd-4b34-4afd-a097-004a8c51055d.png",
       "PackagePath": "staticwebassets/images/ad58d2fd-4b34-4afd-a097-004a8c51055d.png"
+    },
+    {
+      "Id": "/Users/akshay/Desktop/StageCraft/wwwroot/images/c94ccc60-af83-404c-8761-766febc3bf88.png",
+      "PackagePath": "staticwebassets/images/c94ccc60-af83-404c-8761-766febc3bf88.png"
+    },
+    {
+      "Id": "/Users/akshay/Desktop/StageCraft/wwwroot/images/d33bb160-73be-4326-b60d-38bda3982570.png",
+      "PackagePath": "staticwebassets/images/d33bb160-73be-4326-b60d-38bda3982570.png"
+    },
+    {
+      "Id": "/Users/akshay/Desktop/StageCraft/wwwroot/images/d3b330d4-8f5c-4e5d-8566-d615d165988a.png",
+      "PackagePath": "staticwebassets/images/d3b330d4-8f5c-4e5d-8566-d615d165988a.png"
     },
     {
       "Id": "/Users/akshay/Desktop/StageCraft/wwwroot/images/logo.jpg",

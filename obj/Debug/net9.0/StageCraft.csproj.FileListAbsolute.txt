@@ -168,4 +168,8 @@
 /Users/akshay/Desktop/StageCraft/obj/Debug/net9.0/ref/StageCraft.dll
 /Users/akshay/Desktop/StageCraft/obj/Debug/net9.0/compressed/6dxft4d9tr-xnj7zq629o.gz
 /Users/akshay/Desktop/StageCraft/obj/Debug/net9.0/compressed/vvgcbcxp03-xnj7zq629o.gz
-/Users/akshay/Desktop/StageCraft/obj/Debug/net9.0/compressed/s2pyfjz9wx-kct7lakqza.gz
+/Users/akshay/Desktop/StageCraft/obj/Debug/net9.0/StageCraft.sourcelink.json
+/Users/akshay/Desktop/StageCraft/obj/Debug/net9.0/StageCraft.MvcApplicationPartsAssemblyInfo.cs
+/Users/akshay/Desktop/StageCraft/bin/Debug/net9.0/X.PagedList.dll
+/Users/akshay/Desktop/StageCraft/bin/Debug/net9.0/X.PagedList.Mvc.Core.dll
+/Users/akshay/Desktop/StageCraft/obj/Debug/net9.0/compressed/s2pyfjz9wx-im9e27n1dd.gz

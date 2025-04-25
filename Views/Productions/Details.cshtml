@@ -1,0 +1,47 @@
+@model StageCraft.Models.Production
+
+@{
+    ViewData["Title"] = "Production Details";
+}
+
+<div class="container mt-5">
+    <div class="card bg-dark text-white border border-danger shadow-sm mx-auto" style="max-width: 700px;">
+        @if (!string.IsNullOrEmpty(Model.PosterImagePath))
+        {
+            <img src="@Model.PosterImagePath" class="card-img-top rounded" alt="Poster for @Model.Title" style="height: 400px; object-fit: cover;" />
+        }
+        else
+        {
+            <div class="d-flex align-items-center justify-content-center bg-secondary" style="height: 400px;">
+                <span class="text-light">No Poster Available</span>
+            </div>
+        }
+
+        <div class="card-body">
+            <h2 class="card-title text-center mb-4">@Model.Title</h2>
+
+            <p class="card-text"><strong>Description:</strong> @Model.Description</p>
+            <p class="card-text"><strong>Playwright:</strong> @Model.Playwright</p>
+            <p class="card-text"><strong>Runtime:</strong> @Model.Runtime minutes</p>
+            <p class="card-text"><strong>Opening Day:</strong> @Model.OpeningDay.ToShortDateString()</p>
+            <p class="card-text"><strong>Closing Day:</strong> @Model.ClosingDay.ToShortDateString()</p>
+            <p class="card-text"><strong>Evening Show Time:</strong> @Model.ShowTimeEve.ToString("f")</p>
+            <p class="card-text"><strong>Season:</strong> @Model.Season</p>
+            <p class="card-text"><strong>World Premiere:</strong> @(Model.IsWorldPremiere ? "Yes" : "No")</p>
+
+            @if (!string.IsNullOrEmpty(Model.TicketLink))
+            {
+                <div class="text-center mt-3">
+                    <a href="@Model.TicketLink" target="_blank" rel="noopener noreferrer" class="btn btn-danger btn-sm">
+                        🎟 Buy Tickets
+                    </a>
+                </div>
+            }
+        </div>
+
+        <div class="card-footer bg-transparent d-flex justify-content-between">
+            <a asp-action="Edit" asp-route-id="@Model.Id" class="btn btn-outline-warning btn-sm">Edit</a>
+            <a asp-action="Index" class="btn btn-outline-light btn-sm">Back to Productions</a>
+        </div>
+    </div>
+</div>

@@ -139,5 +139,17 @@ namespace StageCraft.Controllers
 
             return RedirectToAction(nameof(Index));
         }
+
+                // GET: Productions/Details/5
+        public async Task<IActionResult> Details(int id)
+        {
+            var production = await _context.Productions.FindAsync(id);
+            if (production == null)
+            {
+                return NotFound();
+            }
+            return View(production);
+        }
+
     }
 }
