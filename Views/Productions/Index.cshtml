@@ -9,11 +9,13 @@
 <div class="container mt-5">
     <h2 class="text-white mb-4 text-center">🎭 All Productions</h2>
 
-    <div class="text-center mb-4">
-        <a class="btn btn-danger" asp-controller="Productions" asp-action="Create">+ Add New Production</a>
-    </div>
+    @if (User.IsInRole("Admin") || User.IsInRole("ProductionManager"))
+    {
+        <div class="text-center mb-4">
+            <a class="btn btn-danger" asp-controller="Productions" asp-action="Create">+ Add New Production</a>
+        </div>
+    }
 
-    <!-- Search bar -->
     <div class="row mb-4">
         <div class="col-md-6 offset-md-3">
             <form asp-action="Index" method="get" class="d-flex">
@@ -69,43 +71,52 @@
                             </p>
                         </div>
 
-                        <div class="card-footer bg-transparent text-center position-relative">
-                            <div class="overlay-buttons d-flex justify-content-center gap-3">
-                                <a asp-action="Edit" asp-route-id="@item.Id" class="btn btn-sm btn-warning">Edit</a>
-                                <a asp-action="Delete" asp-route-id="@item.Id" class="btn btn-sm btn-danger">Delete</a>
+                        @if (User.IsInRole("Admin") || User.IsInRole("ProductionManager"))
+                        {
+                            <div class="card-footer bg-transparent text-center">
+                                <div class="d-flex justify-content-center gap-3">
+                                    <a asp-action="Edit" asp-route-id="@item.Id" class="btn btn-sm btn-warning">Edit</a>
+                                    <a asp-action="Delete" asp-route-id="@item.Id" class="btn btn-sm btn-danger">Delete</a>
+                                </div>
                             </div>
-                        </div>
+                        }
                     </div>
                 </div>
             }
         </div>
+
+        @if (Model.PageCount > 1)
+        {
+            <div class="row mt-4">
+                <div class="col-md-12 d-flex justify-content-center">
+                    @Html.PagedListPager(
+                        Model,
+                        page => Url.Action("Index", new { page, searchString = ViewBag.CurrentFilter }),
+                        new PagedListRenderOptions
+                        {
+                            LiElementClasses = new[] { "page-item" },
+                            PageClasses = new[] { "page-link" },
+                            Display = PagedListDisplayMode.IfNeeded,
+                            DisplayLinkToFirstPage = PagedListDisplayMode.IfNeeded,
+                            DisplayLinkToLastPage = PagedListDisplayMode.IfNeeded,
+                            DisplayLinkToPreviousPage = PagedListDisplayMode.Always,
+                            DisplayLinkToNextPage = PagedListDisplayMode.Always,
+                            MaximumPageNumbersToDisplay = 5,
+                            ContainerDivClasses = new[] { "pagination" }
+                        }
+                    )
+                </div>
+            </div>
+        }
     }
     else
     {
-        <div class="alert alert-info text-center">
-            No productions found. <a asp-action="Create" class="alert-link">Create a new production</a>.
-        </div>
-    }
-
-    <!-- Pagination controls -->
-    @if (Model.PageCount > 1)
-    {
-        <div class="row mt-4">
-            <div class="col-md-12 d-flex justify-content-center">
-                @Html.PagedListPager(Model, page => Url.Action("Index", new { page, searchString = ViewBag.CurrentFilter }),
-                new PagedListRenderOptions {
-                    LiElementClasses = new string[] { "page-item" },
-                    PageClasses = new string[] { "page-link" },
-                    Display = PagedListDisplayMode.IfNeeded,
-                    DisplayLinkToFirstPage = PagedListDisplayMode.IfNeeded,
-                    DisplayLinkToLastPage = PagedListDisplayMode.IfNeeded,
-                    DisplayLinkToPreviousPage = PagedListDisplayMode.Always,
-                    DisplayLinkToNextPage = PagedListDisplayMode.Always,
-                    MaximumPageNumbersToDisplay = 5,
-                    ContainerDivClasses = new[] { "pagination" }
-                })
-            </div>
+        <div class="alert alert-info text-center mt-4">
+            No productions found.
+            @if (User.IsInRole("Admin") || User.IsInRole("ProductionManager"))
+            {
+                <a asp-action="Create" class="alert-link">Create a new production</a>
+            }
         </div>
     }
 </div>
-

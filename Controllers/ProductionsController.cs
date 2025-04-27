@@ -1,3 +1,4 @@
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using StageCraft.Data;
@@ -18,7 +19,8 @@ namespace StageCraft.Controllers
             _environment = environment;
         }
 
-        // GET: Productions (with search and pagination)
+        // GET: Productions (open to everyone)
+        [AllowAnonymous]
         public async Task<IActionResult> Index(string searchString, int? page)
         {
             ViewBag.CurrentFilter = searchString;
@@ -34,11 +36,20 @@ namespace StageCraft.Controllers
 
             int pageNumber = page ?? 1;
             var pagedProductions = await productions.ToPagedListAsync(pageNumber, PageSize);
-            
+
             return View(pagedProductions);
         }
 
-        // GET: Productions/Create
+        // GET: Productions/Details/5 (open to everyone)
+        [AllowAnonymous]
+        public async Task<IActionResult> Details(int id)
+        {
+            var production = await _context.Productions.FindAsync(id);
+            return production == null ? NotFound() : View(production);
+        }
+
+        // GET: Productions/Create (Admin + ProductionManager only)
+        [Authorize(Roles = "Admin,ProductionManager")]
         public IActionResult Create()
         {
             return View();
@@ -47,6 +58,7 @@ namespace StageCraft.Controllers
         // POST: Productions/Create
         [HttpPost]
         [ValidateAntiForgeryToken]
+        [Authorize(Roles = "Admin,ProductionManager")]
         public async Task<IActionResult> Create(Production production, IFormFile? posterFile)
         {
             if (!ModelState.IsValid)
@@ -74,6 +86,7 @@ namespace StageCraft.Controllers
         }
 
         // GET: Productions/Edit/5
+        [Authorize(Roles = "Admin,ProductionManager")]
         public async Task<IActionResult> Edit(int id)
         {
             var production = await _context.Productions.FindAsync(id);
@@ -83,6 +96,7 @@ namespace StageCraft.Controllers
         // POST: Productions/Edit/5
         [HttpPost]
         [ValidateAntiForgeryToken]
+        [Authorize(Roles = "Admin,ProductionManager")]
         public async Task<IActionResult> Edit(int id, Production updated, IFormFile? posterFile)
         {
             if (id != updated.Id)
@@ -126,6 +140,7 @@ namespace StageCraft.Controllers
         }
 
         // GET: Productions/Delete/5
+        [Authorize(Roles = "Admin,ProductionManager")]
         public async Task<IActionResult> Delete(int id)
         {
             var production = await _context.Productions.FindAsync(id);
@@ -135,6 +150,7 @@ namespace StageCraft.Controllers
         // POST: Productions/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
+        [Authorize(Roles = "Admin,ProductionManager")]
         public async Task<IActionResult> DeleteConfirmed(int id)
         {
             var production = await _context.Productions.FindAsync(id);
@@ -144,17 +160,6 @@ namespace StageCraft.Controllers
                 await _context.SaveChangesAsync();
             }
             return RedirectToAction(nameof(Index));
-        }
-
-        // GET: Productions/Details/5
-        public async Task<IActionResult> Details(int id)
-        {
-            var production = await _context.Productions.FindAsync(id);
-            if (production == null)
-            {
-                return NotFound();
-            }
-            return View(production);
         }
     }
 }

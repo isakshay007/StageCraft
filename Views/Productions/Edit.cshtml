@@ -60,17 +60,23 @@
             <input asp-for="TicketLink" class="form-control" placeholder="Update ticket URL" />
         </div>
 
+        <!-- Existing Poster -->
         @if (!string.IsNullOrEmpty(Model.PosterImagePath))
         {
             <div class="form-group text-center mt-4">
                 <label class="form-label">Current Poster</label><br />
-                <img src="@Model.PosterImagePath" alt="Poster for @Model.Title" class="img-fluid rounded shadow" style="max-height: 200px;" />
+                <img src="@Model.PosterImagePath" id="currentPoster" alt="Poster for @Model.Title" class="img-fluid rounded shadow" style="max-height: 200px;" />
             </div>
         }
 
+        <!-- Upload New Poster + Preview -->
         <div class="form-group mt-4 mb-4">
             <label class="form-label">Upload New Poster (optional)</label>
-            <input type="file" name="posterFile" class="form-control" />
+            <input type="file" id="posterFile" name="posterFile" class="form-control" onchange="previewPoster(event)" />
+        </div>
+
+        <div class="text-center mb-4">
+            <img id="posterPreview" style="display:none; max-height:200px; margin-top:10px;" class="rounded shadow" />
         </div>
 
         <div class="d-flex justify-content-between">
@@ -79,3 +85,21 @@
         </div>
     </form>
 </div>
+
+@section Scripts {
+    <script>
+        function previewPoster(event) {
+            var reader = new FileReader();
+            reader.onload = function(){
+                var preview = document.getElementById('posterPreview');
+                var current = document.getElementById('currentPoster');
+                preview.src = reader.result;
+                preview.style.display = 'block';
+                if (current) {
+                    current.style.display = 'none'; // Hide old poster if new selected
+                }
+            };
+            reader.readAsDataURL(event.target.files[0]);
+        }
+    </script>
+}

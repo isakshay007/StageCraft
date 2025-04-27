@@ -72,6 +72,42 @@
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
       <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\images\15a0f0f2-2586-435c-a4ba-6edd4a3d3c69.png'))</OriginalItemSpec>
     </StaticWebAsset>
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\images\176f516f-5755-4bf4-9c8e-81d69c96fc71.png'))">
+      <SourceType>Package</SourceType>
+      <SourceId>StageCraft</SourceId>
+      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
+      <BasePath>_content/StageCraft</BasePath>
+      <RelativePath>images/176f516f-5755-4bf4-9c8e-81d69c96fc71.png</RelativePath>
+      <AssetKind>All</AssetKind>
+      <AssetMode>All</AssetMode>
+      <AssetRole>Primary</AssetRole>
+      <RelatedAsset></RelatedAsset>
+      <AssetTraitName></AssetTraitName>
+      <AssetTraitValue></AssetTraitValue>
+      <Fingerprint>0pk0uyxeq2</Fingerprint>
+      <Integrity>PGEqv9qKpJy6YTgrk+y6aJ9Esgj08WFGpwW6OrsOycQ=</Integrity>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\images\176f516f-5755-4bf4-9c8e-81d69c96fc71.png'))</OriginalItemSpec>
+    </StaticWebAsset>
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\images\1c7ea165-1235-440f-aaa6-140bba4dd3a0.png'))">
+      <SourceType>Package</SourceType>
+      <SourceId>StageCraft</SourceId>
+      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
+      <BasePath>_content/StageCraft</BasePath>
+      <RelativePath>images/1c7ea165-1235-440f-aaa6-140bba4dd3a0.png</RelativePath>
+      <AssetKind>All</AssetKind>
+      <AssetMode>All</AssetMode>
+      <AssetRole>Primary</AssetRole>
+      <RelatedAsset></RelatedAsset>
+      <AssetTraitName></AssetTraitName>
+      <AssetTraitValue></AssetTraitValue>
+      <Fingerprint>aptupt99m4</Fingerprint>
+      <Integrity>IvGWRqkFjbDi7bB7FCbBJpk0XTchtFYYzaom1jQs3Ds=</Integrity>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\images\1c7ea165-1235-440f-aaa6-140bba4dd3a0.png'))</OriginalItemSpec>
+    </StaticWebAsset>
     <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\images\23aba93a-c676-4b6c-a726-d4c336642d0b.png'))">
       <SourceType>Package</SourceType>
       <SourceId>StageCraft</SourceId>
@@ -89,6 +125,24 @@
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
       <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\images\23aba93a-c676-4b6c-a726-d4c336642d0b.png'))</OriginalItemSpec>
+    </StaticWebAsset>
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\images\25bc23a7-34ca-4ce5-b407-4d503ad14d57.png'))">
+      <SourceType>Package</SourceType>
+      <SourceId>StageCraft</SourceId>
+      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
+      <BasePath>_content/StageCraft</BasePath>
+      <RelativePath>images/25bc23a7-34ca-4ce5-b407-4d503ad14d57.png</RelativePath>
+      <AssetKind>All</AssetKind>
+      <AssetMode>All</AssetMode>
+      <AssetRole>Primary</AssetRole>
+      <RelatedAsset></RelatedAsset>
+      <AssetTraitName></AssetTraitName>
+      <AssetTraitValue></AssetTraitValue>
+      <Fingerprint>rd0f2s1k6g</Fingerprint>
+      <Integrity>r/HJF/LnHo4OCjllhyhybDKk302NRYdJi8uKNJ3IvS0=</Integrity>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\images\25bc23a7-34ca-4ce5-b407-4d503ad14d57.png'))</OriginalItemSpec>
     </StaticWebAsset>
     <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\images\29d793ed-f397-457f-94f6-f7ca365e44c3.png'))">
       <SourceType>Package</SourceType>
@@ -126,6 +180,24 @@
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
       <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\images\3245a47a-99b8-416d-a786-1e356cabe304.png'))</OriginalItemSpec>
     </StaticWebAsset>
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\images\32584e88-2fe9-49f5-bd2a-a4146c25d942.png'))">
+      <SourceType>Package</SourceType>
+      <SourceId>StageCraft</SourceId>
+      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
+      <BasePath>_content/StageCraft</BasePath>
+      <RelativePath>images/32584e88-2fe9-49f5-bd2a-a4146c25d942.png</RelativePath>
+      <AssetKind>All</AssetKind>
+      <AssetMode>All</AssetMode>
+      <AssetRole>Primary</AssetRole>
+      <RelatedAsset></RelatedAsset>
+      <AssetTraitName></AssetTraitName>
+      <AssetTraitValue></AssetTraitValue>
+      <Fingerprint>w29bozfuzk</Fingerprint>
+      <Integrity>SAlsK/gC/h6yHLL913vTB8jiiQK+7mbmm5Fy7DMkYtw=</Integrity>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\images\32584e88-2fe9-49f5-bd2a-a4146c25d942.png'))</OriginalItemSpec>
+    </StaticWebAsset>
     <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\images\456b9148-284a-4b08-b7e5-70b595a8e7df.jpg'))">
       <SourceType>Package</SourceType>
       <SourceId>StageCraft</SourceId>
@@ -143,6 +215,24 @@
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
       <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\images\456b9148-284a-4b08-b7e5-70b595a8e7df.jpg'))</OriginalItemSpec>
+    </StaticWebAsset>
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\images\4643cd7b-1c5d-48f9-9091-e1284aaa6461.png'))">
+      <SourceType>Package</SourceType>
+      <SourceId>StageCraft</SourceId>
+      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
+      <BasePath>_content/StageCraft</BasePath>
+      <RelativePath>images/4643cd7b-1c5d-48f9-9091-e1284aaa6461.png</RelativePath>
+      <AssetKind>All</AssetKind>
+      <AssetMode>All</AssetMode>
+      <AssetRole>Primary</AssetRole>
+      <RelatedAsset></RelatedAsset>
+      <AssetTraitName></AssetTraitName>
+      <AssetTraitValue></AssetTraitValue>
+      <Fingerprint>p8wps9fvm1</Fingerprint>
+      <Integrity>h4BqRxSntCSl/M1hQvfMWVIP7vnV4mpSfjosPMGbdpQ=</Integrity>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\images\4643cd7b-1c5d-48f9-9091-e1284aaa6461.png'))</OriginalItemSpec>
     </StaticWebAsset>
     <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\images\495e362d-e64e-4da5-911f-b0afaac1d328.png'))">
       <SourceType>Package</SourceType>
@@ -180,6 +270,24 @@
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
       <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\images\4ff96332-17b1-4b11-82db-14effd35bd4a.png'))</OriginalItemSpec>
     </StaticWebAsset>
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\images\59a65368-8abd-4765-b2f9-7abb782b21bf.png'))">
+      <SourceType>Package</SourceType>
+      <SourceId>StageCraft</SourceId>
+      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
+      <BasePath>_content/StageCraft</BasePath>
+      <RelativePath>images/59a65368-8abd-4765-b2f9-7abb782b21bf.png</RelativePath>
+      <AssetKind>All</AssetKind>
+      <AssetMode>All</AssetMode>
+      <AssetRole>Primary</AssetRole>
+      <RelatedAsset></RelatedAsset>
+      <AssetTraitName></AssetTraitName>
+      <AssetTraitValue></AssetTraitValue>
+      <Fingerprint>htb6jsjbre</Fingerprint>
+      <Integrity>VVRjHCa5x5ppSrJQezuhTz8tjqnOnLrXFitedkQJvzk=</Integrity>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\images\59a65368-8abd-4765-b2f9-7abb782b21bf.png'))</OriginalItemSpec>
+    </StaticWebAsset>
     <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\images\6624ae93-7989-4522-83ca-39d355c437cb.png'))">
       <SourceType>Package</SourceType>
       <SourceId>StageCraft</SourceId>
@@ -215,6 +323,24 @@
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
       <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\images\81a37ed8-a6fd-4a6c-9141-74bcaa357132.png'))</OriginalItemSpec>
+    </StaticWebAsset>
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\images\84ba63aa-0256-4288-8e20-7a5bc78f10cd.png'))">
+      <SourceType>Package</SourceType>
+      <SourceId>StageCraft</SourceId>
+      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
+      <BasePath>_content/StageCraft</BasePath>
+      <RelativePath>images/84ba63aa-0256-4288-8e20-7a5bc78f10cd.png</RelativePath>
+      <AssetKind>All</AssetKind>
+      <AssetMode>All</AssetMode>
+      <AssetRole>Primary</AssetRole>
+      <RelatedAsset></RelatedAsset>
+      <AssetTraitName></AssetTraitName>
+      <AssetTraitValue></AssetTraitValue>
+      <Fingerprint>70flmqlw88</Fingerprint>
+      <Integrity>Nw1Ed89CyNA3bcJ+M/mks2yNEVSiDJjfiNjJ6t+YR5A=</Integrity>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\images\84ba63aa-0256-4288-8e20-7a5bc78f10cd.png'))</OriginalItemSpec>
     </StaticWebAsset>
     <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\images\8cbdebfe-4d38-4a39-acdf-e3506ef4dfa2.JPG'))">
       <SourceType>Package</SourceType>
@@ -252,6 +378,24 @@
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
       <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\images\94444df7-81be-489a-9a23-c8b6364b42b9.png'))</OriginalItemSpec>
     </StaticWebAsset>
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\images\94a968e2-c13f-431e-ba79-ef0ffc8fa884.png'))">
+      <SourceType>Package</SourceType>
+      <SourceId>StageCraft</SourceId>
+      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
+      <BasePath>_content/StageCraft</BasePath>
+      <RelativePath>images/94a968e2-c13f-431e-ba79-ef0ffc8fa884.png</RelativePath>
+      <AssetKind>All</AssetKind>
+      <AssetMode>All</AssetMode>
+      <AssetRole>Primary</AssetRole>
+      <RelatedAsset></RelatedAsset>
+      <AssetTraitName></AssetTraitName>
+      <AssetTraitValue></AssetTraitValue>
+      <Fingerprint>s2u2kwk7wv</Fingerprint>
+      <Integrity>POf7fsT4JR7zdW+3ou6exFExnP2v4zVdzJzDrYqO9i0=</Integrity>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\images\94a968e2-c13f-431e-ba79-ef0ffc8fa884.png'))</OriginalItemSpec>
+    </StaticWebAsset>
     <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\images\a02362f8-af70-4be6-b854-e852dc03614c.jpeg'))">
       <SourceType>Package</SourceType>
       <SourceId>StageCraft</SourceId>
@@ -287,6 +431,24 @@
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
       <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\images\ad58d2fd-4b34-4afd-a097-004a8c51055d.png'))</OriginalItemSpec>
+    </StaticWebAsset>
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\images\b9bd2c07-5e79-429b-9272-ec32e6ced10b.png'))">
+      <SourceType>Package</SourceType>
+      <SourceId>StageCraft</SourceId>
+      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
+      <BasePath>_content/StageCraft</BasePath>
+      <RelativePath>images/b9bd2c07-5e79-429b-9272-ec32e6ced10b.png</RelativePath>
+      <AssetKind>All</AssetKind>
+      <AssetMode>All</AssetMode>
+      <AssetRole>Primary</AssetRole>
+      <RelatedAsset></RelatedAsset>
+      <AssetTraitName></AssetTraitName>
+      <AssetTraitValue></AssetTraitValue>
+      <Fingerprint>0pk0uyxeq2</Fingerprint>
+      <Integrity>PGEqv9qKpJy6YTgrk+y6aJ9Esgj08WFGpwW6OrsOycQ=</Integrity>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\images\b9bd2c07-5e79-429b-9272-ec32e6ced10b.png'))</OriginalItemSpec>
     </StaticWebAsset>
     <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\images\c94ccc60-af83-404c-8761-766febc3bf88.png'))">
       <SourceType>Package</SourceType>
@@ -341,6 +503,78 @@
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
       <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\images\d3b330d4-8f5c-4e5d-8566-d615d165988a.png'))</OriginalItemSpec>
+    </StaticWebAsset>
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\images\dbe597b4-4760-470c-8441-715d31cf79ea.png'))">
+      <SourceType>Package</SourceType>
+      <SourceId>StageCraft</SourceId>
+      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
+      <BasePath>_content/StageCraft</BasePath>
+      <RelativePath>images/dbe597b4-4760-470c-8441-715d31cf79ea.png</RelativePath>
+      <AssetKind>All</AssetKind>
+      <AssetMode>All</AssetMode>
+      <AssetRole>Primary</AssetRole>
+      <RelatedAsset></RelatedAsset>
+      <AssetTraitName></AssetTraitName>
+      <AssetTraitValue></AssetTraitValue>
+      <Fingerprint>lvn4ufpoa1</Fingerprint>
+      <Integrity>4VtQPAfjUbhliTghVQMk3OmPBGdTQ60HCWRavRyjY2g=</Integrity>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\images\dbe597b4-4760-470c-8441-715d31cf79ea.png'))</OriginalItemSpec>
+    </StaticWebAsset>
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\images\e114e927-4240-447f-af0c-1a2a0457d567.png'))">
+      <SourceType>Package</SourceType>
+      <SourceId>StageCraft</SourceId>
+      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
+      <BasePath>_content/StageCraft</BasePath>
+      <RelativePath>images/e114e927-4240-447f-af0c-1a2a0457d567.png</RelativePath>
+      <AssetKind>All</AssetKind>
+      <AssetMode>All</AssetMode>
+      <AssetRole>Primary</AssetRole>
+      <RelatedAsset></RelatedAsset>
+      <AssetTraitName></AssetTraitName>
+      <AssetTraitValue></AssetTraitValue>
+      <Fingerprint>czs7hx14i8</Fingerprint>
+      <Integrity>iIwd379S4HzW8bHPJHMGHamwGJ7txT/nDEhZXm5t77k=</Integrity>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\images\e114e927-4240-447f-af0c-1a2a0457d567.png'))</OriginalItemSpec>
+    </StaticWebAsset>
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\images\e8e5284e-7621-42fa-a8f7-9abfacbf3b96.png'))">
+      <SourceType>Package</SourceType>
+      <SourceId>StageCraft</SourceId>
+      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
+      <BasePath>_content/StageCraft</BasePath>
+      <RelativePath>images/e8e5284e-7621-42fa-a8f7-9abfacbf3b96.png</RelativePath>
+      <AssetKind>All</AssetKind>
+      <AssetMode>All</AssetMode>
+      <AssetRole>Primary</AssetRole>
+      <RelatedAsset></RelatedAsset>
+      <AssetTraitName></AssetTraitName>
+      <AssetTraitValue></AssetTraitValue>
+      <Fingerprint>h34kk4roz7</Fingerprint>
+      <Integrity>Q9qK/lpG7eWa4fTfBaAi48J7R6TUVICAqrunQqH1OLI=</Integrity>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\images\e8e5284e-7621-42fa-a8f7-9abfacbf3b96.png'))</OriginalItemSpec>
+    </StaticWebAsset>
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\images\f284b31d-3b18-4947-8fff-484f07ade0a6.png'))">
+      <SourceType>Package</SourceType>
+      <SourceId>StageCraft</SourceId>
+      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
+      <BasePath>_content/StageCraft</BasePath>
+      <RelativePath>images/f284b31d-3b18-4947-8fff-484f07ade0a6.png</RelativePath>
+      <AssetKind>All</AssetKind>
+      <AssetMode>All</AssetMode>
+      <AssetRole>Primary</AssetRole>
+      <RelatedAsset></RelatedAsset>
+      <AssetTraitName></AssetTraitName>
+      <AssetTraitValue></AssetTraitValue>
+      <Fingerprint>46ia5qeapw</Fingerprint>
+      <Integrity>fKdG7I7X00dYODLsG4SLtdGj+zwTLdNyRkKJdfYXEeI=</Integrity>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\images\f284b31d-3b18-4947-8fff-484f07ade0a6.png'))</OriginalItemSpec>
     </StaticWebAsset>
     <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\images\logo.jpg'))">
       <SourceType>Package</SourceType>

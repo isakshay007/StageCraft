@@ -1,9 +1,11 @@
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using StageCraft.Data;
 
 namespace StageCraft.Controllers
 {
+    [Authorize] // ✅ Require login for all actions in HomeController
     public class HomeController : Controller
     {
         private readonly AppDbContext _context;
@@ -16,8 +18,8 @@ namespace StageCraft.Controllers
         public async Task<IActionResult> Index()
         {
             var spotlightProductions = await _context.Productions
-                .OrderByDescending(p => p.OpeningDay) // You can keep .Id if preferred
-                .Take(9) // ✅ Show up to 9 productions
+                .OrderByDescending(p => p.OpeningDay)
+                .Take(9)
                 .ToListAsync();
 
             return View(spotlightProductions);

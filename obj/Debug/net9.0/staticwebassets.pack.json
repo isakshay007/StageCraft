@@ -21,8 +21,20 @@
       "PackagePath": "staticwebassets/images/15a0f0f2-2586-435c-a4ba-6edd4a3d3c69.png"
     },
     {
+      "Id": "/Users/akshay/Desktop/StageCraft/wwwroot/images/176f516f-5755-4bf4-9c8e-81d69c96fc71.png",
+      "PackagePath": "staticwebassets/images/176f516f-5755-4bf4-9c8e-81d69c96fc71.png"
+    },
+    {
+      "Id": "/Users/akshay/Desktop/StageCraft/wwwroot/images/1c7ea165-1235-440f-aaa6-140bba4dd3a0.png",
+      "PackagePath": "staticwebassets/images/1c7ea165-1235-440f-aaa6-140bba4dd3a0.png"
+    },
+    {
       "Id": "/Users/akshay/Desktop/StageCraft/wwwroot/images/23aba93a-c676-4b6c-a726-d4c336642d0b.png",
       "PackagePath": "staticwebassets/images/23aba93a-c676-4b6c-a726-d4c336642d0b.png"
+    },
+    {
+      "Id": "/Users/akshay/Desktop/StageCraft/wwwroot/images/25bc23a7-34ca-4ce5-b407-4d503ad14d57.png",
+      "PackagePath": "staticwebassets/images/25bc23a7-34ca-4ce5-b407-4d503ad14d57.png"
     },
     {
       "Id": "/Users/akshay/Desktop/StageCraft/wwwroot/images/29d793ed-f397-457f-94f6-f7ca365e44c3.png",
@@ -33,8 +45,16 @@
       "PackagePath": "staticwebassets/images/3245a47a-99b8-416d-a786-1e356cabe304.png"
     },
     {
+      "Id": "/Users/akshay/Desktop/StageCraft/wwwroot/images/32584e88-2fe9-49f5-bd2a-a4146c25d942.png",
+      "PackagePath": "staticwebassets/images/32584e88-2fe9-49f5-bd2a-a4146c25d942.png"
+    },
+    {
       "Id": "/Users/akshay/Desktop/StageCraft/wwwroot/images/456b9148-284a-4b08-b7e5-70b595a8e7df.jpg",
       "PackagePath": "staticwebassets/images/456b9148-284a-4b08-b7e5-70b595a8e7df.jpg"
+    },
+    {
+      "Id": "/Users/akshay/Desktop/StageCraft/wwwroot/images/4643cd7b-1c5d-48f9-9091-e1284aaa6461.png",
+      "PackagePath": "staticwebassets/images/4643cd7b-1c5d-48f9-9091-e1284aaa6461.png"
     },
     {
       "Id": "/Users/akshay/Desktop/StageCraft/wwwroot/images/495e362d-e64e-4da5-911f-b0afaac1d328.png",
@@ -45,6 +65,10 @@
       "PackagePath": "staticwebassets/images/4ff96332-17b1-4b11-82db-14effd35bd4a.png"
     },
     {
+      "Id": "/Users/akshay/Desktop/StageCraft/wwwroot/images/59a65368-8abd-4765-b2f9-7abb782b21bf.png",
+      "PackagePath": "staticwebassets/images/59a65368-8abd-4765-b2f9-7abb782b21bf.png"
+    },
+    {
       "Id": "/Users/akshay/Desktop/StageCraft/wwwroot/images/6624ae93-7989-4522-83ca-39d355c437cb.png",
       "PackagePath": "staticwebassets/images/6624ae93-7989-4522-83ca-39d355c437cb.png"
     },
@@ -53,12 +77,20 @@
       "PackagePath": "staticwebassets/images/81a37ed8-a6fd-4a6c-9141-74bcaa357132.png"
     },
     {
+      "Id": "/Users/akshay/Desktop/StageCraft/wwwroot/images/84ba63aa-0256-4288-8e20-7a5bc78f10cd.png",
+      "PackagePath": "staticwebassets/images/84ba63aa-0256-4288-8e20-7a5bc78f10cd.png"
+    },
+    {
       "Id": "/Users/akshay/Desktop/StageCraft/wwwroot/images/8cbdebfe-4d38-4a39-acdf-e3506ef4dfa2.JPG",
       "PackagePath": "staticwebassets/images/8cbdebfe-4d38-4a39-acdf-e3506ef4dfa2.JPG"
     },
     {
       "Id": "/Users/akshay/Desktop/StageCraft/wwwroot/images/94444df7-81be-489a-9a23-c8b6364b42b9.png",
       "PackagePath": "staticwebassets/images/94444df7-81be-489a-9a23-c8b6364b42b9.png"
+    },
+    {
+      "Id": "/Users/akshay/Desktop/StageCraft/wwwroot/images/94a968e2-c13f-431e-ba79-ef0ffc8fa884.png",
+      "PackagePath": "staticwebassets/images/94a968e2-c13f-431e-ba79-ef0ffc8fa884.png"
     },
     {
       "Id": "/Users/akshay/Desktop/StageCraft/wwwroot/images/Sponsor1.jpg",
@@ -77,6 +109,10 @@
       "PackagePath": "staticwebassets/images/ad58d2fd-4b34-4afd-a097-004a8c51055d.png"
     },
     {
+      "Id": "/Users/akshay/Desktop/StageCraft/wwwroot/images/b9bd2c07-5e79-429b-9272-ec32e6ced10b.png",
+      "PackagePath": "staticwebassets/images/b9bd2c07-5e79-429b-9272-ec32e6ced10b.png"
+    },
+    {
       "Id": "/Users/akshay/Desktop/StageCraft/wwwroot/images/c94ccc60-af83-404c-8761-766febc3bf88.png",
       "PackagePath": "staticwebassets/images/c94ccc60-af83-404c-8761-766febc3bf88.png"
     },
@@ -87,6 +123,22 @@
     {
       "Id": "/Users/akshay/Desktop/StageCraft/wwwroot/images/d3b330d4-8f5c-4e5d-8566-d615d165988a.png",
       "PackagePath": "staticwebassets/images/d3b330d4-8f5c-4e5d-8566-d615d165988a.png"
+    },
+    {
+      "Id": "/Users/akshay/Desktop/StageCraft/wwwroot/images/dbe597b4-4760-470c-8441-715d31cf79ea.png",
+      "PackagePath": "staticwebassets/images/dbe597b4-4760-470c-8441-715d31cf79ea.png"
+    },
+    {
+      "Id": "/Users/akshay/Desktop/StageCraft/wwwroot/images/e114e927-4240-447f-af0c-1a2a0457d567.png",
+      "PackagePath": "staticwebassets/images/e114e927-4240-447f-af0c-1a2a0457d567.png"
+    },
+    {
+      "Id": "/Users/akshay/Desktop/StageCraft/wwwroot/images/e8e5284e-7621-42fa-a8f7-9abfacbf3b96.png",
+      "PackagePath": "staticwebassets/images/e8e5284e-7621-42fa-a8f7-9abfacbf3b96.png"
+    },
+    {
+      "Id": "/Users/akshay/Desktop/StageCraft/wwwroot/images/f284b31d-3b18-4947-8fff-484f07ade0a6.png",
+      "PackagePath": "staticwebassets/images/f284b31d-3b18-4947-8fff-484f07ade0a6.png"
     },
     {
       "Id": "/Users/akshay/Desktop/StageCraft/wwwroot/images/logo.jpg",

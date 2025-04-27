@@ -11,8 +11,9 @@
         <div class="col-md-8">
             <h3 class="text-white border-bottom pb-2">🎭 Spotlight</h3>
 
+            @* Show up to 9 productions *@
             <div class="row row-cols-1 row-cols-md-3 g-4">
-                @foreach (var prod in Model.Take(9))  // Show up to 9 productions
+                @foreach (var prod in Model.Take(9))
                 {
                     <div class="col">
                         <div class="card bg-dark text-white border-0 shadow-sm h-100">

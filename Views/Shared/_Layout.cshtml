@@ -7,9 +7,7 @@
 
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
-    <!-- Custom Site Styles -->
     <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
-    <!-- Razor Scoped Styles -->
     <link rel="stylesheet" href="~/StageCraft.styles.css" asp-append-version="true" />
 </head>
 <body class="d-flex flex-column min-vh-100 bg-black text-white">
@@ -28,22 +26,59 @@
 
                 <div class="collapse navbar-collapse" id="mainNav">
                     <ul class="navbar-nav ms-auto">
-                        <li class="nav-item">
-                            <a class="nav-link text-white" asp-controller="Home" asp-action="Index">Home</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-white" asp-controller="Productions" asp-action="Index">Productions</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-white" asp-controller="Home" asp-action="Privacy">Privacy</a>
-                        </li>
+
+                        @if (User.Identity.IsAuthenticated)
+                        {
+                            <!-- Show Home for all logged in users -->
+                            <li class="nav-item">
+                                <a class="nav-link text-white" asp-controller="Home" asp-action="Index">Home</a>
+                            </li>
+
+                            <!-- Admin-specific link -->
+                            @if (User.IsInRole("Admin"))
+                            {
+                                <li class="nav-item">
+                                    <a class="nav-link text-white" asp-controller="Admin" asp-action="CreateProductionManager">Admin Panel</a>
+                                </li>
+                            }
+
+                            <!-- ProductionManager-specific link -->
+                            @if (User.IsInRole("ProductionManager") || User.IsInRole("Admin"))
+                            {
+                                <li class="nav-item">
+                                    <a class="nav-link text-white" asp-controller="Productions" asp-action="Index">Productions</a>
+                                </li>
+                            }
+
+                            <!-- Common link for all logged in users -->
+                            <li class="nav-item">
+                                <a class="nav-link text-white" asp-controller="Home" asp-action="Privacy">Privacy</a>
+                            </li>
+
+                            <!-- Logout button -->
+                            <li class="nav-item">
+                                <form asp-controller="Account" asp-action="Logout" method="post" class="d-inline">
+                                    <button type="submit" class="btn btn-link nav-link text-white">Logout</button>
+                                </form>
+                            </li>
+                        }
+                        else
+                        {
+                            <!-- Guest (not logged in) -->
+                            <li class="nav-item">
+                                <a class="nav-link text-white" asp-controller="Account" asp-action="Login">Login</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link text-white" asp-controller="Account" asp-action="Register">Register</a>
+                            </li>
+                        }
                     </ul>
                 </div>
             </div>
         </nav>
     </header>
 
-    <!-- Main Body Content -->
+    <!-- Main Content -->
     <main class="flex-grow-1 container mt-4 pb-5">
         @RenderBody()
     </main>
