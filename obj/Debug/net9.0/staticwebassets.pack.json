@@ -17,6 +17,10 @@
       "PackagePath": "staticwebassets/images/01c2cab8-6793-4a86-944c-0cc6556bad44.png"
     },
     {
+      "Id": "/Users/akshay/Desktop/StageCraft/wwwroot/images/068a2ad9-e8ff-40e2-b160-dd97462cde58.png",
+      "PackagePath": "staticwebassets/images/068a2ad9-e8ff-40e2-b160-dd97462cde58.png"
+    },
+    {
       "Id": "/Users/akshay/Desktop/StageCraft/wwwroot/images/15a0f0f2-2586-435c-a4ba-6edd4a3d3c69.png",
       "PackagePath": "staticwebassets/images/15a0f0f2-2586-435c-a4ba-6edd4a3d3c69.png"
     },
@@ -47,6 +51,10 @@
     {
       "Id": "/Users/akshay/Desktop/StageCraft/wwwroot/images/32584e88-2fe9-49f5-bd2a-a4146c25d942.png",
       "PackagePath": "staticwebassets/images/32584e88-2fe9-49f5-bd2a-a4146c25d942.png"
+    },
+    {
+      "Id": "/Users/akshay/Desktop/StageCraft/wwwroot/images/3fd27392-c1b4-4f6c-801e-99b4db3d3660.png",
+      "PackagePath": "staticwebassets/images/3fd27392-c1b4-4f6c-801e-99b4db3d3660.png"
     },
     {
       "Id": "/Users/akshay/Desktop/StageCraft/wwwroot/images/456b9148-284a-4b08-b7e5-70b595a8e7df.jpg",
@@ -155,6 +163,10 @@
     {
       "Id": "/Users/akshay/Desktop/StageCraft/wwwroot/images/spotlight2.jpg",
       "PackagePath": "staticwebassets/images/spotlight2.jpg"
+    },
+    {
+      "Id": "/Users/akshay/Desktop/StageCraft/wwwroot/js/comments.js",
+      "PackagePath": "staticwebassets/js/comments.js"
     },
     {
       "Id": "/Users/akshay/Desktop/StageCraft/wwwroot/js/site.js",

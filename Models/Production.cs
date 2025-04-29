@@ -14,5 +14,6 @@ namespace StageCraft.Models
         public bool IsWorldPremiere { get; set; }
         public string TicketLink { get; set; } = string.Empty;
         public string PosterImagePath { get; set; } = string.Empty;
+        public List<Comment> Comments { get; set; } = new List<Comment>();
     }
 }

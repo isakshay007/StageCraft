@@ -40,12 +40,26 @@ namespace StageCraft.Controllers
             return View(pagedProductions);
         }
 
-        // GET: Productions/Details/5 (open to everyone)
+        //  GET: Productions/Details/5 (open to everyone)
         [AllowAnonymous]
         public async Task<IActionResult> Details(int id)
         {
             var production = await _context.Productions.FindAsync(id);
-            return production == null ? NotFound() : View(production);
+            if (production == null)
+            {
+                return NotFound();
+            }
+
+            //  Fetch comments related to this production
+            var comments = await _context.Comments
+                .Include(c => c.User) // Needed to show comment author's name
+                .Where(c => c.ProductionId == id)
+                .OrderByDescending(c => c.CreatedAt)
+                .ToListAsync();
+
+            ViewBag.Comments = comments;
+
+            return View(production);
         }
 
         // GET: Productions/Create (Admin + ProductionManager only)
@@ -90,7 +104,12 @@ namespace StageCraft.Controllers
         public async Task<IActionResult> Edit(int id)
         {
             var production = await _context.Productions.FindAsync(id);
-            return production == null ? NotFound() : View(production);
+            if (production == null)
+            {
+                return NotFound();
+            }
+
+            return View(production);
         }
 
         // POST: Productions/Edit/5
@@ -144,7 +163,12 @@ namespace StageCraft.Controllers
         public async Task<IActionResult> Delete(int id)
         {
             var production = await _context.Productions.FindAsync(id);
-            return production == null ? NotFound() : View(production);
+            if (production == null)
+            {
+                return NotFound();
+            }
+
+            return View(production);
         }
 
         // POST: Productions/Delete/5

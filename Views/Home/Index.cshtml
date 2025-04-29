@@ -11,15 +11,18 @@
         <div class="col-md-8">
             <h3 class="text-white border-bottom pb-2">🎭 Spotlight</h3>
 
-            @* Show up to 9 productions *@
             <div class="row row-cols-1 row-cols-md-3 g-4">
                 @foreach (var prod in Model.Take(9))
                 {
                     <div class="col">
                         <div class="card bg-dark text-white border-0 shadow-sm h-100">
+
+                            <!-- Poster image clickable: redirect to Details page -->
                             @if (!string.IsNullOrEmpty(prod.PosterImagePath))
                             {
-                                <img src="@prod.PosterImagePath" class="card-img-top img-fluid rounded" alt="Poster for @prod.Title" style="height: 300px; object-fit: cover;" />
+                                <a asp-controller="Productions" asp-action="Details" asp-route-id="@prod.Id">
+                                    <img src="@prod.PosterImagePath" class="card-img-top img-fluid rounded" alt="Poster for @prod.Title" style="height: 300px; object-fit: cover;" />
+                                </a>
                             }
                             else
                             {
@@ -27,11 +30,15 @@
                                     <span class="text-white">No Poster</span>
                                 </div>
                             }
-                            <div class="card-body">
-                                <h6 class="card-title text-white mb-1">@prod.Title</h6>
-                                <small class="text-light">
+
+                            <div class="card-body text-center">
+                                <h6 class="card-title text-white mb-2">@prod.Title</h6>
+                                <small class="text-light d-block mb-3">
                                     <strong>Opens:</strong> @prod.OpeningDay.ToShortDateString()
                                 </small>
+
+                                <!-- See Comments Button -->
+                                <button class="btn btn-outline-light btn-sm" onclick="openCommentsModal(@prod.Id)">💬 See Comments</button>
                             </div>
                         </div>
                     </div>
@@ -54,3 +61,20 @@
         </div>
     </div>
 </div>
+
+<!-- Comment Modal (initially hidden) -->
+<div id="commentModal" class="modal" tabindex="-1" style="display:none; position:fixed; top:10%; left:50%; transform:translateX(-50%); background:black; padding:20px; border:2px solid red; width:90%; max-width:600px; z-index:9999;">
+    <button id="closeModalBtn" style="position:absolute; top:10px; right:15px; background:none; border:none; font-size:24px; color:white;">&times;</button>
+    <div id="commentModalContent" class="text-white">
+        <div class="text-center">
+            <div class="spinner-border text-danger" role="status">
+                <span class="visually-hidden">Loading...</span>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    <!-- ✅ Use comments.js here -->
+    <script src="~/js/comments.js"></script>
+}

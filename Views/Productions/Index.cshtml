@@ -49,9 +49,7 @@
                     <div class="card bg-dark text-white border border-danger h-100 shadow-sm prod-card">
                         @if (!string.IsNullOrEmpty(item.PosterImagePath))
                         {
-                            <a asp-action="Details" asp-route-id="@item.Id">
-                                <img src="@item.PosterImagePath" class="card-img-top" alt="Poster for @item.Title" style="height: 280px; object-fit: cover;" />
-                            </a>
+                            <img src="@item.PosterImagePath" class="card-img-top" alt="Poster for @item.Title" style="height: 280px; object-fit: cover;" />
                         }
                         else
                         {
@@ -69,6 +67,8 @@
                                     <strong>Closing:</strong> @item.ClosingDay.ToShortDateString()
                                 </small>
                             </p>
+
+                            <button class="btn btn-outline-light btn-sm mt-2" onclick="openCommentsModal(@item.Id)">💬 See Comments</button>
                         </div>
 
                         @if (User.IsInRole("Admin") || User.IsInRole("ProductionManager"))
@@ -120,3 +120,108 @@
         </div>
     }
 </div>
+
+<!-- Comments Modal -->
+<div id="commentModal" class="modal" tabindex="-1" style="display:none; position:fixed; top:10%; left:50%; transform:translateX(-50%); background:black; padding:20px; border:2px solid red; width:90%; max-width:700px; z-index:9999;">
+    <button id="closeModalBtn" style="position:absolute; top:10px; right:15px; background:none; border:none; font-size:24px; color:white;">&times;</button>
+    <div id="commentModalContent" class="text-white">
+        <!-- Comments will load dynamically -->
+    </div>
+</div>
+
+@section Scripts {
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+
+            window.openCommentsModal = function (productionId) {
+                const modal = document.getElementById('commentModal');
+                const modalContent = document.getElementById('commentModalContent');
+
+                modal.style.display = 'block';
+                modalContent.innerHTML = `
+                    <div class="text-center">
+                        <div class="spinner-border text-danger" role="status">
+                            <span class="visually-hidden">Loading...</span>
+                        </div>
+                    </div>
+                `;
+
+                fetch(`/Comments/GetCommentsPartial?productionId=${productionId}`)
+                    .then(response => response.text())
+                    .then(html => {
+                        modalContent.innerHTML = html;
+                        initializeCommentsHandlers();
+                    })
+                    .catch(error => {
+                        console.error('Failed to load comments:', error);
+                        modalContent.innerHTML = `<p class="text-danger">Failed to load comments.</p>`;
+                    });
+            };
+
+            function initializeCommentsHandlers() {
+                const commentForm = document.getElementById('commentForm');
+                if (commentForm) {
+                    commentForm.addEventListener('submit', function (e) {
+                        e.preventDefault();
+                        const formData = new FormData(commentForm);
+                        const token = commentForm.querySelector('input[name="__RequestVerificationToken"]').value;
+
+                        fetch('/Comments/Create', {
+                            method: 'POST',
+                            headers: {
+                                'RequestVerificationToken': token
+                            },
+                            body: formData
+                        })
+                        .then(response => response.text())
+                        .then(html => {
+                            document.getElementById('commentModalContent').innerHTML = html;
+                            initializeCommentsHandlers();
+                        })
+                        .catch(error => {
+                            console.error('Error posting comment:', error);
+                        });
+                    });
+                }
+
+                document.querySelectorAll('.delete-comment-form').forEach(form => {
+                    form.addEventListener('submit', function (e) {
+                        e.preventDefault();
+                        const formData = new FormData(form);
+                        const token = form.querySelector('input[name="__RequestVerificationToken"]').value;
+
+                        fetch('/Comments/Delete', {
+                            method: 'POST',
+                            headers: {
+                                'RequestVerificationToken': token
+                            },
+                            body: formData
+                        })
+                        .then(response => response.text())
+                        .then(html => {
+                            document.getElementById('commentModalContent').innerHTML = html;
+                            initializeCommentsHandlers();
+                        })
+                        .catch(error => {
+                            console.error('Error deleting comment:', error);
+                        });
+                    });
+                });
+            }
+
+            const closeBtn = document.getElementById('closeModalBtn');
+            if (closeBtn) {
+                closeBtn.addEventListener('click', function () {
+                    document.getElementById('commentModal').style.display = 'none';
+                });
+            }
+
+            window.addEventListener('click', function (event) {
+                const modal = document.getElementById('commentModal');
+                if (event.target === modal) {
+                    modal.style.display = 'none';
+                }
+            });
+        });
+    </script>
+}

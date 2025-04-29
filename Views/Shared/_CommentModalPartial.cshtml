@@ -1,0 +1,66 @@
+@model List<StageCraft.Models.Comment>
+@inject Microsoft.AspNetCore.Antiforgery.IAntiforgery Antiforgery
+@using Microsoft.AspNetCore.Http
+
+@{
+    var productionId = ViewBag.ProductionId as int?;
+}
+
+<div id="comments-list">
+    <div class="mb-3">
+        <h5 class="text-center text-danger">Comments</h5>
+    </div>
+
+    @if (Model != null && Model.Count > 0)
+    {
+        foreach (var comment in Model)
+        {
+            <div class="border-bottom mb-4 pb-2">
+                <div class="d-flex justify-content-between">
+                    <div>
+                        <strong class="text-light">@comment.Username</strong>
+                        <small class="text-secondary ms-2">(@comment.CreatedAt.ToLocalTime().ToString("g"))</small>
+                    </div>
+
+                    @if (User.Identity.IsAuthenticated &&
+                        (User.FindFirst(System.Security.Claims.ClaimTypes.NameIdentifier)?.Value == comment.UserId
+                         || User.IsInRole("Admin") || User.IsInRole("ProductionManager")))
+                    {
+
+                        <form class="delete-comment-form d-inline" method="post">
+                            @Html.AntiForgeryToken()
+                            <input type="hidden" name="id" value="@comment.Id" />
+                            <button type="submit" class="btn btn-sm btn-outline-danger">Delete</button>
+                        </form>
+                    }
+                </div>
+
+                <p class="mt-2 text-light">@comment.Text</p>
+            </div>
+        }
+    }
+    else
+    {
+        <p class="text-muted text-center">No comments yet. Be the first to comment!</p>
+    }
+
+    @if (User.Identity.IsAuthenticated)
+    {
+        <form id="commentForm" method="post">
+            @Html.AntiForgeryToken()
+            <input type="hidden" name="productionId" value="@productionId" />
+            <div class="form-group">
+                <textarea name="text" class="form-control mb-2" rows="3" placeholder="Write a comment..." required></textarea>
+            </div>
+            <div class="text-end">
+                <button type="submit" class="btn btn-danger btn-sm">Post Comment</button>
+            </div>
+        </form>
+    }
+    else
+    {
+        <div class="text-center mt-3">
+            <a asp-controller="Account" asp-action="Login" class="btn btn-outline-light">Login to comment</a>
+        </div>
+    }
+</div>

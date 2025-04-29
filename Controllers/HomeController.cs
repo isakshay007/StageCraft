@@ -5,7 +5,7 @@ using StageCraft.Data;
 
 namespace StageCraft.Controllers
 {
-    [Authorize] // ✅ Require login for all actions in HomeController
+    [Authorize] //  Require login for all actions in HomeController
     public class HomeController : Controller
     {
         private readonly AppDbContext _context;

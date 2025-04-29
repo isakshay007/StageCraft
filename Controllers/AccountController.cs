@@ -16,12 +16,14 @@ namespace StageCraft.Controllers
             _userManager = userManager;
         }
 
+        // GET: /Account/Login
         [HttpGet]
         public IActionResult Login()
         {
             return View();
         }
 
+        // POST: /Account/Login
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Login(LoginViewModel model)
@@ -32,7 +34,7 @@ namespace StageCraft.Controllers
             var user = await _userManager.FindByEmailAsync(model.Email);
             if (user != null)
             {
-                var result = await _signInManager.PasswordSignInAsync(user, model.Password, model.RememberMe, false);
+                var result = await _signInManager.PasswordSignInAsync(user, model.Password, model.RememberMe, lockoutOnFailure: false);
                 if (result.Succeeded)
                 {
                     var roles = await _userManager.GetRolesAsync(user);
@@ -41,7 +43,7 @@ namespace StageCraft.Controllers
                     else if (roles.Contains("ProductionManager"))
                         return RedirectToAction("Index", "Productions");
                     else
-                        return RedirectToAction("Index", "Home");
+                        return RedirectToAction("Index", "Home"); // Regular User
                 }
             }
 
@@ -49,12 +51,14 @@ namespace StageCraft.Controllers
             return View(model);
         }
 
+        // GET: /Account/Register
         [HttpGet]
         public IActionResult Register()
         {
             return View();
         }
 
+        // POST: /Account/Register
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Register(RegisterViewModel model)
@@ -64,7 +68,8 @@ namespace StageCraft.Controllers
 
             var user = new ApplicationUser
             {
-                UserName = model.Email,
+                FullName = model.FullName,
+                UserName = model.UserName,
                 Email = model.Email
             };
 
@@ -72,7 +77,7 @@ namespace StageCraft.Controllers
 
             if (result.Succeeded)
             {
-                await _userManager.AddToRoleAsync(user, "User"); // ✅ Default role is "User"
+                await _userManager.AddToRoleAsync(user, "User"); // Default role assignment
                 await _signInManager.SignInAsync(user, isPersistent: false);
                 return RedirectToAction("Index", "Home");
             }
@@ -85,6 +90,7 @@ namespace StageCraft.Controllers
             return View(model);
         }
 
+        // POST: /Account/Logout
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Logout()
@@ -93,6 +99,7 @@ namespace StageCraft.Controllers
             return RedirectToAction("Login", "Account");
         }
 
+        // GET: /Account/AccessDenied
         [HttpGet]
         public IActionResult AccessDenied()
         {
