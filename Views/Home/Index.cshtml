@@ -31,9 +31,12 @@
 
                             <div class="card-body text-center">
                                 <h6 class="card-title text-white mb-2">@prod.Title</h6>
-                                <small class="text-light d-block mb-3">
-                                    <strong>Opens:</strong> @prod.OpeningDay.ToShortDateString()
+                                <small class="text-light d-block mb-1">
+                                    <strong>Opens:</strong> @prod.OpeningDay.ToShortDateString()<br />
+                                    <strong>Closes:</strong> @prod.ClosingDay.ToShortDateString()<br />
+                                    <strong>Runtime:</strong> @prod.Runtime mins
                                 </small>
+
 
                                 <button class="btn btn-outline-light btn-sm" onclick="openCommentsModal(@prod.Id)">💬 See Comments</button>
                             </div>
@@ -46,19 +49,19 @@
         <!-- RIGHT COLUMN: Animated Theatre + Sponsors -->
         <div class="col-md-4 d-flex flex-column gap-4 animate__animated animate__fadeInRight">
             <!-- 🎭 Animated Theatre Banner -->
-            <div class="theatre-card text-center p-3 mb-4 tilt-box">
-                <h4 class="text-glow">
+            <div class="mt-5 pt-3 theatre-banner tilt-box neon-flicker text-center p-4">
+                <h2 class="display-6 fw-bold glowing-text">
                     🎭 Love the <span class="highlight-red">Stage</span><br />
                     ❤️ Embrace the <span class="highlight-gold">Drama</span>
-                </h4>
-                <p class="small text-light mt-2">Where every act is a story</p>
+                </h2>
+                <p class="fst-italic text-light mt-2">Where every act is a story</p>
             </div>
 
             <!-- 🎟 Sponsors -->
             <div>
                 <h5 class="text-white border-bottom pb-2"><i class="bi bi-ticket-fill text-warning"></i> Sponsors</h5>
                 <div class="row row-cols-3 g-3 text-center">
-                    @for (int i = 1; i <= 6; i++)
+                    @for (int i = 1; i <= 15; i++)
                     {
                         <div class="col">
                             <div class="sponsor-tile tilt-box">
