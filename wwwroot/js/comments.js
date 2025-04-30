@@ -88,13 +88,18 @@ document.addEventListener('DOMContentLoaded', function () {
 
     function handleCommentDelete(e) {
         e.preventDefault();
-        if (!confirm('Are you sure you want to delete this comment?')) return;
-
+        
         const form = e.target;
         const submitBtn = form.querySelector('button[type="submit"]');
         const originalText = submitBtn.innerHTML;
-
+    
         submitBtn.disabled = true;
+        //if (!confirm('Are you sure you want to delete this comment?')) return;
+
+        //const form = e.target;
+        //const submitBtn = form.querySelector('button[type="submit"]');
+        //const originalText = submitBtn.innerHTML;
+
         submitBtn.innerHTML = `
             <span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>
             Deleting...

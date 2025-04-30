@@ -9,6 +9,8 @@
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
     <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
     <link rel="stylesheet" href="~/StageCraft.styles.css" asp-append-version="true" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
+
 </head>
 <body class="d-flex flex-column min-vh-100 bg-black text-white">
 
@@ -29,12 +31,10 @@
 
                         @if (User.Identity.IsAuthenticated)
                         {
-                            <!-- Show Home for all logged in users -->
                             <li class="nav-item">
                                 <a class="nav-link text-white" asp-controller="Home" asp-action="Index">Home</a>
                             </li>
 
-                            <!-- Admin-specific link -->
                             @if (User.IsInRole("Admin"))
                             {
                                 <li class="nav-item">
@@ -42,20 +42,17 @@
                                 </li>
                             }
 
-                            <!-- ProductionManager-specific link -->
-                            @if (User.IsInRole("ProductionManager") || User.IsInRole("Admin"))
+                            @if (User.IsInRole("ProductionManager") || User.IsInRole("Admin") || User.IsInRole("User"))
                             {
                                 <li class="nav-item">
                                     <a class="nav-link text-white" asp-controller="Productions" asp-action="Index">Productions</a>
                                 </li>
                             }
 
-                            <!-- Common link for all logged in users -->
                             <li class="nav-item">
                                 <a class="nav-link text-white" asp-controller="Home" asp-action="Privacy">Privacy</a>
                             </li>
 
-                            <!-- Logout button -->
                             <li class="nav-item">
                                 <form asp-controller="Account" asp-action="Logout" method="post" class="d-inline">
                                     <button type="submit" class="btn btn-link nav-link text-white">Logout</button>
@@ -64,7 +61,6 @@
                         }
                         else
                         {
-                            <!-- Guest (not logged in) -->
                             <li class="nav-item">
                                 <a class="nav-link text-white" asp-controller="Account" asp-action="Login">Login</a>
                             </li>
@@ -89,6 +85,18 @@
             &copy; 2025 - StageCraft - <a asp-controller="Home" asp-action="Privacy" class="text-light">Privacy</a>
         </div>
     </footer>
+
+    <!-- Centralized Comment Modal (added globally) -->
+    <div id="commentModal" class="modal" tabindex="-1" style="display:none; position:fixed; top:10%; left:50%; transform:translateX(-50%); background:black; padding:20px; border:2px solid red; width:90%; max-width:700px; z-index:9999;">
+        <button id="closeModalBtn" style="position:absolute; top:10px; right:15px; background:none; border:none; font-size:24px; color:white;">&times;</button>
+        <div id="commentModalContent" class="text-white">
+            <div class="text-center py-4">
+                <div class="spinner-border text-danger" role="status">
+                    <span class="visually-hidden">Loading...</span>
+                </div>
+            </div>
+        </div>
+    </div>
 
     <!-- Scripts -->
     <script src="~/lib/jquery/dist/jquery.min.js"></script>

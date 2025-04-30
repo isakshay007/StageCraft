@@ -26,8 +26,7 @@
                         (User.FindFirst(System.Security.Claims.ClaimTypes.NameIdentifier)?.Value == comment.UserId
                          || User.IsInRole("Admin") || User.IsInRole("ProductionManager")))
                     {
-
-                        <form class="delete-comment-form d-inline" method="post">
+                        <form class="delete-comment-form d-inline" method="post" action="/Comments/Delete">
                             @Html.AntiForgeryToken()
                             <input type="hidden" name="id" value="@comment.Id" />
                             <button type="submit" class="btn btn-sm btn-outline-danger">Delete</button>
@@ -46,7 +45,7 @@
 
     @if (User.Identity.IsAuthenticated)
     {
-        <form id="commentForm" method="post">
+        <form id="commentForm" method="post" action="/Comments/Create">
             @Html.AntiForgeryToken()
             <input type="hidden" name="productionId" value="@productionId" />
             <div class="form-group">
