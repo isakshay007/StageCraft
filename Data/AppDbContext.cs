@@ -6,12 +6,14 @@ namespace StageCraft.Data
 {
     public class AppDbContext : IdentityDbContext<ApplicationUser>
     {
-        public AppDbContext(DbContextOptions<AppDbContext> options) 
-            : base(options) 
-        { 
+        public AppDbContext(DbContextOptions<AppDbContext> options)
+            : base(options)
+        {
         }
 
         public DbSet<Production> Productions { get; set; } = null!;
         public DbSet<Comment> Comments { get; set; } = null!;
+        public DbSet<ActivityLog> ActivityLogs { get; set; } = null!;
+        public DbSet<LoginStatistic> LoginStatistics { get; set; } = null!;
     }
 }

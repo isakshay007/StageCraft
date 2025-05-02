@@ -1,0 +1,87 @@
+@model StageCraft.ViewModels.LoginStatisticsViewModel
+
+@{
+    ViewData["Title"] = "Role Statistics";
+}
+
+<div class="container mt-5">
+    <h3 class="text-danger text-center mb-4">📊 Role Statistics</h3>
+
+    <div class="row">
+        <!-- Left: Summary Card -->
+        <div class="col-md-4 mb-4">
+            <div class="card bg-dark text-white shadow-lg h-100">
+                <div class="card-body">
+                    <h5 class="text-center mb-4">System Overview</h5>
+
+                    <ul class="list-group list-group-flush">
+                        <li class="list-group-item bg-dark text-light d-flex justify-content-between">
+                            <span>Total Users</span>
+                            <span class="fw-bold">@Model.TotalUsers</span>
+                        </li>
+                        <li class="list-group-item bg-dark text-light d-flex justify-content-between">
+                            <span>Total Admins</span>
+                            <span class="fw-bold">@Model.TotalAdmins</span>
+                        </li>
+                        <li class="list-group-item bg-dark text-light d-flex justify-content-between">
+                            <span>Total Production Managers</span>
+                            <span class="fw-bold">@Model.TotalManagers</span>
+                        </li>
+                    </ul>
+
+                    <div class="text-center mt-4">
+                        <a asp-action="AdminPanel" class="btn btn-secondary">
+                            ⬅️ Back to Admin Panel
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Right: Role Bar Chart -->
+        <div class="col-md-8 mb-4">
+            <div class="card bg-dark text-white shadow-lg h-100">
+                <div class="card-body">
+                    <h5 class="text-center mb-4">User Role Comparison</h5>
+                    <canvas id="roleChart"></canvas>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script>
+        const ctx = document.getElementById('roleChart').getContext('2d');
+        const roleChart = new Chart(ctx, {
+            type: 'bar',
+            data: {
+                labels: ['Admins', 'Production Managers', 'Users'],
+                datasets: [{
+                    label: 'Count',
+                    data: [@Model.TotalAdmins, @Model.TotalManagers, @Model.TotalUsers],
+                    backgroundColor: [
+                        'rgba(255, 99, 132, 0.7)',
+                        'rgba(54, 162, 235, 0.7)',
+                        'rgba(255, 206, 86, 0.7)'
+                    ],
+                    borderColor: [
+                        'rgba(255, 99, 132, 1)',
+                        'rgba(54, 162, 235, 1)',
+                        'rgba(255, 206, 86, 1)'
+                    ],
+                    borderWidth: 1
+                }]
+            },
+            options: {
+                scales: {
+                    y: {
+                        beginAtZero: true,
+                        ticks: { precision:0 }
+                    }
+                }
+            }
+        });
+    </script>
+}

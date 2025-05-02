@@ -208,4 +208,4 @@
 /Users/akshay/Desktop/StageCraft/obj/Debug/net9.0/StageCraft.genruntimeconfig.cache
 /Users/akshay/Desktop/StageCraft/obj/Debug/net9.0/ref/StageCraft.dll
 /Users/akshay/Desktop/StageCraft/obj/Debug/net9.0/compressed/57spz9q5av-p7r9dbzls3.gz
-/Users/akshay/Desktop/StageCraft/obj/Debug/net9.0/compressed/s2pyfjz9wx-o4qncg8gl8.gz
+/Users/akshay/Desktop/StageCraft/obj/Debug/net9.0/compressed/s2pyfjz9wx-zprts59m01.gz

@@ -1,0 +1,23 @@
+@model StageCraft.ViewModels.CreateProductionManagerViewModel
+
+<p class="text-center text-light mb-3 fst-italic">
+    Assign a new manager to help oversee theatre productions.
+</p>
+
+<form asp-action="CreateProductionManager" method="post">
+    <div asp-validation-summary="ModelOnly" class="alert alert-danger text-center"></div>
+
+    <div class="mb-3">
+        <label asp-for="Email" class="form-label">Email</label>
+        <input asp-for="Email" class="form-control" placeholder="manager@example.com" />
+        <span asp-validation-for="Email" class="text-danger small"></span>
+    </div>
+
+    <div class="mb-3">
+        <label asp-for="Password" class="form-label">Password</label>
+        <input asp-for="Password" type="password" class="form-control" placeholder="Set a password" />
+        <span asp-validation-for="Password" class="text-danger small"></span>
+    </div>
+
+    <button type="submit" class="btn btn-danger w-100 mb-2">Create Manager</button>
+</form>

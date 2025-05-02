@@ -1,0 +1,33 @@
+@{
+    ViewData["Title"] = "Admin Panel";
+}
+
+<div class="container mt-5">
+    <!-- Show TempData messages -->
+    @if (TempData["Success"] != null)
+    {
+        <div class="alert alert-success text-center">@TempData["Success"]</div>
+    }
+    @if (TempData["Error"] != null)
+    {
+        <div class="alert alert-danger text-center">@TempData["Error"]</div>
+    }
+
+    <div class="row justify-content-center">
+        <div class="col-md-6 mb-4">
+            <div class="card bg-dark text-white shadow-lg h-100">
+                <div class="card-header text-danger text-center">
+                    <h4>Manage Section ⚙️</h4>
+                </div>
+                <div class="card-body d-flex flex-column justify-content-center">
+                    <a asp-action="CreateProductionManager" class="btn btn-danger w-100 mb-2">➕ Create Production Manager</a>
+                    <a asp-action="UsersList" class="btn btn-danger w-100 mb-2">👥 All Users</a>
+                    <a asp-action="ProductionManagersList" class="btn btn-danger w-100 mb-2">🎭 All Production Managers</a>
+                    <a asp-action="RecentActivityLogs" class="btn btn-danger w-100 mb-2">🕒 Recent Activity Logs</a>
+                    <a asp-action="LoginStatistics" class="btn btn-danger w-100 mb-2">📊 Login Statistics</a>
+                    <a asp-controller="Productions" asp-action="Index" class="btn btn-danger w-100 mb-2">🎬 Manage Productions</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

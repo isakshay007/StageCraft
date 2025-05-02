@@ -1,0 +1,50 @@
+@model IEnumerable<StageCraft.ViewModels.ActivityLogViewModel>
+
+@{
+    ViewData["Title"] = "Recent Activity Logs";
+}
+
+<div class="container mt-5">
+    <h3 class="text-danger text-center mb-4">🕒 Recent Activity Logs</h3>
+
+    <div class="table-responsive">
+        <table class="table table-dark table-striped align-middle">
+            <thead>
+                <tr>
+                    <th>User ID</th>
+                    <th>User Name</th>
+                    <th>User Email</th>
+                    <th>Action</th>
+                    <th>Timestamp (UTC)</th>
+                </tr>
+            </thead>
+            <tbody>
+                @if (Model.Any())
+                {
+                    foreach (var log in Model)
+                    {
+                        <tr>
+                            <td>@log.UserId</td>
+                            <td>@log.UserName</td>
+                            <td>@log.UserEmail</td>
+                            <td>@log.Action</td>
+                            <td>@log.Timestamp.ToString("yyyy-MM-dd HH:mm:ss")</td>
+                        </tr>
+                    }
+                }
+                else
+                {
+                    <tr>
+                        <td colspan="5" class="text-center text-warning">No recent activity logs found.</td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+
+    <div class="text-center mt-4">
+        <a asp-action="AdminPanel" class="btn btn-secondary">
+            ⬅️ Back to Admin Panel
+        </a>
+    </div>
+</div>

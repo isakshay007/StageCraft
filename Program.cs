@@ -6,19 +6,16 @@ using StageCraft.Models;
 
 var builder = WebApplication.CreateBuilder(args);
 
-// ✅ Register services
 builder.Services.AddDbContext<AppDbContext>(options =>
     options.UseMySql(
         builder.Configuration.GetConnectionString("DefaultConnection"),
         new MySqlServerVersion(new Version(8, 0, 32))
     ));
 
-// ✅ Add Identity services (User + Role)
 builder.Services.AddIdentity<ApplicationUser, IdentityRole>()
     .AddEntityFrameworkStores<AppDbContext>()
-    .AddDefaultTokenProviders();  // Optional: If you want to use email confirmation etc.
+    .AddDefaultTokenProviders();
 
-// ✅ Configure login paths
 builder.Services.ConfigureApplicationCookie(options =>
 {
     options.LoginPath = "/Account/Login";
@@ -29,14 +26,14 @@ builder.Services.AddControllersWithViews();
 
 var app = builder.Build();
 
-// ✅ Seed Roles + Admin
 using (var scope = app.Services.CreateScope())
 {
-    var roleManager = scope.ServiceProvider.GetRequiredService<RoleManager<IdentityRole>>();
-    var userManager = scope.ServiceProvider.GetRequiredService<UserManager<ApplicationUser>>();
+    var services = scope.ServiceProvider;
+    var roleManager = services.GetRequiredService<RoleManager<IdentityRole>>();
+    var userManager = services.GetRequiredService<UserManager<ApplicationUser>>();
+    var context = services.GetRequiredService<AppDbContext>();
 
     string[] roles = { "Admin", "ProductionManager", "User" };
-
     foreach (var role in roles)
     {
         if (!await roleManager.RoleExistsAsync(role))
@@ -45,10 +42,8 @@ using (var scope = app.Services.CreateScope())
         }
     }
 
-    // ✅ Seed Admin user
     string adminEmail = "admin@stagecraft.com";
     string adminPassword = "Admin@123";
-
     var adminUser = await userManager.FindByEmailAsync(adminEmail);
     if (adminUser == null)
     {
@@ -63,9 +58,76 @@ using (var scope = app.Services.CreateScope())
             await userManager.AddToRoleAsync(newAdmin, "Admin");
         }
     }
+
+    var rnd = new Random();
+    var today = DateTime.UtcNow;
+
+    for (int i = 1; i <= 30; i++)
+    {
+        var userEmail = $"user{i}@example.com";
+        var user = await userManager.FindByEmailAsync(userEmail);
+        if (user == null)
+        {
+            user = new ApplicationUser
+            {
+                UserName = userEmail,
+                Email = userEmail,
+                FullName = $"User {i}"
+            };
+            await userManager.CreateAsync(user, "Password@123");
+            await userManager.AddToRoleAsync(user, "User");
+        }
+
+        var daysAgo = rnd.Next(1, 30);
+        var loginTime = today.AddDays(-daysAgo);
+
+        context.ActivityLogs.Add(new ActivityLog
+        {
+            UserId = user.Id,
+            Action = "Register",
+            Timestamp = loginTime.AddMinutes(-10)
+        });
+        context.ActivityLogs.Add(new ActivityLog
+        {
+            UserId = user.Id,
+            Action = "Login",
+            Timestamp = loginTime
+        });
+
+        var managerEmail = $"manager{i}@example.com";
+        var manager = await userManager.FindByEmailAsync(managerEmail);
+        if (manager == null)
+        {
+            manager = new ProductionManager
+            {
+                UserName = managerEmail,
+                Email = managerEmail,
+                FullName = $"Manager {i}"
+            };
+            await userManager.CreateAsync(manager, "Password@123");
+            await userManager.AddToRoleAsync(manager, "ProductionManager");
+        }
+
+        var mgrDaysAgo = rnd.Next(1, 30);
+        var mgrLoginTime = today.AddDays(-mgrDaysAgo);
+
+        context.ActivityLogs.Add(new ActivityLog
+        {
+            UserId = manager.Id,
+            Action = "Register",
+            Timestamp = mgrLoginTime.AddMinutes(-10)
+        });
+        context.ActivityLogs.Add(new ActivityLog
+        {
+            UserId = manager.Id,
+            Action = "Login",
+            Timestamp = mgrLoginTime
+        });
+    }
+
+    await context.SaveChangesAsync();
 }
 
-// ✅ Configure Middleware
 if (!app.Environment.IsDevelopment())
 {
     app.UseExceptionHandler("/Home/Error");
@@ -78,7 +140,6 @@ app.UseRouting();
 app.UseAuthentication();
 app.UseAuthorization();
 
-// ✅ Default route (starts with Login)
 app.MapControllerRoute(
     name: "default",
     pattern: "{controller=Account}/{action=Login}/{id?}");

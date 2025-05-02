@@ -1,5 +1,7 @@
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
+using StageCraft.Data;
 using StageCraft.Models;
 using StageCraft.ViewModels;
 
@@ -9,11 +11,13 @@ namespace StageCraft.Controllers
     {
         private readonly SignInManager<ApplicationUser> _signInManager;
         private readonly UserManager<ApplicationUser> _userManager;
+        private readonly AppDbContext _context;
 
-        public AccountController(SignInManager<ApplicationUser> signInManager, UserManager<ApplicationUser> userManager)
+        public AccountController(SignInManager<ApplicationUser> signInManager, UserManager<ApplicationUser> userManager, AppDbContext context)
         {
             _signInManager = signInManager;
             _userManager = userManager;
+            _context = context;
         }
 
         // GET: /Account/Login
@@ -37,13 +41,37 @@ namespace StageCraft.Controllers
                 var result = await _signInManager.PasswordSignInAsync(user, model.Password, model.RememberMe, lockoutOnFailure: false);
                 if (result.Succeeded)
                 {
+                    // ✅ Log login action
+                    _context.ActivityLogs.Add(new ActivityLog
+                    {
+                        UserId = user.Id,
+                        Action = "Login",
+                        Timestamp = DateTime.UtcNow
+                    });
+
+                    // ✅ Update daily login count
+                    var today = DateTime.UtcNow.Date;
+                    var stat = await _context.LoginStatistics.FirstOrDefaultAsync(s => s.Date == today);
+                    if (stat == null)
+                    {
+                        stat = new LoginStatistic { Date = today, LoginCount = 1 };
+                        _context.LoginStatistics.Add(stat);
+                    }
+                    else
+                    {
+                        stat.LoginCount++;
+                        _context.LoginStatistics.Update(stat);
+                    }
+
+                    await _context.SaveChangesAsync();
+
                     var roles = await _userManager.GetRolesAsync(user);
                     if (roles.Contains("Admin"))
-                        return RedirectToAction("CreateProductionManager", "Admin");
+                        return RedirectToAction("AdminPanel", "Admin");
                     else if (roles.Contains("ProductionManager"))
                         return RedirectToAction("Index", "Productions");
                     else
-                        return RedirectToAction("Index", "Home"); // Regular User
+                        return RedirectToAction("Index", "Home");
                 }
             }
 
@@ -77,8 +105,19 @@ namespace StageCraft.Controllers
 
             if (result.Succeeded)
             {
-                await _userManager.AddToRoleAsync(user, "User"); // Default role assignment
+                await _userManager.AddToRoleAsync(user, "User");
                 await _signInManager.SignInAsync(user, isPersistent: false);
+
+                // ✅ Log register action
+                _context.ActivityLogs.Add(new ActivityLog
+                {
+                    UserId = user.Id,
+                    Action = "Register",
+                    Timestamp = DateTime.UtcNow
+                });
+
+                await _context.SaveChangesAsync();
+
                 return RedirectToAction("Index", "Home");
             }
 
@@ -95,6 +134,20 @@ namespace StageCraft.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Logout()
         {
+            var user = await _userManager.GetUserAsync(User);
+            if (user != null)
+            {
+                // ✅ Log logout action
+                _context.ActivityLogs.Add(new ActivityLog
+                {
+                    UserId = user.Id,
+                    Action = "Logout",
+                    Timestamp = DateTime.UtcNow
+                });
+
+                await _context.SaveChangesAsync();
+            }
+
             await _signInManager.SignOutAsync();
             return RedirectToAction("Login", "Account");
         }
