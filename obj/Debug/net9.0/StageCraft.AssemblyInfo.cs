@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("StageCraft")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+bd7642d0ec5bf61dbd431c6f920011d95b9ee0ef")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+4bf3b35a443d9674910ad2ae92c6235b3caa208c")]
 [assembly: System.Reflection.AssemblyProductAttribute("StageCraft")]
 [assembly: System.Reflection.AssemblyTitleAttribute("StageCraft")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

@@ -3,6 +3,21 @@
 <div class="container mt-5">
     <h3 class="text-danger text-center mb-4">🎭 All Production Managers</h3>
 
+    @if (TempData["Success"] != null)
+    {
+        <div class="alert alert-success alert-dismissible fade show text-center" role="alert">
+            @TempData["Success"]
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        </div>
+    }
+    @if (TempData["Error"] != null)
+    {
+        <div class="alert alert-danger alert-dismissible fade show text-center" role="alert">
+            @TempData["Error"]
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        </div>
+    }
+
     <div class="table-responsive">
         <table class="table table-dark table-striped align-middle">
             <thead>
@@ -20,6 +35,7 @@
                         <td>@manager.UserName</td>
                         <td class="text-center">
                             <form asp-action="DeleteProductionManager" method="post" class="d-inline">
+                                @Html.AntiForgeryToken()
                                 <input type="hidden" name="id" value="@manager.Id" />
                                 <button type="submit" class="btn btn-sm btn-danger" onclick="return confirm('Are you sure you want to delete this manager?');">
                                     🗑 Delete

@@ -10,6 +10,8 @@
     <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
     <link rel="stylesheet" href="~/StageCraft.styles.css" asp-append-version="true" />
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
 
 </head>
 <body class="d-flex flex-column min-vh-100 bg-black text-white">
@@ -28,31 +30,24 @@
 
                 <div class="collapse navbar-collapse" id="mainNav">
                     <ul class="navbar-nav ms-auto">
-
                         @if (User.Identity.IsAuthenticated)
                         {
                             <li class="nav-item">
                                 <a class="nav-link text-white" asp-controller="Home" asp-action="Index">Home</a>
                             </li>
-
                             @if (User.IsInRole("Admin"))
                             {
                                 <li class="nav-item">
                                     <a class="nav-link text-white" asp-controller="Admin" asp-action="AdminPanel">Admin Panel</a>
                                 </li>
                             }
-
                             @if (User.IsInRole("ProductionManager") || User.IsInRole("Admin") || User.IsInRole("User"))
                             {
                                 <li class="nav-item">
                                     <a class="nav-link text-white" asp-controller="Productions" asp-action="Index">Productions</a>
                                 </li>
                             }
-
-                            <li class="nav-item">
-                                <a class="nav-link text-white" asp-controller="Home" asp-action="Privacy">Privacy</a>
-                            </li>
-
+      
                             <li class="nav-item">
                                 <form asp-controller="Account" asp-action="Logout" method="post" class="d-inline">
                                     <button type="submit" class="btn btn-link nav-link text-white">Logout</button>
@@ -86,13 +81,15 @@
         </div>
     </footer>
 
-    <!-- Centralized Comment Modal (added globally) -->
-    <div id="commentModal" class="modal" tabindex="-1" style="display:none; position:fixed; top:10%; left:50%; transform:translateX(-50%); background:black; padding:20px; border:2px solid red; width:90%; max-width:700px; z-index:9999;">
-        <button id="closeModalBtn" style="position:absolute; top:10px; right:15px; background:none; border:none; font-size:24px; color:white;">&times;</button>
-        <div id="commentModalContent" class="text-white">
-            <div class="text-center py-4">
-                <div class="spinner-border text-danger" role="status">
-                    <span class="visually-hidden">Loading...</span>
+    <!-- Corrected Comment Modal -->
+    <div id="commentModal" class="modal">
+        <div class="modal-content-fullscreen">
+            <button id="closeModalBtn" style="position:absolute; top:15px; right:20px; background:none; border:none; font-size:36px; color:#f44336; cursor:pointer;">&times;</button>
+            <div id="commentModalContent" class="text-dark">
+                <div class="text-center py-4">
+                    <div class="spinner-border text-danger" role="status">
+                        <span class="visually-hidden">Loading...</span>
+                    </div>
                 </div>
             </div>
         </div>

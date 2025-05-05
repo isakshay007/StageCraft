@@ -6,60 +6,77 @@
     var productionId = ViewBag.ProductionId as int?;
 }
 
-<div id="comments-list">
-    <div class="mb-3">
-        <h5 class="text-center text-danger">Comments</h5>
+<div id="comments-list" class="p-3">
+    <div class="mb-4 text-center">
+        <h4 class="text-danger fw-bold">Comments</h4>
     </div>
 
-    @if (Model != null && Model.Count > 0)
-    {
-        foreach (var comment in Model)
+    <div id="comments-scroll" class="mb-4" style="max-height: 400px; overflow-y: auto;">
+        @if (Model != null && Model.Count > 0)
         {
-            <div class="border-bottom mb-4 pb-2">
-                <div class="d-flex justify-content-between">
-                    <div>
-                        <strong class="text-light">@comment.Username</strong>
-                        <small class="text-secondary ms-2">(@comment.CreatedAt.ToLocalTime().ToString("g"))</small>
+            foreach (var comment in Model)
+            {
+                <div class="mb-4 pb-3 border-bottom border-light">
+                    <div class="d-flex justify-content-between align-items-center mb-1">
+                        <div>
+                            <strong class="text-danger me-2">@comment.Username</strong>
+                            <small class="text-secondary">@comment.CreatedAt.ToLocalTime().ToString("g")</small>
+                        </div>
+                        @if (User.Identity.IsAuthenticated &&
+                            (User.FindFirst(System.Security.Claims.ClaimTypes.NameIdentifier)?.Value == comment.UserId
+                             || User.IsInRole("Admin") || User.IsInRole("ProductionManager")))
+                        {
+                            <form class="delete-comment-form d-inline" method="post" action="/Comments/Delete">
+                                @Html.AntiForgeryToken()
+                                <input type="hidden" name="id" value="@comment.Id" />
+                                <button type="submit" class="btn btn-sm btn-outline-danger">
+                                    <i class="bi bi-trash"></i>
+                                </button>
+                            </form>
+                        }
                     </div>
-
-                    @if (User.Identity.IsAuthenticated &&
-                        (User.FindFirst(System.Security.Claims.ClaimTypes.NameIdentifier)?.Value == comment.UserId
-                         || User.IsInRole("Admin") || User.IsInRole("ProductionManager")))
-                    {
-                        <form class="delete-comment-form d-inline" method="post" action="/Comments/Delete">
-                            @Html.AntiForgeryToken()
-                            <input type="hidden" name="id" value="@comment.Id" />
-                            <button type="submit" class="btn btn-sm btn-outline-danger">Delete</button>
-                        </form>
-                    }
+                    <div class="mt-1">
+                        <p class="text-dark mb-2" style="white-space: pre-wrap;">@comment.Text</p>
+                    </div>
                 </div>
-
-                <p class="mt-2 text-light">@comment.Text</p>
+            }
+        }
+        else
+        {
+            <div class="text-center py-4">
+                <i class="bi bi-chat-square-text text-muted" style="font-size: 2rem;"></i>
+                <p class="text-muted mt-2">No comments yet. Be the first to comment!</p>
             </div>
         }
-    }
-    else
-    {
-        <p class="text-muted text-center">No comments yet. Be the first to comment!</p>
-    }
+    </div>
 
     @if (User.Identity.IsAuthenticated)
     {
-        <form id="commentForm" method="post" action="/Comments/Create">
+        <div class="d-flex align-items-center mb-2">
+            <i class="bi bi-person-circle text-danger me-2"></i>
+            <span class="fw-bold text-danger">@User.Identity.Name</span>
+        </div>
+        <form id="commentForm" method="post" action="/Comments/Create" class="mt-2">
             @Html.AntiForgeryToken()
             <input type="hidden" name="productionId" value="@productionId" />
-            <div class="form-group">
-                <textarea name="text" class="form-control mb-2" rows="3" placeholder="Write a comment..." required></textarea>
+            <div class="form-group mb-3">
+                <textarea name="text" class="form-control bg-dark text-light border-secondary"
+                          rows="3" placeholder="Write your comment here..." required
+                          style="resize: none;"></textarea>
             </div>
-            <div class="text-end">
-                <button type="submit" class="btn btn-danger btn-sm">Post Comment</button>
+            <div class="d-flex justify-content-end">
+                <button type="submit" class="btn btn-danger px-4">
+                    <i class="bi bi-send-fill me-2"></i>Post
+                </button>
             </div>
         </form>
     }
     else
     {
-        <div class="text-center mt-3">
-            <a asp-controller="Account" asp-action="Login" class="btn btn-outline-light">Login to comment</a>
+        <div class="text-center mt-4 pt-3 border-top border-light">
+            <a asp-controller="Account" asp-action="Login" class="btn btn-outline-danger px-4">
+                <i class="bi bi-box-arrow-in-right me-2"></i>Login to comment
+            </a>
         </div>
     }
 </div>

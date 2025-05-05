@@ -41,7 +41,6 @@ namespace StageCraft.Controllers
                 var result = await _signInManager.PasswordSignInAsync(user, model.Password, model.RememberMe, lockoutOnFailure: false);
                 if (result.Succeeded)
                 {
-                    // ✅ Log login action
                     _context.ActivityLogs.Add(new ActivityLog
                     {
                         UserId = user.Id,
@@ -49,7 +48,6 @@ namespace StageCraft.Controllers
                         Timestamp = DateTime.UtcNow
                     });
 
-                    // ✅ Update daily login count
                     var today = DateTime.UtcNow.Date;
                     var stat = await _context.LoginStatistics.FirstOrDefaultAsync(s => s.Date == today);
                     if (stat == null)
@@ -106,9 +104,7 @@ namespace StageCraft.Controllers
             if (result.Succeeded)
             {
                 await _userManager.AddToRoleAsync(user, "User");
-                await _signInManager.SignInAsync(user, isPersistent: false);
 
-                // ✅ Log register action
                 _context.ActivityLogs.Add(new ActivityLog
                 {
                     UserId = user.Id,
@@ -118,7 +114,9 @@ namespace StageCraft.Controllers
 
                 await _context.SaveChangesAsync();
 
-                return RedirectToAction("Index", "Home");
+                // ✅ Set success message and redirect to login (do NOT sign in)
+                TempData["SuccessMessage"] = "Registration successful! Please log in.";
+                return RedirectToAction("Login", "Account");
             }
 
             foreach (var error in result.Errors)
@@ -137,7 +135,6 @@ namespace StageCraft.Controllers
             var user = await _userManager.GetUserAsync(User);
             if (user != null)
             {
-                // ✅ Log logout action
                 _context.ActivityLogs.Add(new ActivityLog
                 {
                     UserId = user.Id,

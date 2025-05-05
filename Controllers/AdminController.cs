@@ -192,6 +192,19 @@ namespace StageCraft.Controllers
             return View(recentLogs);
         }
 
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> ClearLogs()
+        {
+            var allLogs = _context.ActivityLogs;
+            _context.ActivityLogs.RemoveRange(allLogs);
+            await _context.SaveChangesAsync();
+
+            TempData["Success"] = "✅ All activity logs have been cleared.";
+            return RedirectToAction(nameof(RecentActivityLogs));
+        }
+
+
         [HttpGet]
         public async Task<IActionResult> LoginStatistics()
         {

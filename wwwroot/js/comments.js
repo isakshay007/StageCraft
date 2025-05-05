@@ -6,10 +6,10 @@ document.addEventListener('DOMContentLoaded', function () {
         const modal = document.getElementById('commentModal');
         const modalContent = document.getElementById('commentModalContent');
 
-        modal.style.display = 'block';
+        modal.style.display = 'flex';  // use flex to center the new bigger box
         modalContent.innerHTML = `
             <div class="text-center py-4">
-                <div class="spinner-border text-primary" role="status">
+                <div class="spinner-border text-danger" role="status">
                     <span class="visually-hidden">Loading...</span>
                 </div>
             </div>
@@ -28,7 +28,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 console.error('Error:', error);
                 modalContent.innerHTML = `
                     <div class="alert alert-danger">
-                        Error loading comments. 
+                        Error loading comments.
                         <button onclick="openCommentsModal(${productionId})" class="btn btn-sm btn-outline-danger">Retry</button>
                     </div>
                 `;
@@ -36,16 +36,19 @@ document.addEventListener('DOMContentLoaded', function () {
     };
 
     function attachEventHandlers() {
-        // Comment submission
         const commentForm = document.getElementById('commentForm');
         if (commentForm) {
             commentForm.addEventListener('submit', handleCommentSubmit);
         }
 
-        // Comment deletion - now handling form submission instead of button click
         document.querySelectorAll('.delete-comment-form').forEach(form => {
             form.addEventListener('submit', handleCommentDelete);
         });
+
+        const commentsScroll = document.querySelector('#comments-scroll');
+        if (commentsScroll) {
+            commentsScroll.scrollTop = commentsScroll.scrollHeight;
+        }
     }
 
     function handleCommentSubmit(e) {
@@ -88,18 +91,11 @@ document.addEventListener('DOMContentLoaded', function () {
 
     function handleCommentDelete(e) {
         e.preventDefault();
-        
         const form = e.target;
         const submitBtn = form.querySelector('button[type="submit"]');
         const originalText = submitBtn.innerHTML;
-    
+
         submitBtn.disabled = true;
-        //if (!confirm('Are you sure you want to delete this comment?')) return;
-
-        //const form = e.target;
-        //const submitBtn = form.querySelector('button[type="submit"]');
-        //const originalText = submitBtn.innerHTML;
-
         submitBtn.innerHTML = `
             <span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>
             Deleting...
@@ -130,13 +126,19 @@ document.addEventListener('DOMContentLoaded', function () {
         });
     }
 
-    // Modal close handlers
+    // Close modal handlers
     document.getElementById('closeModalBtn')?.addEventListener('click', () => {
         document.getElementById('commentModal').style.display = 'none';
     });
 
-    window.addEventListener('click', (event) => {
-        if (event.target === document.getElementById('commentModal')) {
+    document.getElementById('commentModal').addEventListener('click', (event) => {
+        if (event.target.id === 'commentModal') {
+            document.getElementById('commentModal').style.display = 'none';
+        }
+    });
+
+    document.addEventListener('keydown', (event) => {
+        if (event.key === 'Escape') {
             document.getElementById('commentModal').style.display = 'none';
         }
     });

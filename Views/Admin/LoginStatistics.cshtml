@@ -59,7 +59,6 @@
             data: {
                 labels: ['Admins', 'Production Managers', 'Users'],
                 datasets: [{
-                    label: 'Count',
                     data: [@Model.TotalAdmins, @Model.TotalManagers, @Model.TotalUsers],
                     backgroundColor: [
                         'rgba(255, 99, 132, 0.7)',
@@ -75,9 +74,35 @@
                 }]
             },
             options: {
+                plugins: {
+                    legend: {
+                        display: false  // ✅ Remove legend label
+                    },
+                    title: {
+                        display: true,
+                        text: 'User Role Counts'
+                    },
+                    tooltip: {
+                        callbacks: {
+                            label: function(context) {
+                                return context.parsed.y + ' users';
+                            }
+                        }
+                    },
+                    datalabels: {
+                        anchor: 'end',
+                        align: 'top',
+                        color: '#fff',
+                        formatter: Math.round
+                    }
+                },
                 scales: {
                     y: {
                         beginAtZero: true,
+                        title: {
+                            display: true,
+                            text: 'Number of Users'
+                        },
                         ticks: { precision:0 }
                     }
                 }

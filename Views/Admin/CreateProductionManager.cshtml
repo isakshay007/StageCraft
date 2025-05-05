@@ -7,35 +7,37 @@
 <div class="container mt-5">
     <div class="row justify-content-center">
         <div class="col-md-6">
-            <div class="card bg-dark text-white shadow-lg">
-                <div class="card-header text-danger text-center">
-                    <h4>Create a Production Manager 🎬</h4>
+            <div class="card bg-dark text-white shadow-lg p-4" style="border-radius: 20px;">
+                <div class="card-header bg-dark text-center mb-3 border-0">
+                    <h4 class="text-danger mb-0">Create a Production Manager 🎬</h4>
                 </div>
                 <div class="card-body">
-                    <p class="text-center text-light mb-3 fst-italic">
+                    <p class="text-center text-light mb-4 fst-italic">
                         Assign a new manager to help oversee theatre productions.
                     </p>
 
                     <form asp-action="CreateProductionManager" method="post">
                         <div asp-validation-summary="ModelOnly" class="alert alert-danger text-center"></div>
 
-                        <div class="mb-3">
+                        <div class="mb-4">
                             <label asp-for="Email" class="form-label">Email</label>
-                            <input asp-for="Email" class="form-control" placeholder="manager@example.com" />
+                            <input asp-for="Email" class="form-control rounded-pill px-3" placeholder="manager@example.com" />
                             <span asp-validation-for="Email" class="text-danger small"></span>
                         </div>
 
-                        <div class="mb-3">
+                        <div class="mb-4">
                             <label asp-for="Password" class="form-label">Password</label>
-                            <input asp-for="Password" type="password" class="form-control" placeholder="Set a password" />
+                            <input asp-for="Password" type="password" class="form-control rounded-pill px-3" placeholder="Set a password" />
                             <span asp-validation-for="Password" class="text-danger small"></span>
                         </div>
 
-                        <button type="submit" class="btn btn-danger w-100 mb-2">Create Manager</button>
+                        <button type="submit" class="btn btn-danger btn-lg w-100 rounded-pill mb-3">
+                            ➕ Create Manager
+                        </button>
                     </form>
 
-                    <div class="text-center mt-3">
-                        <a asp-action="AdminPanel" class="btn btn-secondary">
+                    <div class="text-center">
+                        <a asp-action="AdminPanel" class="btn btn-outline-light rounded-pill px-4 py-2">
                             ⬅️ Back to Admin Panel
                         </a>
                     </div>

@@ -13,6 +13,8 @@ namespace StageCraft.Models
 
         public DateTime CreatedAt { get; set; } = DateTime.UtcNow;  // Use UTC for consistency
 
+        public DateTime? UpdatedAt { get; set; }  // Nullable if edits are optional
+
         // Production Foreign Key
         [Required]
         public int ProductionId { get; set; }
@@ -27,8 +29,9 @@ namespace StageCraft.Models
         [ForeignKey("UserId")]
         public ApplicationUser User { get; set; } = null!;  // Avoid nullable warnings
 
-        //   Convenience property to easily get Username for comments
-        [NotMapped]
-        public string Username => User?.UserName ?? "Unknown User"; 
+        //  Store username directly at creation to avoid navigation issues later
+        [Required]
+        [StringLength(100, ErrorMessage = "Username cannot exceed 100 characters.")]
+        public string Username { get; set; } = string.Empty;
     }
 }
