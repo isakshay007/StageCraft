@@ -29,6 +29,10 @@
       "PackagePath": "staticwebassets/images/176f516f-5755-4bf4-9c8e-81d69c96fc71.png"
     },
     {
+      "Id": "/Users/akshay/Desktop/StageCraft/wwwroot/images/19724a1d-9de8-459c-82dc-b042b0f6fc53.png",
+      "PackagePath": "staticwebassets/images/19724a1d-9de8-459c-82dc-b042b0f6fc53.png"
+    },
+    {
       "Id": "/Users/akshay/Desktop/StageCraft/wwwroot/images/1c7ea165-1235-440f-aaa6-140bba4dd3a0.png",
       "PackagePath": "staticwebassets/images/1c7ea165-1235-440f-aaa6-140bba4dd3a0.png"
     },
@@ -57,6 +61,10 @@
       "PackagePath": "staticwebassets/images/3fd27392-c1b4-4f6c-801e-99b4db3d3660.png"
     },
     {
+      "Id": "/Users/akshay/Desktop/StageCraft/wwwroot/images/43457f34-f596-4cd9-b538-f54cba34af5d.jpg",
+      "PackagePath": "staticwebassets/images/43457f34-f596-4cd9-b538-f54cba34af5d.jpg"
+    },
+    {
       "Id": "/Users/akshay/Desktop/StageCraft/wwwroot/images/456b9148-284a-4b08-b7e5-70b595a8e7df.jpg",
       "PackagePath": "staticwebassets/images/456b9148-284a-4b08-b7e5-70b595a8e7df.jpg"
     },
@@ -77,8 +85,24 @@
       "PackagePath": "staticwebassets/images/59a65368-8abd-4765-b2f9-7abb782b21bf.png"
     },
     {
+      "Id": "/Users/akshay/Desktop/StageCraft/wwwroot/images/6523831c-052b-45fc-9611-8688689dccc6.png",
+      "PackagePath": "staticwebassets/images/6523831c-052b-45fc-9611-8688689dccc6.png"
+    },
+    {
       "Id": "/Users/akshay/Desktop/StageCraft/wwwroot/images/6624ae93-7989-4522-83ca-39d355c437cb.png",
       "PackagePath": "staticwebassets/images/6624ae93-7989-4522-83ca-39d355c437cb.png"
+    },
+    {
+      "Id": "/Users/akshay/Desktop/StageCraft/wwwroot/images/732bb0d9-b0df-41c5-a53c-7154fa71ae7b.png",
+      "PackagePath": "staticwebassets/images/732bb0d9-b0df-41c5-a53c-7154fa71ae7b.png"
+    },
+    {
+      "Id": "/Users/akshay/Desktop/StageCraft/wwwroot/images/7626fc08-2cd7-4499-b152-44f2a7c85db9.png",
+      "PackagePath": "staticwebassets/images/7626fc08-2cd7-4499-b152-44f2a7c85db9.png"
+    },
+    {
+      "Id": "/Users/akshay/Desktop/StageCraft/wwwroot/images/7f9c432c-90c2-4d42-bceb-d6d67b4078c0.jpeg",
+      "PackagePath": "staticwebassets/images/7f9c432c-90c2-4d42-bceb-d6d67b4078c0.jpeg"
     },
     {
       "Id": "/Users/akshay/Desktop/StageCraft/wwwroot/images/81a37ed8-a6fd-4a6c-9141-74bcaa357132.png",
@@ -87,6 +111,10 @@
     {
       "Id": "/Users/akshay/Desktop/StageCraft/wwwroot/images/84ba63aa-0256-4288-8e20-7a5bc78f10cd.png",
       "PackagePath": "staticwebassets/images/84ba63aa-0256-4288-8e20-7a5bc78f10cd.png"
+    },
+    {
+      "Id": "/Users/akshay/Desktop/StageCraft/wwwroot/images/8bf6b719-d06c-4e5e-9ff6-ce564d2490e8.png",
+      "PackagePath": "staticwebassets/images/8bf6b719-d06c-4e5e-9ff6-ce564d2490e8.png"
     },
     {
       "Id": "/Users/akshay/Desktop/StageCraft/wwwroot/images/8cbdebfe-4d38-4a39-acdf-e3506ef4dfa2.JPG",
@@ -121,6 +149,10 @@
       "PackagePath": "staticwebassets/images/b9bd2c07-5e79-429b-9272-ec32e6ced10b.png"
     },
     {
+      "Id": "/Users/akshay/Desktop/StageCraft/wwwroot/images/c096b987-1bcb-4be0-9e3f-e8c8e5ae65c8.jpg",
+      "PackagePath": "staticwebassets/images/c096b987-1bcb-4be0-9e3f-e8c8e5ae65c8.jpg"
+    },
+    {
       "Id": "/Users/akshay/Desktop/StageCraft/wwwroot/images/c94ccc60-af83-404c-8761-766febc3bf88.png",
       "PackagePath": "staticwebassets/images/c94ccc60-af83-404c-8761-766febc3bf88.png"
     },
@@ -153,8 +185,80 @@
       "PackagePath": "staticwebassets/images/logo.jpg"
     },
     {
+      "Id": "/Users/akshay/Desktop/StageCraft/wwwroot/images/logo2.png",
+      "PackagePath": "staticwebassets/images/logo2.png"
+    },
+    {
+      "Id": "/Users/akshay/Desktop/StageCraft/wwwroot/images/logo3.png",
+      "PackagePath": "staticwebassets/images/logo3.png"
+    },
+    {
+      "Id": "/Users/akshay/Desktop/StageCraft/wwwroot/images/sponsor1.png",
+      "PackagePath": "staticwebassets/images/sponsor1.png"
+    },
+    {
+      "Id": "/Users/akshay/Desktop/StageCraft/wwwroot/images/sponsor10.jpg",
+      "PackagePath": "staticwebassets/images/sponsor10.jpg"
+    },
+    {
+      "Id": "/Users/akshay/Desktop/StageCraft/wwwroot/images/sponsor11.png",
+      "PackagePath": "staticwebassets/images/sponsor11.png"
+    },
+    {
+      "Id": "/Users/akshay/Desktop/StageCraft/wwwroot/images/sponsor12.jpg",
+      "PackagePath": "staticwebassets/images/sponsor12.jpg"
+    },
+    {
+      "Id": "/Users/akshay/Desktop/StageCraft/wwwroot/images/sponsor13.png",
+      "PackagePath": "staticwebassets/images/sponsor13.png"
+    },
+    {
+      "Id": "/Users/akshay/Desktop/StageCraft/wwwroot/images/sponsor14.jpg",
+      "PackagePath": "staticwebassets/images/sponsor14.jpg"
+    },
+    {
+      "Id": "/Users/akshay/Desktop/StageCraft/wwwroot/images/sponsor15.jpg",
+      "PackagePath": "staticwebassets/images/sponsor15.jpg"
+    },
+    {
+      "Id": "/Users/akshay/Desktop/StageCraft/wwwroot/images/sponsor16.jpg",
+      "PackagePath": "staticwebassets/images/sponsor16.jpg"
+    },
+    {
+      "Id": "/Users/akshay/Desktop/StageCraft/wwwroot/images/sponsor17.jpg",
+      "PackagePath": "staticwebassets/images/sponsor17.jpg"
+    },
+    {
+      "Id": "/Users/akshay/Desktop/StageCraft/wwwroot/images/sponsor2.png",
+      "PackagePath": "staticwebassets/images/sponsor2.png"
+    },
+    {
       "Id": "/Users/akshay/Desktop/StageCraft/wwwroot/images/sponsor3.jpg",
       "PackagePath": "staticwebassets/images/sponsor3.jpg"
+    },
+    {
+      "Id": "/Users/akshay/Desktop/StageCraft/wwwroot/images/sponsor4.jpg",
+      "PackagePath": "staticwebassets/images/sponsor4.jpg"
+    },
+    {
+      "Id": "/Users/akshay/Desktop/StageCraft/wwwroot/images/sponsor5.jpg",
+      "PackagePath": "staticwebassets/images/sponsor5.jpg"
+    },
+    {
+      "Id": "/Users/akshay/Desktop/StageCraft/wwwroot/images/sponsor6.png",
+      "PackagePath": "staticwebassets/images/sponsor6.png"
+    },
+    {
+      "Id": "/Users/akshay/Desktop/StageCraft/wwwroot/images/sponsor7.jpg",
+      "PackagePath": "staticwebassets/images/sponsor7.jpg"
+    },
+    {
+      "Id": "/Users/akshay/Desktop/StageCraft/wwwroot/images/sponsor8.png",
+      "PackagePath": "staticwebassets/images/sponsor8.png"
+    },
+    {
+      "Id": "/Users/akshay/Desktop/StageCraft/wwwroot/images/sponsor9.png",
+      "PackagePath": "staticwebassets/images/sponsor9.png"
     },
     {
       "Id": "/Users/akshay/Desktop/StageCraft/wwwroot/images/spotlight1.jpg",

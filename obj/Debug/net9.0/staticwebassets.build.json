@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "REsdReN0SxgmLfB2MRKxdKek8pCYetTwzUv0N9reSm0=",
+  "Hash": "bX9ry3hWfkAki0fN8T3Zpu/s0SrAfFuqSb2jj1NHJ3w=",
   "Source": "StageCraft",
   "BasePath": "_content/StageCraft",
   "Mode": "Default",
@@ -1151,12 +1151,12 @@
       "OriginalItemSpec": "/Users/akshay/Desktop/StageCraft/wwwroot/lib/jquery/dist/jquery.js"
     },
     {
-      "Identity": "/Users/akshay/Desktop/StageCraft/obj/Debug/net9.0/compressed/s2pyfjz9wx-wnw8liwvjf.gz",
+      "Identity": "/Users/akshay/Desktop/StageCraft/obj/Debug/net9.0/compressed/s2pyfjz9wx-2sxkh1h6lj.gz",
       "SourceId": "StageCraft",
       "SourceType": "Discovered",
       "ContentRoot": "/Users/akshay/Desktop/StageCraft/obj/Debug/net9.0/compressed/",
       "BasePath": "_content/StageCraft",
-      "RelativePath": "css/site#[.{fingerprint=wnw8liwvjf}]?.css.gz",
+      "RelativePath": "css/site#[.{fingerprint=2sxkh1h6lj}]?.css.gz",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Alternative",
@@ -1165,8 +1165,8 @@
       "RelatedAsset": "/Users/akshay/Desktop/StageCraft/wwwroot/css/site.css",
       "AssetTraitName": "Content-Encoding",
       "AssetTraitValue": "gzip",
-      "Fingerprint": "r2fu1ppi21",
-      "Integrity": "LaOHfdNBfBWTPQy3r2si7pJJLApxXPiLWEBsGbzwXyc=",
+      "Fingerprint": "63sskrk681",
+      "Integrity": "Mh2DVPHMeKIFGl1jT+kuwCIGGT+Gi93sbLW3d0sQsL8=",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "/Users/akshay/Desktop/StageCraft/wwwroot/css/site.css"
@@ -1438,8 +1438,8 @@
       "RelatedAsset": "",
       "AssetTraitName": "",
       "AssetTraitValue": "",
-      "Fingerprint": "wnw8liwvjf",
-      "Integrity": "pCsVx6VlePOAgd8er7jUfqlogEw2riUJDWu++cQInyM=",
+      "Fingerprint": "2sxkh1h6lj",
+      "Integrity": "/jLcgJd1SE7/a7gqJKdPZiOBwoxJgt1LuY3p5pj7wV4=",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot/css/site.css"
@@ -1548,6 +1548,27 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot/images/176f516f-5755-4bf4-9c8e-81d69c96fc71.png"
+    },
+    {
+      "Identity": "/Users/akshay/Desktop/StageCraft/wwwroot/images/19724a1d-9de8-459c-82dc-b042b0f6fc53.png",
+      "SourceId": "StageCraft",
+      "SourceType": "Discovered",
+      "ContentRoot": "/Users/akshay/Desktop/StageCraft/wwwroot/",
+      "BasePath": "_content/StageCraft",
+      "RelativePath": "images/19724a1d-9de8-459c-82dc-b042b0f6fc53#[.{fingerprint}]?.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "4fxl8qrp5q",
+      "Integrity": "kMM2q91Vd7rQ/yCTjYnt0OFYmTLXGjEVIDhb5s4WpDQ=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot/images/19724a1d-9de8-459c-82dc-b042b0f6fc53.png"
     },
     {
       "Identity": "/Users/akshay/Desktop/StageCraft/wwwroot/images/1c7ea165-1235-440f-aaa6-140bba4dd3a0.png",
@@ -1697,6 +1718,27 @@
       "OriginalItemSpec": "wwwroot/images/3fd27392-c1b4-4f6c-801e-99b4db3d3660.png"
     },
     {
+      "Identity": "/Users/akshay/Desktop/StageCraft/wwwroot/images/43457f34-f596-4cd9-b538-f54cba34af5d.jpg",
+      "SourceId": "StageCraft",
+      "SourceType": "Discovered",
+      "ContentRoot": "/Users/akshay/Desktop/StageCraft/wwwroot/",
+      "BasePath": "_content/StageCraft",
+      "RelativePath": "images/43457f34-f596-4cd9-b538-f54cba34af5d#[.{fingerprint}]?.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "i23sa8lgbg",
+      "Integrity": "irj0mbi4DkwgOdvLENHbgJLk9AyURU1QCF40C0cfUpA=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot/images/43457f34-f596-4cd9-b538-f54cba34af5d.jpg"
+    },
+    {
       "Identity": "/Users/akshay/Desktop/StageCraft/wwwroot/images/456b9148-284a-4b08-b7e5-70b595a8e7df.jpg",
       "SourceId": "StageCraft",
       "SourceType": "Discovered",
@@ -1802,6 +1844,27 @@
       "OriginalItemSpec": "wwwroot/images/59a65368-8abd-4765-b2f9-7abb782b21bf.png"
     },
     {
+      "Identity": "/Users/akshay/Desktop/StageCraft/wwwroot/images/6523831c-052b-45fc-9611-8688689dccc6.png",
+      "SourceId": "StageCraft",
+      "SourceType": "Discovered",
+      "ContentRoot": "/Users/akshay/Desktop/StageCraft/wwwroot/",
+      "BasePath": "_content/StageCraft",
+      "RelativePath": "images/6523831c-052b-45fc-9611-8688689dccc6#[.{fingerprint}]?.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "42dsf1rjqh",
+      "Integrity": "5Es9ZykGxOicYy6ujKhem+pmtnxjmc8kYDv/jIjULLY=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot/images/6523831c-052b-45fc-9611-8688689dccc6.png"
+    },
+    {
       "Identity": "/Users/akshay/Desktop/StageCraft/wwwroot/images/6624ae93-7989-4522-83ca-39d355c437cb.png",
       "SourceId": "StageCraft",
       "SourceType": "Discovered",
@@ -1821,6 +1884,69 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot/images/6624ae93-7989-4522-83ca-39d355c437cb.png"
+    },
+    {
+      "Identity": "/Users/akshay/Desktop/StageCraft/wwwroot/images/732bb0d9-b0df-41c5-a53c-7154fa71ae7b.png",
+      "SourceId": "StageCraft",
+      "SourceType": "Discovered",
+      "ContentRoot": "/Users/akshay/Desktop/StageCraft/wwwroot/",
+      "BasePath": "_content/StageCraft",
+      "RelativePath": "images/732bb0d9-b0df-41c5-a53c-7154fa71ae7b#[.{fingerprint}]?.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "20egqlnax0",
+      "Integrity": "HpewDQZl5fTq4l6rThURpZA4eA1ejG/wCtwKCFZSF6g=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot/images/732bb0d9-b0df-41c5-a53c-7154fa71ae7b.png"
+    },
+    {
+      "Identity": "/Users/akshay/Desktop/StageCraft/wwwroot/images/7626fc08-2cd7-4499-b152-44f2a7c85db9.png",
+      "SourceId": "StageCraft",
+      "SourceType": "Discovered",
+      "ContentRoot": "/Users/akshay/Desktop/StageCraft/wwwroot/",
+      "BasePath": "_content/StageCraft",
+      "RelativePath": "images/7626fc08-2cd7-4499-b152-44f2a7c85db9#[.{fingerprint}]?.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "72eg7qqubj",
+      "Integrity": "0SUSQ3keZXaFo5Bzfh1yrEQTJo51VFDrGt10D+fcu6U=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot/images/7626fc08-2cd7-4499-b152-44f2a7c85db9.png"
+    },
+    {
+      "Identity": "/Users/akshay/Desktop/StageCraft/wwwroot/images/7f9c432c-90c2-4d42-bceb-d6d67b4078c0.jpeg",
+      "SourceId": "StageCraft",
+      "SourceType": "Discovered",
+      "ContentRoot": "/Users/akshay/Desktop/StageCraft/wwwroot/",
+      "BasePath": "_content/StageCraft",
+      "RelativePath": "images/7f9c432c-90c2-4d42-bceb-d6d67b4078c0#[.{fingerprint}]?.jpeg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "nz8u2f4hqn",
+      "Integrity": "A+fs8tK+AWol75qeVgMTwfwzGIT3BOAs8m5JQ8dCSvk=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot/images/7f9c432c-90c2-4d42-bceb-d6d67b4078c0.jpeg"
     },
     {
       "Identity": "/Users/akshay/Desktop/StageCraft/wwwroot/images/81a37ed8-a6fd-4a6c-9141-74bcaa357132.png",
@@ -1863,6 +1989,27 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot/images/84ba63aa-0256-4288-8e20-7a5bc78f10cd.png"
+    },
+    {
+      "Identity": "/Users/akshay/Desktop/StageCraft/wwwroot/images/8bf6b719-d06c-4e5e-9ff6-ce564d2490e8.png",
+      "SourceId": "StageCraft",
+      "SourceType": "Discovered",
+      "ContentRoot": "/Users/akshay/Desktop/StageCraft/wwwroot/",
+      "BasePath": "_content/StageCraft",
+      "RelativePath": "images/8bf6b719-d06c-4e5e-9ff6-ce564d2490e8#[.{fingerprint}]?.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "6wti55hena",
+      "Integrity": "1lA5lXdD5a0NNjBc/6JYQOwTuOaT+o5ENNSmNgIosMw=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot/images/8bf6b719-d06c-4e5e-9ff6-ce564d2490e8.png"
     },
     {
       "Identity": "/Users/akshay/Desktop/StageCraft/wwwroot/images/8cbdebfe-4d38-4a39-acdf-e3506ef4dfa2.JPG",
@@ -1989,6 +2136,27 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot/images/b9bd2c07-5e79-429b-9272-ec32e6ced10b.png"
+    },
+    {
+      "Identity": "/Users/akshay/Desktop/StageCraft/wwwroot/images/c096b987-1bcb-4be0-9e3f-e8c8e5ae65c8.jpg",
+      "SourceId": "StageCraft",
+      "SourceType": "Discovered",
+      "ContentRoot": "/Users/akshay/Desktop/StageCraft/wwwroot/",
+      "BasePath": "_content/StageCraft",
+      "RelativePath": "images/c096b987-1bcb-4be0-9e3f-e8c8e5ae65c8#[.{fingerprint}]?.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "xjnsy7ogqv",
+      "Integrity": "PcQpF9M3z5AKeXXbVpGWRokdK+19l/noEDTVl6V/tHY=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot/images/c096b987-1bcb-4be0-9e3f-e8c8e5ae65c8.jpg"
     },
     {
       "Identity": "/Users/akshay/Desktop/StageCraft/wwwroot/images/c94ccc60-af83-404c-8761-766febc3bf88.png",
@@ -2159,6 +2327,48 @@
       "OriginalItemSpec": "wwwroot/images/logo.jpg"
     },
     {
+      "Identity": "/Users/akshay/Desktop/StageCraft/wwwroot/images/logo2.png",
+      "SourceId": "StageCraft",
+      "SourceType": "Discovered",
+      "ContentRoot": "/Users/akshay/Desktop/StageCraft/wwwroot/",
+      "BasePath": "_content/StageCraft",
+      "RelativePath": "images/logo2#[.{fingerprint}]?.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "8t8of5vp7q",
+      "Integrity": "nBUNX7Y49n10pM07NiDeHOKYNhjNtvCfhRrKaeT1Epo=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot/images/logo2.png"
+    },
+    {
+      "Identity": "/Users/akshay/Desktop/StageCraft/wwwroot/images/logo3.png",
+      "SourceId": "StageCraft",
+      "SourceType": "Discovered",
+      "ContentRoot": "/Users/akshay/Desktop/StageCraft/wwwroot/",
+      "BasePath": "_content/StageCraft",
+      "RelativePath": "images/logo3#[.{fingerprint}]?.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "2lalcl9sbt",
+      "Integrity": "1rh3g93NDt9HpveQipxaEXXE+tjYSVbEnmrufn/5xMI=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot/images/logo3.png"
+    },
+    {
       "Identity": "/Users/akshay/Desktop/StageCraft/wwwroot/images/Sponsor1.jpg",
       "SourceId": "StageCraft",
       "SourceType": "Discovered",
@@ -2178,6 +2388,195 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot/images/Sponsor1.jpg"
+    },
+    {
+      "Identity": "/Users/akshay/Desktop/StageCraft/wwwroot/images/sponsor1.png",
+      "SourceId": "StageCraft",
+      "SourceType": "Discovered",
+      "ContentRoot": "/Users/akshay/Desktop/StageCraft/wwwroot/",
+      "BasePath": "_content/StageCraft",
+      "RelativePath": "images/sponsor1#[.{fingerprint}]?.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "ju9cuw92o5",
+      "Integrity": "2yp+/oIq11cFXuYPqpHm8SgrsOhA5O5uB0Iaw05Wk54=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot/images/sponsor1.png"
+    },
+    {
+      "Identity": "/Users/akshay/Desktop/StageCraft/wwwroot/images/sponsor10.jpg",
+      "SourceId": "StageCraft",
+      "SourceType": "Discovered",
+      "ContentRoot": "/Users/akshay/Desktop/StageCraft/wwwroot/",
+      "BasePath": "_content/StageCraft",
+      "RelativePath": "images/sponsor10#[.{fingerprint}]?.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "xrbq6xw7g7",
+      "Integrity": "HWi9UZc94wZb42JFQVyutObgevsYzwWcb7E3B8OJZ+U=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot/images/sponsor10.jpg"
+    },
+    {
+      "Identity": "/Users/akshay/Desktop/StageCraft/wwwroot/images/sponsor11.png",
+      "SourceId": "StageCraft",
+      "SourceType": "Discovered",
+      "ContentRoot": "/Users/akshay/Desktop/StageCraft/wwwroot/",
+      "BasePath": "_content/StageCraft",
+      "RelativePath": "images/sponsor11#[.{fingerprint}]?.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "ohjtmgtrtg",
+      "Integrity": "FFIKYFfguVPYyesi9gBt4ffTbwJvcaAj7wT4SnX4/4M=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot/images/sponsor11.png"
+    },
+    {
+      "Identity": "/Users/akshay/Desktop/StageCraft/wwwroot/images/sponsor12.jpg",
+      "SourceId": "StageCraft",
+      "SourceType": "Discovered",
+      "ContentRoot": "/Users/akshay/Desktop/StageCraft/wwwroot/",
+      "BasePath": "_content/StageCraft",
+      "RelativePath": "images/sponsor12#[.{fingerprint}]?.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "uhtt2on1io",
+      "Integrity": "kozytbTxGZVDP8PrvGvILx717wey+RvHxWzIaWvhMEc=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot/images/sponsor12.jpg"
+    },
+    {
+      "Identity": "/Users/akshay/Desktop/StageCraft/wwwroot/images/sponsor13.png",
+      "SourceId": "StageCraft",
+      "SourceType": "Discovered",
+      "ContentRoot": "/Users/akshay/Desktop/StageCraft/wwwroot/",
+      "BasePath": "_content/StageCraft",
+      "RelativePath": "images/sponsor13#[.{fingerprint}]?.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "bwz6sh298d",
+      "Integrity": "xSSOyl4uI82/U7QsryuxHncZnPm3Bc+3DkSEXZZO1P0=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot/images/sponsor13.png"
+    },
+    {
+      "Identity": "/Users/akshay/Desktop/StageCraft/wwwroot/images/sponsor14.jpg",
+      "SourceId": "StageCraft",
+      "SourceType": "Discovered",
+      "ContentRoot": "/Users/akshay/Desktop/StageCraft/wwwroot/",
+      "BasePath": "_content/StageCraft",
+      "RelativePath": "images/sponsor14#[.{fingerprint}]?.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "edagedpeyo",
+      "Integrity": "gsqeliavrW484awK0J8P0OGpBXwdHzWE3hlzma89Ch8=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot/images/sponsor14.jpg"
+    },
+    {
+      "Identity": "/Users/akshay/Desktop/StageCraft/wwwroot/images/sponsor15.jpg",
+      "SourceId": "StageCraft",
+      "SourceType": "Discovered",
+      "ContentRoot": "/Users/akshay/Desktop/StageCraft/wwwroot/",
+      "BasePath": "_content/StageCraft",
+      "RelativePath": "images/sponsor15#[.{fingerprint}]?.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "3qbkx1os2y",
+      "Integrity": "W11ZHa6lqOhjYlTzi915rNGUgPsVRPOJ6q7vmE+hn7s=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot/images/sponsor15.jpg"
+    },
+    {
+      "Identity": "/Users/akshay/Desktop/StageCraft/wwwroot/images/sponsor16.jpg",
+      "SourceId": "StageCraft",
+      "SourceType": "Discovered",
+      "ContentRoot": "/Users/akshay/Desktop/StageCraft/wwwroot/",
+      "BasePath": "_content/StageCraft",
+      "RelativePath": "images/sponsor16#[.{fingerprint}]?.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "jmx3clradf",
+      "Integrity": "+/wT0/WDdhQavCup6KRhH0f3/aF4H+jt3Ev8udIJS+g=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot/images/sponsor16.jpg"
+    },
+    {
+      "Identity": "/Users/akshay/Desktop/StageCraft/wwwroot/images/sponsor17.jpg",
+      "SourceId": "StageCraft",
+      "SourceType": "Discovered",
+      "ContentRoot": "/Users/akshay/Desktop/StageCraft/wwwroot/",
+      "BasePath": "_content/StageCraft",
+      "RelativePath": "images/sponsor17#[.{fingerprint}]?.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "bhmvjhd3zb",
+      "Integrity": "cRWQfbgpVjvDatPN1EyNiAQDghT/pXjdbXAYWJ7luDc=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot/images/sponsor17.jpg"
     },
     {
       "Identity": "/Users/akshay/Desktop/StageCraft/wwwroot/images/Sponsor2.jpg",
@@ -2201,6 +2600,27 @@
       "OriginalItemSpec": "wwwroot/images/Sponsor2.jpg"
     },
     {
+      "Identity": "/Users/akshay/Desktop/StageCraft/wwwroot/images/sponsor2.png",
+      "SourceId": "StageCraft",
+      "SourceType": "Discovered",
+      "ContentRoot": "/Users/akshay/Desktop/StageCraft/wwwroot/",
+      "BasePath": "_content/StageCraft",
+      "RelativePath": "images/sponsor2#[.{fingerprint}]?.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "t5h6541sne",
+      "Integrity": "n54TkTR5eo3nQxe2fEaMP75QZTzSAUa32s2bsUIPrXE=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot/images/sponsor2.png"
+    },
+    {
       "Identity": "/Users/akshay/Desktop/StageCraft/wwwroot/images/sponsor3.jpg",
       "SourceId": "StageCraft",
       "SourceType": "Discovered",
@@ -2215,11 +2635,137 @@
       "RelatedAsset": "",
       "AssetTraitName": "",
       "AssetTraitValue": "",
-      "Fingerprint": "uj6h63cuzy",
-      "Integrity": "ltIu3BtmziDTKoloJ7FpgIjMmMOXU/7fw/lcAXvphp0=",
+      "Fingerprint": "5xs6t0zr3y",
+      "Integrity": "F/so2WwryCfFFZtjxFaLNcYWhVdqmgaUaD8+DXDApt0=",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot/images/sponsor3.jpg"
+    },
+    {
+      "Identity": "/Users/akshay/Desktop/StageCraft/wwwroot/images/sponsor4.jpg",
+      "SourceId": "StageCraft",
+      "SourceType": "Discovered",
+      "ContentRoot": "/Users/akshay/Desktop/StageCraft/wwwroot/",
+      "BasePath": "_content/StageCraft",
+      "RelativePath": "images/sponsor4#[.{fingerprint}]?.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "p2jvf0bd6w",
+      "Integrity": "ry5U1TbTQ0WzBWLPRNToJhVQYbyVXX2H6XFfZ0PhZtE=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot/images/sponsor4.jpg"
+    },
+    {
+      "Identity": "/Users/akshay/Desktop/StageCraft/wwwroot/images/sponsor5.jpg",
+      "SourceId": "StageCraft",
+      "SourceType": "Discovered",
+      "ContentRoot": "/Users/akshay/Desktop/StageCraft/wwwroot/",
+      "BasePath": "_content/StageCraft",
+      "RelativePath": "images/sponsor5#[.{fingerprint}]?.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "polr5dk8oy",
+      "Integrity": "iV9ddaRg1kd5mnVgeskXnoe/8i2vAhRNBWCkKWBCXKw=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot/images/sponsor5.jpg"
+    },
+    {
+      "Identity": "/Users/akshay/Desktop/StageCraft/wwwroot/images/sponsor6.png",
+      "SourceId": "StageCraft",
+      "SourceType": "Discovered",
+      "ContentRoot": "/Users/akshay/Desktop/StageCraft/wwwroot/",
+      "BasePath": "_content/StageCraft",
+      "RelativePath": "images/sponsor6#[.{fingerprint}]?.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "1a0tpvnrpa",
+      "Integrity": "qWtrgRgArBBC9iOeoKeBCBQDOCbaFPFAFc8ux/gO48Y=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot/images/sponsor6.png"
+    },
+    {
+      "Identity": "/Users/akshay/Desktop/StageCraft/wwwroot/images/sponsor7.jpg",
+      "SourceId": "StageCraft",
+      "SourceType": "Discovered",
+      "ContentRoot": "/Users/akshay/Desktop/StageCraft/wwwroot/",
+      "BasePath": "_content/StageCraft",
+      "RelativePath": "images/sponsor7#[.{fingerprint}]?.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "tlq1jxrfxw",
+      "Integrity": "Dzzraaph+hPLSCGuy4HB5Q4n1sbYu6C+kT9uDlBuBRk=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot/images/sponsor7.jpg"
+    },
+    {
+      "Identity": "/Users/akshay/Desktop/StageCraft/wwwroot/images/sponsor8.png",
+      "SourceId": "StageCraft",
+      "SourceType": "Discovered",
+      "ContentRoot": "/Users/akshay/Desktop/StageCraft/wwwroot/",
+      "BasePath": "_content/StageCraft",
+      "RelativePath": "images/sponsor8#[.{fingerprint}]?.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "yj91dxx9p7",
+      "Integrity": "noczzAqdtEZ9OXwauCzewCOkWrM3PKk5b/198vC4UjI=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot/images/sponsor8.png"
+    },
+    {
+      "Identity": "/Users/akshay/Desktop/StageCraft/wwwroot/images/sponsor9.png",
+      "SourceId": "StageCraft",
+      "SourceType": "Discovered",
+      "ContentRoot": "/Users/akshay/Desktop/StageCraft/wwwroot/",
+      "BasePath": "_content/StageCraft",
+      "RelativePath": "images/sponsor9#[.{fingerprint}]?.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "lxozoinl5r",
+      "Integrity": "B0e5gBuzoFSQmbzJMBG+0QsKFh0MMnzYHa6DRUL+/aM=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot/images/sponsor9.png"
     },
     {
       "Identity": "/Users/akshay/Desktop/StageCraft/wwwroot/images/spotlight1.jpg",
@@ -3568,13 +4114,13 @@
   ],
   "Endpoints": [
     {
-      "Route": "css/site.css",
-      "AssetFile": "/Users/akshay/Desktop/StageCraft/obj/Debug/net9.0/compressed/s2pyfjz9wx-wnw8liwvjf.gz",
+      "Route": "css/site.2sxkh1h6lj.css",
+      "AssetFile": "/Users/akshay/Desktop/StageCraft/obj/Debug/net9.0/compressed/s2pyfjz9wx-2sxkh1h6lj.gz",
       "Selectors": [
         {
           "Name": "Content-Encoding",
           "Value": "gzip",
-          "Quality": "0.000465116279"
+          "Quality": "0.000390015601"
         }
       ],
       "ResponseHeaders": [
@@ -3584,19 +4130,19 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "2149"
+          "Value": "2563"
         },
         {
           "Name": "ETag",
-          "Value": "\"LaOHfdNBfBWTPQy3r2si7pJJLApxXPiLWEBsGbzwXyc=\""
+          "Value": "\"Mh2DVPHMeKIFGl1jT+kuwCIGGT+Gi93sbLW3d0sQsL8=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Sat, 03 May 2025 19:57:42 GMT"
+          "Value": "Wed, 07 May 2025 23:16:24 GMT"
         },
         {
           "Name": "Cache-Control",
-          "Value": "no-cache"
+          "Value": "max-age=31536000, immutable"
         },
         {
           "Name": "Content-Encoding",
@@ -3612,18 +4158,26 @@
         },
         {
           "Name": "ETag",
-          "Value": "W/\"pCsVx6VlePOAgd8er7jUfqlogEw2riUJDWu++cQInyM=\""
+          "Value": "W/\"/jLcgJd1SE7/a7gqJKdPZiOBwoxJgt1LuY3p5pj7wV4=\""
         }
       ],
       "EndpointProperties": [
         {
+          "Name": "fingerprint",
+          "Value": "2sxkh1h6lj"
+        },
+        {
+          "Name": "label",
+          "Value": "css/site.css"
+        },
+        {
           "Name": "integrity",
-          "Value": "sha256-pCsVx6VlePOAgd8er7jUfqlogEw2riUJDWu++cQInyM="
+          "Value": "sha256-/jLcgJd1SE7/a7gqJKdPZiOBwoxJgt1LuY3p5pj7wV4="
         }
       ]
     },
     {
-      "Route": "css/site.css",
+      "Route": "css/site.2sxkh1h6lj.css",
       "AssetFile": "/Users/akshay/Desktop/StageCraft/wwwroot/css/site.css",
       "Selectors": [],
       "ResponseHeaders": [
@@ -3633,7 +4187,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "7311"
+          "Value": "8954"
         },
         {
           "Name": "Content-Type",
@@ -3641,121 +4195,21 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"pCsVx6VlePOAgd8er7jUfqlogEw2riUJDWu++cQInyM=\""
+          "Value": "\"/jLcgJd1SE7/a7gqJKdPZiOBwoxJgt1LuY3p5pj7wV4=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Sat, 03 May 2025 19:57:42 GMT"
-        },
-        {
-          "Name": "Cache-Control",
-          "Value": "no-cache"
-        }
-      ],
-      "EndpointProperties": [
-        {
-          "Name": "integrity",
-          "Value": "sha256-pCsVx6VlePOAgd8er7jUfqlogEw2riUJDWu++cQInyM="
-        }
-      ]
-    },
-    {
-      "Route": "css/site.css.gz",
-      "AssetFile": "/Users/akshay/Desktop/StageCraft/obj/Debug/net9.0/compressed/s2pyfjz9wx-wnw8liwvjf.gz",
-      "Selectors": [],
-      "ResponseHeaders": [
-        {
-          "Name": "Accept-Ranges",
-          "Value": "bytes"
-        },
-        {
-          "Name": "Content-Length",
-          "Value": "2149"
-        },
-        {
-          "Name": "Content-Type",
-          "Value": "text/css"
-        },
-        {
-          "Name": "ETag",
-          "Value": "\"LaOHfdNBfBWTPQy3r2si7pJJLApxXPiLWEBsGbzwXyc=\""
-        },
-        {
-          "Name": "Last-Modified",
-          "Value": "Sat, 03 May 2025 19:57:42 GMT"
-        },
-        {
-          "Name": "Cache-Control",
-          "Value": "no-cache"
-        },
-        {
-          "Name": "Content-Encoding",
-          "Value": "gzip"
-        },
-        {
-          "Name": "Vary",
-          "Value": "Content-Encoding"
-        }
-      ],
-      "EndpointProperties": [
-        {
-          "Name": "integrity",
-          "Value": "sha256-LaOHfdNBfBWTPQy3r2si7pJJLApxXPiLWEBsGbzwXyc="
-        }
-      ]
-    },
-    {
-      "Route": "css/site.wnw8liwvjf.css",
-      "AssetFile": "/Users/akshay/Desktop/StageCraft/obj/Debug/net9.0/compressed/s2pyfjz9wx-wnw8liwvjf.gz",
-      "Selectors": [
-        {
-          "Name": "Content-Encoding",
-          "Value": "gzip",
-          "Quality": "0.000465116279"
-        }
-      ],
-      "ResponseHeaders": [
-        {
-          "Name": "Accept-Ranges",
-          "Value": "bytes"
-        },
-        {
-          "Name": "Content-Length",
-          "Value": "2149"
-        },
-        {
-          "Name": "ETag",
-          "Value": "\"LaOHfdNBfBWTPQy3r2si7pJJLApxXPiLWEBsGbzwXyc=\""
-        },
-        {
-          "Name": "Last-Modified",
-          "Value": "Sat, 03 May 2025 19:57:42 GMT"
+          "Value": "Wed, 07 May 2025 23:16:24 GMT"
         },
         {
           "Name": "Cache-Control",
           "Value": "max-age=31536000, immutable"
-        },
-        {
-          "Name": "Content-Encoding",
-          "Value": "gzip"
-        },
-        {
-          "Name": "Vary",
-          "Value": "Content-Encoding"
-        },
-        {
-          "Name": "Content-Type",
-          "Value": "text/css"
-        },
-        {
-          "Name": "ETag",
-          "Value": "W/\"pCsVx6VlePOAgd8er7jUfqlogEw2riUJDWu++cQInyM=\""
         }
       ],
       "EndpointProperties": [
         {
           "Name": "fingerprint",
-          "Value": "wnw8liwvjf"
+          "Value": "2sxkh1h6lj"
         },
         {
           "Name": "label",
@@ -3763,13 +4217,13 @@
         },
         {
           "Name": "integrity",
-          "Value": "sha256-pCsVx6VlePOAgd8er7jUfqlogEw2riUJDWu++cQInyM="
+          "Value": "sha256-/jLcgJd1SE7/a7gqJKdPZiOBwoxJgt1LuY3p5pj7wV4="
         }
       ]
     },
     {
-      "Route": "css/site.wnw8liwvjf.css",
-      "AssetFile": "/Users/akshay/Desktop/StageCraft/wwwroot/css/site.css",
+      "Route": "css/site.2sxkh1h6lj.css.gz",
+      "AssetFile": "/Users/akshay/Desktop/StageCraft/obj/Debug/net9.0/compressed/s2pyfjz9wx-2sxkh1h6lj.gz",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -3778,7 +4232,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "7311"
+          "Value": "2563"
         },
         {
           "Name": "Content-Type",
@@ -3786,56 +4240,11 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"pCsVx6VlePOAgd8er7jUfqlogEw2riUJDWu++cQInyM=\""
+          "Value": "\"Mh2DVPHMeKIFGl1jT+kuwCIGGT+Gi93sbLW3d0sQsL8=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Sat, 03 May 2025 19:57:42 GMT"
-        },
-        {
-          "Name": "Cache-Control",
-          "Value": "max-age=31536000, immutable"
-        }
-      ],
-      "EndpointProperties": [
-        {
-          "Name": "fingerprint",
-          "Value": "wnw8liwvjf"
-        },
-        {
-          "Name": "label",
-          "Value": "css/site.css"
-        },
-        {
-          "Name": "integrity",
-          "Value": "sha256-pCsVx6VlePOAgd8er7jUfqlogEw2riUJDWu++cQInyM="
-        }
-      ]
-    },
-    {
-      "Route": "css/site.wnw8liwvjf.css.gz",
-      "AssetFile": "/Users/akshay/Desktop/StageCraft/obj/Debug/net9.0/compressed/s2pyfjz9wx-wnw8liwvjf.gz",
-      "Selectors": [],
-      "ResponseHeaders": [
-        {
-          "Name": "Accept-Ranges",
-          "Value": "bytes"
-        },
-        {
-          "Name": "Content-Length",
-          "Value": "2149"
-        },
-        {
-          "Name": "Content-Type",
-          "Value": "text/css"
-        },
-        {
-          "Name": "ETag",
-          "Value": "\"LaOHfdNBfBWTPQy3r2si7pJJLApxXPiLWEBsGbzwXyc=\""
-        },
-        {
-          "Name": "Last-Modified",
-          "Value": "Sat, 03 May 2025 19:57:42 GMT"
+          "Value": "Wed, 07 May 2025 23:16:24 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -3853,7 +4262,7 @@
       "EndpointProperties": [
         {
           "Name": "fingerprint",
-          "Value": "wnw8liwvjf"
+          "Value": "2sxkh1h6lj"
         },
         {
           "Name": "label",
@@ -3861,7 +4270,144 @@
         },
         {
           "Name": "integrity",
-          "Value": "sha256-LaOHfdNBfBWTPQy3r2si7pJJLApxXPiLWEBsGbzwXyc="
+          "Value": "sha256-Mh2DVPHMeKIFGl1jT+kuwCIGGT+Gi93sbLW3d0sQsL8="
+        }
+      ]
+    },
+    {
+      "Route": "css/site.css",
+      "AssetFile": "/Users/akshay/Desktop/StageCraft/obj/Debug/net9.0/compressed/s2pyfjz9wx-2sxkh1h6lj.gz",
+      "Selectors": [
+        {
+          "Name": "Content-Encoding",
+          "Value": "gzip",
+          "Quality": "0.000390015601"
+        }
+      ],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "2563"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"Mh2DVPHMeKIFGl1jT+kuwCIGGT+Gi93sbLW3d0sQsL8=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Wed, 07 May 2025 23:16:24 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        },
+        {
+          "Name": "Content-Encoding",
+          "Value": "gzip"
+        },
+        {
+          "Name": "Vary",
+          "Value": "Content-Encoding"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/css"
+        },
+        {
+          "Name": "ETag",
+          "Value": "W/\"/jLcgJd1SE7/a7gqJKdPZiOBwoxJgt1LuY3p5pj7wV4=\""
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-/jLcgJd1SE7/a7gqJKdPZiOBwoxJgt1LuY3p5pj7wV4="
+        }
+      ]
+    },
+    {
+      "Route": "css/site.css",
+      "AssetFile": "/Users/akshay/Desktop/StageCraft/wwwroot/css/site.css",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "8954"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/css"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"/jLcgJd1SE7/a7gqJKdPZiOBwoxJgt1LuY3p5pj7wV4=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Wed, 07 May 2025 23:16:24 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-/jLcgJd1SE7/a7gqJKdPZiOBwoxJgt1LuY3p5pj7wV4="
+        }
+      ]
+    },
+    {
+      "Route": "css/site.css.gz",
+      "AssetFile": "/Users/akshay/Desktop/StageCraft/obj/Debug/net9.0/compressed/s2pyfjz9wx-2sxkh1h6lj.gz",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "2563"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/css"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"Mh2DVPHMeKIFGl1jT+kuwCIGGT+Gi93sbLW3d0sQsL8=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Wed, 07 May 2025 23:16:24 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        },
+        {
+          "Name": "Content-Encoding",
+          "Value": "gzip"
+        },
+        {
+          "Name": "Vary",
+          "Value": "Content-Encoding"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-Mh2DVPHMeKIFGl1jT+kuwCIGGT+Gi93sbLW3d0sQsL8="
         }
       ]
     },
@@ -4492,6 +5038,88 @@
       ]
     },
     {
+      "Route": "images/19724a1d-9de8-459c-82dc-b042b0f6fc53.4fxl8qrp5q.png",
+      "AssetFile": "/Users/akshay/Desktop/StageCraft/wwwroot/images/19724a1d-9de8-459c-82dc-b042b0f6fc53.png",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "74286"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/png"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"kMM2q91Vd7rQ/yCTjYnt0OFYmTLXGjEVIDhb5s4WpDQ=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Tue, 06 May 2025 00:21:38 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "4fxl8qrp5q"
+        },
+        {
+          "Name": "label",
+          "Value": "images/19724a1d-9de8-459c-82dc-b042b0f6fc53.png"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-kMM2q91Vd7rQ/yCTjYnt0OFYmTLXGjEVIDhb5s4WpDQ="
+        }
+      ]
+    },
+    {
+      "Route": "images/19724a1d-9de8-459c-82dc-b042b0f6fc53.png",
+      "AssetFile": "/Users/akshay/Desktop/StageCraft/wwwroot/images/19724a1d-9de8-459c-82dc-b042b0f6fc53.png",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "74286"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/png"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"kMM2q91Vd7rQ/yCTjYnt0OFYmTLXGjEVIDhb5s4WpDQ=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Tue, 06 May 2025 00:21:38 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=3600, must-revalidate"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-kMM2q91Vd7rQ/yCTjYnt0OFYmTLXGjEVIDhb5s4WpDQ="
+        }
+      ]
+    },
+    {
       "Route": "images/1c7ea165-1235-440f-aaa6-140bba4dd3a0.aptupt99m4.png",
       "AssetFile": "/Users/akshay/Desktop/StageCraft/wwwroot/images/1c7ea165-1235-440f-aaa6-140bba4dd3a0.png",
       "Selectors": [],
@@ -5066,6 +5694,88 @@
       ]
     },
     {
+      "Route": "images/43457f34-f596-4cd9-b538-f54cba34af5d.i23sa8lgbg.jpg",
+      "AssetFile": "/Users/akshay/Desktop/StageCraft/wwwroot/images/43457f34-f596-4cd9-b538-f54cba34af5d.jpg",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "30605"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/jpeg"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"irj0mbi4DkwgOdvLENHbgJLk9AyURU1QCF40C0cfUpA=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Tue, 06 May 2025 00:18:57 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "i23sa8lgbg"
+        },
+        {
+          "Name": "label",
+          "Value": "images/43457f34-f596-4cd9-b538-f54cba34af5d.jpg"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-irj0mbi4DkwgOdvLENHbgJLk9AyURU1QCF40C0cfUpA="
+        }
+      ]
+    },
+    {
+      "Route": "images/43457f34-f596-4cd9-b538-f54cba34af5d.jpg",
+      "AssetFile": "/Users/akshay/Desktop/StageCraft/wwwroot/images/43457f34-f596-4cd9-b538-f54cba34af5d.jpg",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "30605"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/jpeg"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"irj0mbi4DkwgOdvLENHbgJLk9AyURU1QCF40C0cfUpA=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Tue, 06 May 2025 00:18:57 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=3600, must-revalidate"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-irj0mbi4DkwgOdvLENHbgJLk9AyURU1QCF40C0cfUpA="
+        }
+      ]
+    },
+    {
       "Route": "images/456b9148-284a-4b08-b7e5-70b595a8e7df.bh4sh7mviq.jpg",
       "AssetFile": "/Users/akshay/Desktop/StageCraft/wwwroot/images/456b9148-284a-4b08-b7e5-70b595a8e7df.jpg",
       "Selectors": [],
@@ -5476,6 +6186,88 @@
       ]
     },
     {
+      "Route": "images/6523831c-052b-45fc-9611-8688689dccc6.42dsf1rjqh.png",
+      "AssetFile": "/Users/akshay/Desktop/StageCraft/wwwroot/images/6523831c-052b-45fc-9611-8688689dccc6.png",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "139715"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/png"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"5Es9ZykGxOicYy6ujKhem+pmtnxjmc8kYDv/jIjULLY=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Tue, 06 May 2025 00:30:34 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "42dsf1rjqh"
+        },
+        {
+          "Name": "label",
+          "Value": "images/6523831c-052b-45fc-9611-8688689dccc6.png"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-5Es9ZykGxOicYy6ujKhem+pmtnxjmc8kYDv/jIjULLY="
+        }
+      ]
+    },
+    {
+      "Route": "images/6523831c-052b-45fc-9611-8688689dccc6.png",
+      "AssetFile": "/Users/akshay/Desktop/StageCraft/wwwroot/images/6523831c-052b-45fc-9611-8688689dccc6.png",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "139715"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/png"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"5Es9ZykGxOicYy6ujKhem+pmtnxjmc8kYDv/jIjULLY=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Tue, 06 May 2025 00:30:34 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=3600, must-revalidate"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-5Es9ZykGxOicYy6ujKhem+pmtnxjmc8kYDv/jIjULLY="
+        }
+      ]
+    },
+    {
       "Route": "images/6624ae93-7989-4522-83ca-39d355c437cb.b0ow2z2noy.png",
       "AssetFile": "/Users/akshay/Desktop/StageCraft/wwwroot/images/6624ae93-7989-4522-83ca-39d355c437cb.png",
       "Selectors": [],
@@ -5554,6 +6346,252 @@
         {
           "Name": "integrity",
           "Value": "sha256-dTB7nXuWApTczu0/HHQG0WEg7Zf1fdEnz1SCnT2JtDE="
+        }
+      ]
+    },
+    {
+      "Route": "images/732bb0d9-b0df-41c5-a53c-7154fa71ae7b.20egqlnax0.png",
+      "AssetFile": "/Users/akshay/Desktop/StageCraft/wwwroot/images/732bb0d9-b0df-41c5-a53c-7154fa71ae7b.png",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "162806"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/png"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"HpewDQZl5fTq4l6rThURpZA4eA1ejG/wCtwKCFZSF6g=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Tue, 06 May 2025 00:38:06 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "20egqlnax0"
+        },
+        {
+          "Name": "label",
+          "Value": "images/732bb0d9-b0df-41c5-a53c-7154fa71ae7b.png"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-HpewDQZl5fTq4l6rThURpZA4eA1ejG/wCtwKCFZSF6g="
+        }
+      ]
+    },
+    {
+      "Route": "images/732bb0d9-b0df-41c5-a53c-7154fa71ae7b.png",
+      "AssetFile": "/Users/akshay/Desktop/StageCraft/wwwroot/images/732bb0d9-b0df-41c5-a53c-7154fa71ae7b.png",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "162806"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/png"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"HpewDQZl5fTq4l6rThURpZA4eA1ejG/wCtwKCFZSF6g=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Tue, 06 May 2025 00:38:06 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=3600, must-revalidate"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-HpewDQZl5fTq4l6rThURpZA4eA1ejG/wCtwKCFZSF6g="
+        }
+      ]
+    },
+    {
+      "Route": "images/7626fc08-2cd7-4499-b152-44f2a7c85db9.72eg7qqubj.png",
+      "AssetFile": "/Users/akshay/Desktop/StageCraft/wwwroot/images/7626fc08-2cd7-4499-b152-44f2a7c85db9.png",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "277714"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/png"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"0SUSQ3keZXaFo5Bzfh1yrEQTJo51VFDrGt10D+fcu6U=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Tue, 06 May 2025 00:32:32 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "72eg7qqubj"
+        },
+        {
+          "Name": "label",
+          "Value": "images/7626fc08-2cd7-4499-b152-44f2a7c85db9.png"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-0SUSQ3keZXaFo5Bzfh1yrEQTJo51VFDrGt10D+fcu6U="
+        }
+      ]
+    },
+    {
+      "Route": "images/7626fc08-2cd7-4499-b152-44f2a7c85db9.png",
+      "AssetFile": "/Users/akshay/Desktop/StageCraft/wwwroot/images/7626fc08-2cd7-4499-b152-44f2a7c85db9.png",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "277714"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/png"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"0SUSQ3keZXaFo5Bzfh1yrEQTJo51VFDrGt10D+fcu6U=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Tue, 06 May 2025 00:32:32 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=3600, must-revalidate"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-0SUSQ3keZXaFo5Bzfh1yrEQTJo51VFDrGt10D+fcu6U="
+        }
+      ]
+    },
+    {
+      "Route": "images/7f9c432c-90c2-4d42-bceb-d6d67b4078c0.jpeg",
+      "AssetFile": "/Users/akshay/Desktop/StageCraft/wwwroot/images/7f9c432c-90c2-4d42-bceb-d6d67b4078c0.jpeg",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "112734"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/jpeg"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"A+fs8tK+AWol75qeVgMTwfwzGIT3BOAs8m5JQ8dCSvk=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Mon, 05 May 2025 00:38:31 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=3600, must-revalidate"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-A+fs8tK+AWol75qeVgMTwfwzGIT3BOAs8m5JQ8dCSvk="
+        }
+      ]
+    },
+    {
+      "Route": "images/7f9c432c-90c2-4d42-bceb-d6d67b4078c0.nz8u2f4hqn.jpeg",
+      "AssetFile": "/Users/akshay/Desktop/StageCraft/wwwroot/images/7f9c432c-90c2-4d42-bceb-d6d67b4078c0.jpeg",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "112734"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/jpeg"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"A+fs8tK+AWol75qeVgMTwfwzGIT3BOAs8m5JQ8dCSvk=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Mon, 05 May 2025 00:38:31 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "nz8u2f4hqn"
+        },
+        {
+          "Name": "label",
+          "Value": "images/7f9c432c-90c2-4d42-bceb-d6d67b4078c0.jpeg"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-A+fs8tK+AWol75qeVgMTwfwzGIT3BOAs8m5JQ8dCSvk="
         }
       ]
     },
@@ -5718,6 +6756,88 @@
         {
           "Name": "integrity",
           "Value": "sha256-Nw1Ed89CyNA3bcJ+M/mks2yNEVSiDJjfiNjJ6t+YR5A="
+        }
+      ]
+    },
+    {
+      "Route": "images/8bf6b719-d06c-4e5e-9ff6-ce564d2490e8.6wti55hena.png",
+      "AssetFile": "/Users/akshay/Desktop/StageCraft/wwwroot/images/8bf6b719-d06c-4e5e-9ff6-ce564d2490e8.png",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "89327"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/png"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"1lA5lXdD5a0NNjBc/6JYQOwTuOaT+o5ENNSmNgIosMw=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Tue, 06 May 2025 00:24:20 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "6wti55hena"
+        },
+        {
+          "Name": "label",
+          "Value": "images/8bf6b719-d06c-4e5e-9ff6-ce564d2490e8.png"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-1lA5lXdD5a0NNjBc/6JYQOwTuOaT+o5ENNSmNgIosMw="
+        }
+      ]
+    },
+    {
+      "Route": "images/8bf6b719-d06c-4e5e-9ff6-ce564d2490e8.png",
+      "AssetFile": "/Users/akshay/Desktop/StageCraft/wwwroot/images/8bf6b719-d06c-4e5e-9ff6-ce564d2490e8.png",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "89327"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/png"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"1lA5lXdD5a0NNjBc/6JYQOwTuOaT+o5ENNSmNgIosMw=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Tue, 06 May 2025 00:24:20 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=3600, must-revalidate"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-1lA5lXdD5a0NNjBc/6JYQOwTuOaT+o5ENNSmNgIosMw="
         }
       ]
     },
@@ -6210,6 +7330,88 @@
         {
           "Name": "integrity",
           "Value": "sha256-PGEqv9qKpJy6YTgrk+y6aJ9Esgj08WFGpwW6OrsOycQ="
+        }
+      ]
+    },
+    {
+      "Route": "images/c096b987-1bcb-4be0-9e3f-e8c8e5ae65c8.jpg",
+      "AssetFile": "/Users/akshay/Desktop/StageCraft/wwwroot/images/c096b987-1bcb-4be0-9e3f-e8c8e5ae65c8.jpg",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "21119"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/jpeg"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"PcQpF9M3z5AKeXXbVpGWRokdK+19l/noEDTVl6V/tHY=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Tue, 06 May 2025 00:34:16 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=3600, must-revalidate"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-PcQpF9M3z5AKeXXbVpGWRokdK+19l/noEDTVl6V/tHY="
+        }
+      ]
+    },
+    {
+      "Route": "images/c096b987-1bcb-4be0-9e3f-e8c8e5ae65c8.xjnsy7ogqv.jpg",
+      "AssetFile": "/Users/akshay/Desktop/StageCraft/wwwroot/images/c096b987-1bcb-4be0-9e3f-e8c8e5ae65c8.jpg",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "21119"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/jpeg"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"PcQpF9M3z5AKeXXbVpGWRokdK+19l/noEDTVl6V/tHY=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Tue, 06 May 2025 00:34:16 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "xjnsy7ogqv"
+        },
+        {
+          "Name": "label",
+          "Value": "images/c096b987-1bcb-4be0-9e3f-e8c8e5ae65c8.jpg"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-PcQpF9M3z5AKeXXbVpGWRokdK+19l/noEDTVl6V/tHY="
         }
       ]
     },
@@ -6870,6 +8072,170 @@
       ]
     },
     {
+      "Route": "images/logo2.8t8of5vp7q.png",
+      "AssetFile": "/Users/akshay/Desktop/StageCraft/wwwroot/images/logo2.png",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "1824529"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/png"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"nBUNX7Y49n10pM07NiDeHOKYNhjNtvCfhRrKaeT1Epo=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Wed, 07 May 2025 00:25:20 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "8t8of5vp7q"
+        },
+        {
+          "Name": "label",
+          "Value": "images/logo2.png"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-nBUNX7Y49n10pM07NiDeHOKYNhjNtvCfhRrKaeT1Epo="
+        }
+      ]
+    },
+    {
+      "Route": "images/logo2.png",
+      "AssetFile": "/Users/akshay/Desktop/StageCraft/wwwroot/images/logo2.png",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "1824529"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/png"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"nBUNX7Y49n10pM07NiDeHOKYNhjNtvCfhRrKaeT1Epo=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Wed, 07 May 2025 00:25:20 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=3600, must-revalidate"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-nBUNX7Y49n10pM07NiDeHOKYNhjNtvCfhRrKaeT1Epo="
+        }
+      ]
+    },
+    {
+      "Route": "images/logo3.2lalcl9sbt.png",
+      "AssetFile": "/Users/akshay/Desktop/StageCraft/wwwroot/images/logo3.png",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "1552637"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/png"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"1rh3g93NDt9HpveQipxaEXXE+tjYSVbEnmrufn/5xMI=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Wed, 07 May 2025 00:28:42 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "2lalcl9sbt"
+        },
+        {
+          "Name": "label",
+          "Value": "images/logo3.png"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-1rh3g93NDt9HpveQipxaEXXE+tjYSVbEnmrufn/5xMI="
+        }
+      ]
+    },
+    {
+      "Route": "images/logo3.png",
+      "AssetFile": "/Users/akshay/Desktop/StageCraft/wwwroot/images/logo3.png",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "1552637"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/png"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"1rh3g93NDt9HpveQipxaEXXE+tjYSVbEnmrufn/5xMI=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Wed, 07 May 2025 00:28:42 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=3600, must-revalidate"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-1rh3g93NDt9HpveQipxaEXXE+tjYSVbEnmrufn/5xMI="
+        }
+      ]
+    },
+    {
       "Route": "images/Sponsor1.jpg",
       "AssetFile": "/Users/akshay/Desktop/StageCraft/wwwroot/images/Sponsor1.jpg",
       "Selectors": [],
@@ -6903,6 +8269,88 @@
         {
           "Name": "integrity",
           "Value": "sha256-YYyVihMga6njpsDDpjjYxA99xeH7gPLloe7zwGY3K80="
+        }
+      ]
+    },
+    {
+      "Route": "images/sponsor1.ju9cuw92o5.png",
+      "AssetFile": "/Users/akshay/Desktop/StageCraft/wwwroot/images/sponsor1.png",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "2652"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/png"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"2yp+/oIq11cFXuYPqpHm8SgrsOhA5O5uB0Iaw05Wk54=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Mon, 05 May 2025 23:37:00 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "ju9cuw92o5"
+        },
+        {
+          "Name": "label",
+          "Value": "images/sponsor1.png"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-2yp+/oIq11cFXuYPqpHm8SgrsOhA5O5uB0Iaw05Wk54="
+        }
+      ]
+    },
+    {
+      "Route": "images/sponsor1.png",
+      "AssetFile": "/Users/akshay/Desktop/StageCraft/wwwroot/images/sponsor1.png",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "2652"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/png"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"2yp+/oIq11cFXuYPqpHm8SgrsOhA5O5uB0Iaw05Wk54=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Mon, 05 May 2025 23:37:00 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=3600, must-revalidate"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-2yp+/oIq11cFXuYPqpHm8SgrsOhA5O5uB0Iaw05Wk54="
         }
       ]
     },
@@ -6948,6 +8396,662 @@
         {
           "Name": "integrity",
           "Value": "sha256-YYyVihMga6njpsDDpjjYxA99xeH7gPLloe7zwGY3K80="
+        }
+      ]
+    },
+    {
+      "Route": "images/sponsor10.jpg",
+      "AssetFile": "/Users/akshay/Desktop/StageCraft/wwwroot/images/sponsor10.jpg",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "9505"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/jpeg"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"HWi9UZc94wZb42JFQVyutObgevsYzwWcb7E3B8OJZ+U=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Mon, 05 May 2025 23:44:55 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=3600, must-revalidate"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-HWi9UZc94wZb42JFQVyutObgevsYzwWcb7E3B8OJZ+U="
+        }
+      ]
+    },
+    {
+      "Route": "images/sponsor10.xrbq6xw7g7.jpg",
+      "AssetFile": "/Users/akshay/Desktop/StageCraft/wwwroot/images/sponsor10.jpg",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "9505"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/jpeg"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"HWi9UZc94wZb42JFQVyutObgevsYzwWcb7E3B8OJZ+U=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Mon, 05 May 2025 23:44:55 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "xrbq6xw7g7"
+        },
+        {
+          "Name": "label",
+          "Value": "images/sponsor10.jpg"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-HWi9UZc94wZb42JFQVyutObgevsYzwWcb7E3B8OJZ+U="
+        }
+      ]
+    },
+    {
+      "Route": "images/sponsor11.ohjtmgtrtg.png",
+      "AssetFile": "/Users/akshay/Desktop/StageCraft/wwwroot/images/sponsor11.png",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "7424"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/png"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"FFIKYFfguVPYyesi9gBt4ffTbwJvcaAj7wT4SnX4/4M=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Mon, 05 May 2025 23:38:56 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "ohjtmgtrtg"
+        },
+        {
+          "Name": "label",
+          "Value": "images/sponsor11.png"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-FFIKYFfguVPYyesi9gBt4ffTbwJvcaAj7wT4SnX4/4M="
+        }
+      ]
+    },
+    {
+      "Route": "images/sponsor11.png",
+      "AssetFile": "/Users/akshay/Desktop/StageCraft/wwwroot/images/sponsor11.png",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "7424"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/png"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"FFIKYFfguVPYyesi9gBt4ffTbwJvcaAj7wT4SnX4/4M=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Mon, 05 May 2025 23:38:56 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=3600, must-revalidate"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-FFIKYFfguVPYyesi9gBt4ffTbwJvcaAj7wT4SnX4/4M="
+        }
+      ]
+    },
+    {
+      "Route": "images/sponsor12.jpg",
+      "AssetFile": "/Users/akshay/Desktop/StageCraft/wwwroot/images/sponsor12.jpg",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "14991"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/jpeg"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"kozytbTxGZVDP8PrvGvILx717wey+RvHxWzIaWvhMEc=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Mon, 05 May 2025 23:45:06 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=3600, must-revalidate"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-kozytbTxGZVDP8PrvGvILx717wey+RvHxWzIaWvhMEc="
+        }
+      ]
+    },
+    {
+      "Route": "images/sponsor12.uhtt2on1io.jpg",
+      "AssetFile": "/Users/akshay/Desktop/StageCraft/wwwroot/images/sponsor12.jpg",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "14991"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/jpeg"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"kozytbTxGZVDP8PrvGvILx717wey+RvHxWzIaWvhMEc=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Mon, 05 May 2025 23:45:06 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "uhtt2on1io"
+        },
+        {
+          "Name": "label",
+          "Value": "images/sponsor12.jpg"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-kozytbTxGZVDP8PrvGvILx717wey+RvHxWzIaWvhMEc="
+        }
+      ]
+    },
+    {
+      "Route": "images/sponsor13.bwz6sh298d.png",
+      "AssetFile": "/Users/akshay/Desktop/StageCraft/wwwroot/images/sponsor13.png",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "9285"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/png"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"xSSOyl4uI82/U7QsryuxHncZnPm3Bc+3DkSEXZZO1P0=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Mon, 05 May 2025 23:43:02 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "bwz6sh298d"
+        },
+        {
+          "Name": "label",
+          "Value": "images/sponsor13.png"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-xSSOyl4uI82/U7QsryuxHncZnPm3Bc+3DkSEXZZO1P0="
+        }
+      ]
+    },
+    {
+      "Route": "images/sponsor13.png",
+      "AssetFile": "/Users/akshay/Desktop/StageCraft/wwwroot/images/sponsor13.png",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "9285"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/png"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"xSSOyl4uI82/U7QsryuxHncZnPm3Bc+3DkSEXZZO1P0=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Mon, 05 May 2025 23:43:02 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=3600, must-revalidate"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-xSSOyl4uI82/U7QsryuxHncZnPm3Bc+3DkSEXZZO1P0="
+        }
+      ]
+    },
+    {
+      "Route": "images/sponsor14.edagedpeyo.jpg",
+      "AssetFile": "/Users/akshay/Desktop/StageCraft/wwwroot/images/sponsor14.jpg",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "6715"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/jpeg"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"gsqeliavrW484awK0J8P0OGpBXwdHzWE3hlzma89Ch8=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Mon, 05 May 2025 23:42:52 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "edagedpeyo"
+        },
+        {
+          "Name": "label",
+          "Value": "images/sponsor14.jpg"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-gsqeliavrW484awK0J8P0OGpBXwdHzWE3hlzma89Ch8="
+        }
+      ]
+    },
+    {
+      "Route": "images/sponsor14.jpg",
+      "AssetFile": "/Users/akshay/Desktop/StageCraft/wwwroot/images/sponsor14.jpg",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "6715"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/jpeg"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"gsqeliavrW484awK0J8P0OGpBXwdHzWE3hlzma89Ch8=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Mon, 05 May 2025 23:42:52 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=3600, must-revalidate"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-gsqeliavrW484awK0J8P0OGpBXwdHzWE3hlzma89Ch8="
+        }
+      ]
+    },
+    {
+      "Route": "images/sponsor15.3qbkx1os2y.jpg",
+      "AssetFile": "/Users/akshay/Desktop/StageCraft/wwwroot/images/sponsor15.jpg",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "12690"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/jpeg"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"W11ZHa6lqOhjYlTzi915rNGUgPsVRPOJ6q7vmE+hn7s=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Mon, 05 May 2025 23:44:45 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "3qbkx1os2y"
+        },
+        {
+          "Name": "label",
+          "Value": "images/sponsor15.jpg"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-W11ZHa6lqOhjYlTzi915rNGUgPsVRPOJ6q7vmE+hn7s="
+        }
+      ]
+    },
+    {
+      "Route": "images/sponsor15.jpg",
+      "AssetFile": "/Users/akshay/Desktop/StageCraft/wwwroot/images/sponsor15.jpg",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "12690"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/jpeg"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"W11ZHa6lqOhjYlTzi915rNGUgPsVRPOJ6q7vmE+hn7s=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Mon, 05 May 2025 23:44:45 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=3600, must-revalidate"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-W11ZHa6lqOhjYlTzi915rNGUgPsVRPOJ6q7vmE+hn7s="
+        }
+      ]
+    },
+    {
+      "Route": "images/sponsor16.jmx3clradf.jpg",
+      "AssetFile": "/Users/akshay/Desktop/StageCraft/wwwroot/images/sponsor16.jpg",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "7660"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/jpeg"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"+/wT0/WDdhQavCup6KRhH0f3/aF4H+jt3Ev8udIJS+g=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Tue, 06 May 2025 00:03:08 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "jmx3clradf"
+        },
+        {
+          "Name": "label",
+          "Value": "images/sponsor16.jpg"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-+/wT0/WDdhQavCup6KRhH0f3/aF4H+jt3Ev8udIJS+g="
+        }
+      ]
+    },
+    {
+      "Route": "images/sponsor16.jpg",
+      "AssetFile": "/Users/akshay/Desktop/StageCraft/wwwroot/images/sponsor16.jpg",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "7660"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/jpeg"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"+/wT0/WDdhQavCup6KRhH0f3/aF4H+jt3Ev8udIJS+g=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Tue, 06 May 2025 00:03:08 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=3600, must-revalidate"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-+/wT0/WDdhQavCup6KRhH0f3/aF4H+jt3Ev8udIJS+g="
+        }
+      ]
+    },
+    {
+      "Route": "images/sponsor17.bhmvjhd3zb.jpg",
+      "AssetFile": "/Users/akshay/Desktop/StageCraft/wwwroot/images/sponsor17.jpg",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "6164"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/jpeg"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"cRWQfbgpVjvDatPN1EyNiAQDghT/pXjdbXAYWJ7luDc=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Tue, 06 May 2025 00:04:51 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "bhmvjhd3zb"
+        },
+        {
+          "Name": "label",
+          "Value": "images/sponsor17.jpg"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-cRWQfbgpVjvDatPN1EyNiAQDghT/pXjdbXAYWJ7luDc="
+        }
+      ]
+    },
+    {
+      "Route": "images/sponsor17.jpg",
+      "AssetFile": "/Users/akshay/Desktop/StageCraft/wwwroot/images/sponsor17.jpg",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "6164"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/jpeg"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"cRWQfbgpVjvDatPN1EyNiAQDghT/pXjdbXAYWJ7luDc=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Tue, 06 May 2025 00:04:51 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=3600, must-revalidate"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-cRWQfbgpVjvDatPN1EyNiAQDghT/pXjdbXAYWJ7luDc="
         }
       ]
     },
@@ -7034,6 +9138,133 @@
       ]
     },
     {
+      "Route": "images/sponsor2.png",
+      "AssetFile": "/Users/akshay/Desktop/StageCraft/wwwroot/images/sponsor2.png",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "11664"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/png"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"n54TkTR5eo3nQxe2fEaMP75QZTzSAUa32s2bsUIPrXE=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Mon, 05 May 2025 23:37:55 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=3600, must-revalidate"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-n54TkTR5eo3nQxe2fEaMP75QZTzSAUa32s2bsUIPrXE="
+        }
+      ]
+    },
+    {
+      "Route": "images/sponsor2.t5h6541sne.png",
+      "AssetFile": "/Users/akshay/Desktop/StageCraft/wwwroot/images/sponsor2.png",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "11664"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/png"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"n54TkTR5eo3nQxe2fEaMP75QZTzSAUa32s2bsUIPrXE=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Mon, 05 May 2025 23:37:55 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "t5h6541sne"
+        },
+        {
+          "Name": "label",
+          "Value": "images/sponsor2.png"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-n54TkTR5eo3nQxe2fEaMP75QZTzSAUa32s2bsUIPrXE="
+        }
+      ]
+    },
+    {
+      "Route": "images/sponsor3.5xs6t0zr3y.jpg",
+      "AssetFile": "/Users/akshay/Desktop/StageCraft/wwwroot/images/sponsor3.jpg",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "8887"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/jpeg"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"F/so2WwryCfFFZtjxFaLNcYWhVdqmgaUaD8+DXDApt0=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Mon, 05 May 2025 23:37:35 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "5xs6t0zr3y"
+        },
+        {
+          "Name": "label",
+          "Value": "images/sponsor3.jpg"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-F/so2WwryCfFFZtjxFaLNcYWhVdqmgaUaD8+DXDApt0="
+        }
+      ]
+    },
+    {
       "Route": "images/sponsor3.jpg",
       "AssetFile": "/Users/akshay/Desktop/StageCraft/wwwroot/images/sponsor3.jpg",
       "Selectors": [],
@@ -7044,7 +9275,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "9947"
+          "Value": "8887"
         },
         {
           "Name": "Content-Type",
@@ -7052,11 +9283,11 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"ltIu3BtmziDTKoloJ7FpgIjMmMOXU/7fw/lcAXvphp0=\""
+          "Value": "\"F/so2WwryCfFFZtjxFaLNcYWhVdqmgaUaD8+DXDApt0=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Wed, 23 Apr 2025 03:37:02 GMT"
+          "Value": "Mon, 05 May 2025 23:37:35 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -7066,13 +9297,13 @@
       "EndpointProperties": [
         {
           "Name": "integrity",
-          "Value": "sha256-ltIu3BtmziDTKoloJ7FpgIjMmMOXU/7fw/lcAXvphp0="
+          "Value": "sha256-F/so2WwryCfFFZtjxFaLNcYWhVdqmgaUaD8+DXDApt0="
         }
       ]
     },
     {
-      "Route": "images/sponsor3.uj6h63cuzy.jpg",
-      "AssetFile": "/Users/akshay/Desktop/StageCraft/wwwroot/images/sponsor3.jpg",
+      "Route": "images/sponsor4.jpg",
+      "AssetFile": "/Users/akshay/Desktop/StageCraft/wwwroot/images/sponsor4.jpg",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -7081,7 +9312,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "9947"
+          "Value": "8201"
         },
         {
           "Name": "Content-Type",
@@ -7089,11 +9320,48 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"ltIu3BtmziDTKoloJ7FpgIjMmMOXU/7fw/lcAXvphp0=\""
+          "Value": "\"ry5U1TbTQ0WzBWLPRNToJhVQYbyVXX2H6XFfZ0PhZtE=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Wed, 23 Apr 2025 03:37:02 GMT"
+          "Value": "Mon, 05 May 2025 23:41:12 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=3600, must-revalidate"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-ry5U1TbTQ0WzBWLPRNToJhVQYbyVXX2H6XFfZ0PhZtE="
+        }
+      ]
+    },
+    {
+      "Route": "images/sponsor4.p2jvf0bd6w.jpg",
+      "AssetFile": "/Users/akshay/Desktop/StageCraft/wwwroot/images/sponsor4.jpg",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "8201"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/jpeg"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"ry5U1TbTQ0WzBWLPRNToJhVQYbyVXX2H6XFfZ0PhZtE=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Mon, 05 May 2025 23:41:12 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -7103,15 +9371,425 @@
       "EndpointProperties": [
         {
           "Name": "fingerprint",
-          "Value": "uj6h63cuzy"
+          "Value": "p2jvf0bd6w"
         },
         {
           "Name": "label",
-          "Value": "images/sponsor3.jpg"
+          "Value": "images/sponsor4.jpg"
         },
         {
           "Name": "integrity",
-          "Value": "sha256-ltIu3BtmziDTKoloJ7FpgIjMmMOXU/7fw/lcAXvphp0="
+          "Value": "sha256-ry5U1TbTQ0WzBWLPRNToJhVQYbyVXX2H6XFfZ0PhZtE="
+        }
+      ]
+    },
+    {
+      "Route": "images/sponsor5.jpg",
+      "AssetFile": "/Users/akshay/Desktop/StageCraft/wwwroot/images/sponsor5.jpg",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "8325"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/jpeg"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"iV9ddaRg1kd5mnVgeskXnoe/8i2vAhRNBWCkKWBCXKw=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Mon, 05 May 2025 23:40:25 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=3600, must-revalidate"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-iV9ddaRg1kd5mnVgeskXnoe/8i2vAhRNBWCkKWBCXKw="
+        }
+      ]
+    },
+    {
+      "Route": "images/sponsor5.polr5dk8oy.jpg",
+      "AssetFile": "/Users/akshay/Desktop/StageCraft/wwwroot/images/sponsor5.jpg",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "8325"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/jpeg"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"iV9ddaRg1kd5mnVgeskXnoe/8i2vAhRNBWCkKWBCXKw=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Mon, 05 May 2025 23:40:25 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "polr5dk8oy"
+        },
+        {
+          "Name": "label",
+          "Value": "images/sponsor5.jpg"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-iV9ddaRg1kd5mnVgeskXnoe/8i2vAhRNBWCkKWBCXKw="
+        }
+      ]
+    },
+    {
+      "Route": "images/sponsor6.1a0tpvnrpa.png",
+      "AssetFile": "/Users/akshay/Desktop/StageCraft/wwwroot/images/sponsor6.png",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "7433"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/png"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"qWtrgRgArBBC9iOeoKeBCBQDOCbaFPFAFc8ux/gO48Y=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Mon, 05 May 2025 23:40:59 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "1a0tpvnrpa"
+        },
+        {
+          "Name": "label",
+          "Value": "images/sponsor6.png"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-qWtrgRgArBBC9iOeoKeBCBQDOCbaFPFAFc8ux/gO48Y="
+        }
+      ]
+    },
+    {
+      "Route": "images/sponsor6.png",
+      "AssetFile": "/Users/akshay/Desktop/StageCraft/wwwroot/images/sponsor6.png",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "7433"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/png"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"qWtrgRgArBBC9iOeoKeBCBQDOCbaFPFAFc8ux/gO48Y=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Mon, 05 May 2025 23:40:59 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=3600, must-revalidate"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-qWtrgRgArBBC9iOeoKeBCBQDOCbaFPFAFc8ux/gO48Y="
+        }
+      ]
+    },
+    {
+      "Route": "images/sponsor7.jpg",
+      "AssetFile": "/Users/akshay/Desktop/StageCraft/wwwroot/images/sponsor7.jpg",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "13637"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/jpeg"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"Dzzraaph+hPLSCGuy4HB5Q4n1sbYu6C+kT9uDlBuBRk=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Mon, 05 May 2025 23:45:03 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=3600, must-revalidate"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-Dzzraaph+hPLSCGuy4HB5Q4n1sbYu6C+kT9uDlBuBRk="
+        }
+      ]
+    },
+    {
+      "Route": "images/sponsor7.tlq1jxrfxw.jpg",
+      "AssetFile": "/Users/akshay/Desktop/StageCraft/wwwroot/images/sponsor7.jpg",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "13637"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/jpeg"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"Dzzraaph+hPLSCGuy4HB5Q4n1sbYu6C+kT9uDlBuBRk=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Mon, 05 May 2025 23:45:03 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "tlq1jxrfxw"
+        },
+        {
+          "Name": "label",
+          "Value": "images/sponsor7.jpg"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-Dzzraaph+hPLSCGuy4HB5Q4n1sbYu6C+kT9uDlBuBRk="
+        }
+      ]
+    },
+    {
+      "Route": "images/sponsor8.png",
+      "AssetFile": "/Users/akshay/Desktop/StageCraft/wwwroot/images/sponsor8.png",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "4993"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/png"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"noczzAqdtEZ9OXwauCzewCOkWrM3PKk5b/198vC4UjI=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Mon, 05 May 2025 23:45:24 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=3600, must-revalidate"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-noczzAqdtEZ9OXwauCzewCOkWrM3PKk5b/198vC4UjI="
+        }
+      ]
+    },
+    {
+      "Route": "images/sponsor8.yj91dxx9p7.png",
+      "AssetFile": "/Users/akshay/Desktop/StageCraft/wwwroot/images/sponsor8.png",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "4993"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/png"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"noczzAqdtEZ9OXwauCzewCOkWrM3PKk5b/198vC4UjI=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Mon, 05 May 2025 23:45:24 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "yj91dxx9p7"
+        },
+        {
+          "Name": "label",
+          "Value": "images/sponsor8.png"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-noczzAqdtEZ9OXwauCzewCOkWrM3PKk5b/198vC4UjI="
+        }
+      ]
+    },
+    {
+      "Route": "images/sponsor9.lxozoinl5r.png",
+      "AssetFile": "/Users/akshay/Desktop/StageCraft/wwwroot/images/sponsor9.png",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "7108"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/png"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"B0e5gBuzoFSQmbzJMBG+0QsKFh0MMnzYHa6DRUL+/aM=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Mon, 05 May 2025 23:44:49 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "lxozoinl5r"
+        },
+        {
+          "Name": "label",
+          "Value": "images/sponsor9.png"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-B0e5gBuzoFSQmbzJMBG+0QsKFh0MMnzYHa6DRUL+/aM="
+        }
+      ]
+    },
+    {
+      "Route": "images/sponsor9.png",
+      "AssetFile": "/Users/akshay/Desktop/StageCraft/wwwroot/images/sponsor9.png",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "7108"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/png"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"B0e5gBuzoFSQmbzJMBG+0QsKFh0MMnzYHa6DRUL+/aM=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Mon, 05 May 2025 23:44:49 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=3600, must-revalidate"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-B0e5gBuzoFSQmbzJMBG+0QsKFh0MMnzYHa6DRUL+/aM="
         }
       ]
     },
@@ -7304,7 +9982,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Sat, 03 May 2025 21:45:01 GMT"
+          "Value": "Wed, 07 May 2025 01:01:04 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -7357,7 +10035,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Sat, 03 May 2025 21:45:01 GMT"
+          "Value": "Wed, 07 May 2025 01:01:04 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -7394,7 +10072,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Sat, 03 May 2025 21:45:01 GMT"
+          "Value": "Wed, 07 May 2025 01:01:04 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -7441,7 +10119,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Sat, 03 May 2025 21:45:01 GMT"
+          "Value": "Wed, 07 May 2025 01:01:04 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -7502,7 +10180,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Sat, 03 May 2025 21:45:01 GMT"
+          "Value": "Wed, 07 May 2025 01:01:04 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -7547,7 +10225,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Sat, 03 May 2025 21:45:01 GMT"
+          "Value": "Wed, 07 May 2025 01:01:04 GMT"
         },
         {
           "Name": "Cache-Control",

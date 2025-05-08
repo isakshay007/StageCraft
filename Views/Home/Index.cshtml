@@ -15,36 +15,42 @@
                 @foreach (var prod in Model.Take(9))
                 {
                     <div class="col">
-                        <div class="card bg-dark text-white border-0 shadow-sm h-100">
-                            @if (!string.IsNullOrEmpty(prod.PosterImagePath))
-                            {
-                                <a asp-controller="Productions" asp-action="Details" asp-route-id="@prod.Id">
+                        <div class="card bg-dark text-white border-0 shadow-sm h-100 spotlight-card">
+                            <a asp-controller="Productions" asp-action="Details" asp-route-id="@prod.Id" asp-route-from="spotlight" class="text-decoration-none">
+                                @if (!string.IsNullOrEmpty(prod.PosterImagePath))
+                                {
                                     <img src="@prod.PosterImagePath" class="card-img-top img-fluid rounded" alt="Poster for @prod.Title" style="height: 300px; object-fit: cover;" />
-                                </a>
-                            }
-                            else
-                            {
-                                <div class="card-img-top d-flex align-items-center justify-content-center bg-secondary" style="height: 300px;">
-                                    <span class="text-white">No Poster</span>
+                                }
+                                else
+                                {
+                                    <div class="card-img-top d-flex align-items-center justify-content-center bg-secondary" style="height: 300px;">
+                                        <span class="text-white">No Poster</span>
+                                    </div>
+                                }
+
+                                <div class="card-body text-center">
+                                    <h6 class="card-title text-white mb-2">
+                                        @prod.Title
+                                    </h6>
+                                    <small class="text-light d-block mb-1">
+                                        <strong>Opens:</strong> @prod.OpeningDay.ToShortDateString()<br />
+                                        <strong>Closes:</strong> @prod.ClosingDay.ToShortDateString()<br />
+                                        <strong>Runtime:</strong> @prod.Runtime mins
+                                    </small>
+
+                                    <div class="mt-2">
+                                        <button type="button" class="btn btn-outline-light btn-sm" onclick="event.preventDefault(); event.stopPropagation(); openCommentsModal(@prod.Id);">
+                                            💬 See Comments
+                                        </button>
+                                    </div>
                                 </div>
-                            }
-
-                            <div class="card-body text-center">
-                                <h6 class="card-title text-white mb-2">@prod.Title</h6>
-                                <small class="text-light d-block mb-1">
-                                    <strong>Opens:</strong> @prod.OpeningDay.ToShortDateString()<br />
-                                    <strong>Closes:</strong> @prod.ClosingDay.ToShortDateString()<br />
-                                    <strong>Runtime:</strong> @prod.Runtime mins
-                                </small>
-
-
-                                <button class="btn btn-outline-light btn-sm" onclick="openCommentsModal(@prod.Id)">💬 See Comments</button>
-                            </div>
+                            </a>
                         </div>
                     </div>
                 }
             </div>
         </div>
+
 
         <!-- RIGHT COLUMN: Animated Theatre + Sponsors -->
         <div class="col-md-4 d-flex flex-column gap-4 animate__animated animate__fadeInRight">
@@ -61,13 +67,18 @@
             <div>
                 <h5 class="text-white border-bottom pb-2"><i class="bi bi-ticket-fill text-warning"></i> Sponsors</h5>
                 <div class="row row-cols-3 g-3 text-center">
-                    @for (int i = 1; i <= 15; i++)
-                    {
-                        <div class="col">
-                            <div class="sponsor-tile tilt-box">
-                                <img src="/images/sponsor1.jpg" alt="Sponsor @i" class="img-fluid rounded shadow-sm" />
+                    @{
+                        var sponsors = new[] {
+                            "sponsor1.png", "sponsor2.png", "sponsor3.jpg", "sponsor4.jpg", "sponsor5.jpg",
+                            "sponsor6.png", "sponsor1.jpg", "sponsor8.png", "sponsor9.png", "sponsor10.jpg",
+                            "sponsor11.png", "sponsor12.jpg", "sponsor16.jpg", "sponsor17.jpg", "sponsor15.jpg"
+                        };
+                        foreach (var sponsor in sponsors)
+                        {
+                            <div class="col">
+                                <img src="/images/@sponsor" alt="Sponsor" class="img-fluid rounded shadow-sm" />
                             </div>
-                        </div>
+                        }
                     }
                 </div>
             </div>

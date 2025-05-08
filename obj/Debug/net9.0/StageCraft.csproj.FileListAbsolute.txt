@@ -129,9 +129,7 @@
 /Users/akshay/Desktop/StageCraft/obj/Debug/net9.0/scopedcss/Views/Shared/_Layout.cshtml.rz.scp.css
 /Users/akshay/Desktop/StageCraft/obj/Debug/net9.0/scopedcss/bundle/StageCraft.styles.css
 /Users/akshay/Desktop/StageCraft/obj/Debug/net9.0/scopedcss/projectbundle/StageCraft.bundle.scp.css
-/Users/akshay/Desktop/StageCraft/obj/Debug/net9.0/compressed/s2pyfjz9wx-wnw8liwvjf.gz
 /Users/akshay/Desktop/StageCraft/obj/Debug/net9.0/compressed/c1flwogeuo-61n19gt1b8.gz
-/Users/akshay/Desktop/StageCraft/obj/Debug/net9.0/compressed/57spz9q5av-yo7qlvczzj.gz
 /Users/akshay/Desktop/StageCraft/obj/Debug/net9.0/compressed/ft6ocdeanh-xtxxf3hu2r.gz
 /Users/akshay/Desktop/StageCraft/obj/Debug/net9.0/compressed/ghfhgsn4ls-bqjiyaj88i.gz
 /Users/akshay/Desktop/StageCraft/obj/Debug/net9.0/compressed/su314ni9ry-c2jlpeoesf.gz
@@ -209,3 +207,5 @@
 /Users/akshay/Desktop/StageCraft/obj/Debug/net9.0/StageCraft.pdb
 /Users/akshay/Desktop/StageCraft/obj/Debug/net9.0/StageCraft.genruntimeconfig.cache
 /Users/akshay/Desktop/StageCraft/obj/Debug/net9.0/ref/StageCraft.dll
+/Users/akshay/Desktop/StageCraft/obj/Debug/net9.0/compressed/57spz9q5av-yo7qlvczzj.gz
+/Users/akshay/Desktop/StageCraft/obj/Debug/net9.0/compressed/s2pyfjz9wx-2sxkh1h6lj.gz

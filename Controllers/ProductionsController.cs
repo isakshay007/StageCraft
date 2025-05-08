@@ -11,7 +11,7 @@ namespace StageCraft.Controllers
     {
         private readonly AppDbContext _context;
         private readonly IWebHostEnvironment _environment;
-        private const int PageSize = 9; // Items per page
+        private const int PageSize = 9;
 
         public ProductionsController(AppDbContext context, IWebHostEnvironment environment)
         {
@@ -19,7 +19,6 @@ namespace StageCraft.Controllers
             _environment = environment;
         }
 
-        // GET: Productions (open to everyone)
         [AllowAnonymous]
         public async Task<IActionResult> Index(string searchString, int? page)
         {
@@ -40,9 +39,8 @@ namespace StageCraft.Controllers
             return View(pagedProductions);
         }
 
-        //  GET: Productions/Details/5 (open to everyone)
         [AllowAnonymous]
-        public async Task<IActionResult> Details(int id)
+        public async Task<IActionResult> Details(int id, string? from)
         {
             var production = await _context.Productions.FindAsync(id);
             if (production == null)
@@ -50,35 +48,32 @@ namespace StageCraft.Controllers
                 return NotFound();
             }
 
-            //  Fetch comments related to this production
+            // Load related comments
             var comments = await _context.Comments
-                .Include(c => c.User) // Needed to show comment author's name
+                .Include(c => c.User)
                 .Where(c => c.ProductionId == id)
                 .OrderByDescending(c => c.CreatedAt)
                 .ToListAsync();
 
             ViewBag.Comments = comments;
+            ViewBag.From = from ?? "productions"; // Default to productions if not passed
 
             return View(production);
         }
 
-        // GET: Productions/Create (Admin + ProductionManager only)
         [Authorize(Roles = "Admin,ProductionManager")]
         public IActionResult Create()
         {
             return View();
         }
 
-        // POST: Productions/Create
         [HttpPost]
         [ValidateAntiForgeryToken]
         [Authorize(Roles = "Admin,ProductionManager")]
         public async Task<IActionResult> Create(Production production, IFormFile? posterFile)
         {
             if (!ModelState.IsValid)
-            {
                 return View(production);
-            }
 
             if (posterFile != null && posterFile.Length > 0)
             {
@@ -99,20 +94,16 @@ namespace StageCraft.Controllers
             return RedirectToAction(nameof(Index));
         }
 
-        // GET: Productions/Edit/5
         [Authorize(Roles = "Admin,ProductionManager")]
         public async Task<IActionResult> Edit(int id)
         {
             var production = await _context.Productions.FindAsync(id);
             if (production == null)
-            {
                 return NotFound();
-            }
 
             return View(production);
         }
 
-        // POST: Productions/Edit/5
         [HttpPost]
         [ValidateAntiForgeryToken]
         [Authorize(Roles = "Admin,ProductionManager")]
@@ -158,20 +149,16 @@ namespace StageCraft.Controllers
             return RedirectToAction(nameof(Index));
         }
 
-        // GET: Productions/Delete/5
         [Authorize(Roles = "Admin,ProductionManager")]
         public async Task<IActionResult> Delete(int id)
         {
             var production = await _context.Productions.FindAsync(id);
             if (production == null)
-            {
                 return NotFound();
-            }
 
             return View(production);
         }
 
-        // POST: Productions/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         [Authorize(Roles = "Admin,ProductionManager")]

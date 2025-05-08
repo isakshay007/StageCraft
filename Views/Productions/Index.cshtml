@@ -48,48 +48,49 @@
             @foreach (var item in Model)
             {
                 <div class="col">
-                    <div class="card bg-dark text-white border border-danger h-100 shadow tilt-box">
-                        @if (!string.IsNullOrEmpty(item.PosterImagePath))
-                        {
-                            <img src="@item.PosterImagePath" class="card-img-top" alt="Poster for @item.Title" style="height: 280px; object-fit: cover;" />
-                        }
-                        else
-                        {
-                            <div class="card-img-top d-flex align-items-center justify-content-center bg-secondary" style="height: 280px;">
-                                <span class="text-light">No Poster</span>
-                            </div>
-                        }
-
-                        <div class="card-body text-center">
-                            <h5 class="card-title">@item.Title</h5>
-                            <p class="card-text text-truncate" style="max-height: 60px;">@item.Description</p>
-                            <p class="card-text">
-                                <small class="text-light">
-                                    <strong>Opening:</strong> @item.OpeningDay.ToShortDateString()<br />
-                                    <strong>Closing:</strong> @item.ClosingDay.ToShortDateString()<br />
-                                    <strong>Runtime:</strong> @item.Runtime mins
-                                </small>
-                            </p>
-
-                            <button class="btn btn-outline-light btn-sm mt-2" onclick="openCommentsModal(@item.Id)">
-                                💬 See Comments
-                            </button>
-                        </div>
-
-                        @if (User.IsInRole("Admin") || User.IsInRole("ProductionManager"))
-                        {
-                            <div class="card-footer bg-transparent text-center">
-                                <div class="d-flex justify-content-center gap-3">
-                                    <a asp-action="Edit" asp-route-id="@item.Id" class="btn btn-sm btn-warning">
-                                        ✏️ Edit
-                                    </a>
-                                    <a asp-action="Delete" asp-route-id="@item.Id" class="btn btn-sm btn-danger">
-                                        🗑 Delete
-                                    </a>
+                    <a asp-controller="Productions" asp-action="Details" asp-route-id="@item.Id" asp-route-from="productions" class="text-decoration-none">
+                        <div class="card bg-dark text-white border border-danger h-100 shadow tilt-box">
+                            @if (!string.IsNullOrEmpty(item.PosterImagePath))
+                            {
+                                <img src="@item.PosterImagePath" class="card-img-top" alt="Poster for @item.Title" style="height: 280px; object-fit: cover;" />
+                            }
+                            else
+                            {
+                                <div class="card-img-top d-flex align-items-center justify-content-center bg-secondary" style="height: 280px;">
+                                    <span class="text-light">No Poster</span>
                                 </div>
+                            }
+
+                            <div class="card-body text-center">
+                                <h5 class="card-title">@item.Title</h5>
+                                <p class="card-text text-truncate" style="max-height: 60px;">@item.Description</p>
+                                <p class="card-text">
+                                    <small class="text-light">
+                                        <strong>Opening:</strong> @item.OpeningDay.ToShortDateString()<br />
+                                        <strong>Closing:</strong> @item.ClosingDay.ToShortDateString()<br />
+                                        <strong>Runtime:</strong> @item.Runtime mins
+                                    </small>
+                                </p>
+
+                                <button type="button" class="btn btn-outline-light btn-sm mt-2"
+                                        onclick="event.stopPropagation(); openCommentsModal(@item.Id)">
+                                    💬 See Comments
+                                </button>
                             </div>
-                        }
-                    </div>
+
+                            @if (User.IsInRole("Admin") || User.IsInRole("ProductionManager"))
+                            {
+                                <div class="card-footer bg-transparent text-center">
+                                    <div class="d-flex justify-content-center gap-3">
+                                        <a asp-action="Edit" asp-route-id="@item.Id" class="btn btn-sm btn-warning"
+                                           onclick="event.stopPropagation();">✏️ Edit</a>
+                                        <a asp-action="Delete" asp-route-id="@item.Id" class="btn btn-sm btn-danger"
+                                           onclick="event.stopPropagation();">🗑 Delete</a>
+                                    </div>
+                                </div>
+                            }
+                        </div>
+                    </a>
                 </div>
             }
         </div>

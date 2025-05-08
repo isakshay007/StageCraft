@@ -23,19 +23,42 @@ a:hover {
   text-decoration: underline;
   color: #ff6b6b;
 }
-
 /* ===== Navbar ===== */
 .navbar {
   background-color: #d62222;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+  padding: 0;
+  min-height: 60px;
+  display: flex;
+  align-items: center;
+  overflow: visible;
 }
+
+/* Reset image behavior inside navbar */
 .navbar-brand img {
-  height: 40px;
+  display: block;
+  width: auto;
 }
+
+/* StageCraft Logo - Bigger */
+.stagecraft-logo {
+  height: 140px;         /* ⬆️ Increased from 110px */
+  width: auto;
+  display: block;
+  margin: -40px 0;       /* Slightly pulled up */
+  z-index: 10;
+  position: relative;
+}
+
+/* Nav Links */
 .navbar-nav .nav-link {
   color: #fff !important;
   font-weight: 500;
+  padding: 0.3rem 1rem;
+  font-size: 1rem;
+  line-height: 1;
 }
+
 .navbar-nav .nav-link:hover {
   color: #ffdada !important;
   text-shadow: 0 0 2px #fff;
@@ -341,4 +364,52 @@ input[type="datetime-local"] {
 .btn-outline-light:hover {
   background-color: #333;
   color: white;
+}
+
+/* ===== Fix for Red Text in Production Details Card ===== */
+.card.bg-dark.text-white .card-title,
+.card.bg-dark.text-white .card-text {
+  color: #ffffff !important;
+}
+/* === Spotlight Cards === */
+.spotlight-card {
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+  cursor: pointer;
+  border-radius: 10px;
+}
+
+.spotlight-card:hover {
+  transform: scale(1.04);
+  box-shadow: 0 10px 25px rgba(255, 255, 255, 0.15);
+}
+
+/* Ensure images inside spotlight cards also scale smoothly */
+.spotlight-card .card-img-top {
+  transition: transform 0.3s ease;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+}
+
+/* === Sponsor Logos === */
+.sponsors img {
+  height: 60px;
+  width: 100%;
+  object-fit: contain;
+  padding: 0.5rem;
+  background-color: #1c1c1c;
+  border-radius: 6px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
+}
+
+.sponsors img:hover {
+  transform: scale(1.08);
+  box-shadow: 0 6px 20px rgba(255, 255, 255, 0.2);
+}
+
+/* === Consistent Button Hover === */
+.btn-outline-light:hover {
+  background-color: #f44336;
+  color: white;
+  border-color: #f44336;
 }
