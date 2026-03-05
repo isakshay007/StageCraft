@@ -1,14 +1,28 @@
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
+using Microsoft.AspNetCore.HttpOverrides;
 using Microsoft.EntityFrameworkCore;
 using StageCraft.Data;
 using StageCraft.Models;
+using DotNetEnv;
 
 var builder = WebApplication.CreateBuilder(args);
 
+// Load .env file if present (silently ignored in production)
+Env.Load();
+
+var port = Environment.GetEnvironmentVariable("PORT");
+if (port != null)
+{
+    builder.WebHost.UseUrls($"http://+:{port}");
+}
+
+var connectionString = Environment.GetEnvironmentVariable("CONNECTION_STRING")
+    ?? builder.Configuration.GetConnectionString("DefaultConnection");
+
 builder.Services.AddDbContext<AppDbContext>(options =>
     options.UseMySql(
-        builder.Configuration.GetConnectionString("DefaultConnection"),
+        connectionString,
         new MySqlServerVersion(new Version(8, 0, 32))
     ));
 
@@ -22,16 +36,24 @@ builder.Services.ConfigureApplicationCookie(options =>
     options.AccessDeniedPath = "/Account/AccessDenied";
 });
 
+builder.Services.Configure<ForwardedHeadersOptions>(options =>
+{
+    options.ForwardedHeaders = ForwardedHeaders.XForwardedFor | ForwardedHeaders.XForwardedProto;
+});
+
 builder.Services.AddControllersWithViews();
 
 var app = builder.Build();
 
+// Seed roles & users
 using (var scope = app.Services.CreateScope())
 {
     var services = scope.ServiceProvider;
     var roleManager = services.GetRequiredService<RoleManager<IdentityRole>>();
     var userManager = services.GetRequiredService<UserManager<ApplicationUser>>();
     var context = services.GetRequiredService<AppDbContext>();
+
+    await context.Database.MigrateAsync();
 
     string[] roles = { "Admin", "ProductionManager", "User" };
     foreach (var role in roles)
@@ -42,8 +64,10 @@ using (var scope = app.Services.CreateScope())
         }
     }
 
-    string adminEmail = "admin@stagecraft.com";
-    string adminPassword = "Admin@123";
+    // Load from env
+    string adminEmail = Environment.GetEnvironmentVariable("ADMIN_EMAIL") ?? "admin@fallback.com";
+    string adminPassword = Environment.GetEnvironmentVariable("ADMIN_PASSWORD") ?? "Fallback@123";
+
     var adminUser = await userManager.FindByEmailAsync(adminEmail);
     if (adminUser == null)
     {
@@ -81,17 +105,10 @@ using (var scope = app.Services.CreateScope())
         var daysAgo = rnd.Next(1, 30);
         var loginTime = today.AddDays(-daysAgo);
 
-        context.ActivityLogs.Add(new ActivityLog
+        context.ActivityLogs.AddRange(new[]
         {
-            UserId = user.Id,
-            Action = "Register",
-            Timestamp = loginTime.AddMinutes(-10)
-        });
-        context.ActivityLogs.Add(new ActivityLog
-        {
-            UserId = user.Id,
-            Action = "Login",
-            Timestamp = loginTime
+            new ActivityLog { UserId = user.Id, Action = "Register", Timestamp = loginTime.AddMinutes(-10) },
+            new ActivityLog { UserId = user.Id, Action = "Login", Timestamp = loginTime }
         });
 
         var managerEmail = $"manager{i}@example.com";
@@ -111,29 +128,24 @@ using (var scope = app.Services.CreateScope())
         var mgrDaysAgo = rnd.Next(1, 30);
         var mgrLoginTime = today.AddDays(-mgrDaysAgo);
 
-        context.ActivityLogs.Add(new ActivityLog
+        context.ActivityLogs.AddRange(new[]
         {
-            UserId = manager.Id,
-            Action = "Register",
-            Timestamp = mgrLoginTime.AddMinutes(-10)
-        });
-        context.ActivityLogs.Add(new ActivityLog
-        {
-            UserId = manager.Id,
-            Action = "Login",
-            Timestamp = mgrLoginTime
+            new ActivityLog { UserId = manager.Id, Action = "Register", Timestamp = mgrLoginTime.AddMinutes(-10) },
+            new ActivityLog { UserId = manager.Id, Action = "Login", Timestamp = mgrLoginTime }
         });
     }
 
     await context.SaveChangesAsync();
 }
 
+// Middleware
 if (!app.Environment.IsDevelopment())
 {
     app.UseExceptionHandler("/Home/Error");
     app.UseHsts();
 }
 
+app.UseForwardedHeaders();
 app.UseHttpsRedirection();
 app.UseStaticFiles();
 app.UseRouting();

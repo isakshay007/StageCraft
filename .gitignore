@@ -1,0 +1,54 @@
+# Build results
+bin/
+obj/
+out/
+
+# User-specific files
+*.user
+*.suo
+*.userosscache
+*.sln.docstates
+
+# OS generated files
+.DS_Store
+Thumbs.db
+
+# Rider
+.idea/
+
+# VS Code
+.vscode/
+
+# Logs
+*.log
+
+# ASP.NET Secrets
+secrets.json
+
+# dotenv environment files
+.env
+.env.*
+!.env.sample  # Allow sample file for devs to copy
+
+# Configuration transforms (optional)
+*.Transform.*
+
+# Static files if generated
+wwwroot/dist/
+wwwroot/node_modules/
+
+# Node modules (if frontend involved)
+node_modules/
+
+# NPM package lock (optional)
+package-lock.json
+
+# Others (optional depending on tooling)
+*.db
+*.sqlite
+*.bak
+*.mdf
+*.ldf
+
+# Publish outputs
+publish/
