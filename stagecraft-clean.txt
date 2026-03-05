@@ -1,0 +1,3148 @@
+===== ./StageCraft.csproj =====
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>net9.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="DotNetEnv" Version="3.1.1" />
+    <PackageReference Include="Microsoft.AspNetCore.Identity.EntityFrameworkCore" Version="9.0.4" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore" Version="9.0.4" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="9.0.4" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Relational" Version="9.0.4" />
+    <PackageReference Include="Pomelo.EntityFrameworkCore.MySql" Version="9.0.0-preview.3.efcore.9.0.0" />
+    <PackageReference Include="X.PagedList.Mvc.Core" Version="8.4.0" />
+  </ItemGroup>
+
+</Project>
+===== ./ViewModels/LoginStatisticsViewModel.cs =====
+namespace StageCraft.ViewModels
+{
+    public class LoginStatisticsViewModel
+    {
+        public int TotalUsers { get; set; }
+        public int TotalAdmins { get; set; }
+        public int TotalManagers { get; set; }
+        //  For bar chart data
+        public List<string> RoleNames { get; set; } = new List<string> { "Admins", "Production Managers", "Users" };
+        public List<int> RoleCounts { get; set; } = new();
+    }
+}===== ./ViewModels/CreateProductionManagerViewModel.cs =====
+using System.ComponentModel.DataAnnotations;
+
+namespace StageCraft.ViewModels
+{
+    public class CreateProductionManagerViewModel
+    {
+        [Required(ErrorMessage = "Email is required.")]
+        [EmailAddress(ErrorMessage = "Please enter a valid email address.")]
+        public string Email { get; set; }
+
+        [Required(ErrorMessage = "Password is required.")]
+        [DataType(DataType.Password)]
+        [StringLength(100, ErrorMessage = "The {0} must be at least {2} characters long.", MinimumLength = 6)]
+        public string Password { get; set; }
+    }
+}
+===== ./ViewModels/RegisterViewModel.cs =====
+using System.ComponentModel.DataAnnotations;
+
+namespace StageCraft.ViewModels
+{
+    public class RegisterViewModel
+    {
+        [Required(ErrorMessage = "Full Name is required.")]
+        [Display(Name = "Full Name")]
+        public string FullName { get; set; } = string.Empty;
+
+        [Required(ErrorMessage = "Username is required.")]
+        [Display(Name = "Username")]
+        public string UserName { get; set; } = string.Empty;
+
+        [Required(ErrorMessage = "Email is required.")]
+        [EmailAddress(ErrorMessage = "Please enter a valid email address.")]
+        public string Email { get; set; } = string.Empty;
+
+        [Required(ErrorMessage = "Password is required.")]
+        [DataType(DataType.Password)]
+        [StringLength(100, ErrorMessage = "The Password must be at least 6 characters long.", MinimumLength = 6)]
+        public string Password { get; set; } = string.Empty;
+
+        [Required(ErrorMessage = "Please confirm your password.")]
+        [DataType(DataType.Password)]
+        [Display(Name = "Confirm Password")]
+        [Compare("Password", ErrorMessage = "The password and confirmation password do not match.")]
+        public string ConfirmPassword { get; set; } = string.Empty;
+    }
+}
+===== ./ViewModels/CommentListViewModel.cs =====
+===== ./ViewModels/LoginViewModel.cs =====
+using System.ComponentModel.DataAnnotations;
+
+namespace StageCraft.ViewModels
+{
+    public class LoginViewModel
+    {
+        [Required(ErrorMessage = "Email is required.")]
+        [EmailAddress(ErrorMessage = "Please enter a valid email address.")]
+        public string Email { get; set; }
+
+        [Required(ErrorMessage = "Password is required.")]
+        [DataType(DataType.Password)]
+        public string Password { get; set; }
+
+        [Display(Name = "Remember Me")]
+        public bool RememberMe { get; set; }
+    }
+}
+===== ./ViewModels/ActivityLogViewModel.cs =====
+using System;
+
+namespace StageCraft.ViewModels
+{
+    public class ActivityLogViewModel
+    {
+        public string UserId { get; set; }
+        public string UserName { get; set; }
+        public string UserEmail { get; set; }
+        public string Action { get; set; }
+        public DateTime Timestamp { get; set; }
+    }
+}
+===== ./wwwroot/css/site.css =====
+/* ===== Reset & Base ===== */
+html, body {
+  height: 100%;
+}
+body {
+  display: flex;
+  flex-direction: column;
+  background-color: #000;
+  color: #fff;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  line-height: 1.6;
+  margin: 0;
+}
+main {
+  flex: 1;
+  padding-bottom: 2rem;
+}
+a {
+  color: #f44336;
+  text-decoration: none;
+}
+a:hover {
+  text-decoration: underline;
+  color: #ff6b6b;
+}
+/* ===== Navbar ===== */
+.navbar {
+  background-color: #d62222;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+  padding: 0;
+  min-height: 60px;
+  display: flex;
+  align-items: center;
+  overflow: visible;
+}
+
+/* Reset image behavior inside navbar */
+.navbar-brand img {
+  display: block;
+  width: auto;
+}
+
+/* StageCraft Logo - Bigger */
+.stagecraft-logo {
+  height: 140px;         /* ⬆️ Increased from 110px */
+  width: auto;
+  display: block;
+  margin: -40px 0;       /* Slightly pulled up */
+  z-index: 10;
+  position: relative;
+}
+
+/* Nav Links */
+.navbar-nav .nav-link {
+  color: #fff !important;
+  font-weight: 500;
+  padding: 0.3rem 1rem;
+  font-size: 1rem;
+  line-height: 1;
+}
+
+.navbar-nav .nav-link:hover {
+  color: #ffdada !important;
+  text-shadow: 0 0 2px #fff;
+}
+
+/* ===== Headings & Text ===== */
+h1, h2, h3, h4 {
+  color: #fff;
+}
+.text-white {
+  color: #fff !important;
+}
+.text-light {
+  color: #ccc !important;
+}
+.border-bottom {
+  border-bottom: 2px solid #f44336 !important;
+}
+
+/* ===== Spotlight Posters ===== */
+.spotlight-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+.spotlight-poster {
+  flex: 1 1 calc(33.33% - 1rem);
+  max-width: calc(33.33% - 1rem);
+}
+.spotlight-poster img {
+  border-radius: 8px;
+  width: 100%;
+  height: 260px;
+  object-fit: cover;
+  box-shadow: 0 4px 10px rgba(255, 255, 255, 0.05);
+  transition: transform 0.3s ease;
+}
+.spotlight-poster img:hover {
+  transform: scale(1.03);
+}
+
+/* ===== Buttons ===== */
+.btn-danger {
+  background-color: #f44336;
+  border: none;
+  transition: background-color 0.2s ease;
+}
+.btn-danger:hover {
+  background-color: #c62828;
+}
+.btn-primary {
+  background-color: #1b6ec2;
+  border: none;
+}
+.btn-primary:hover {
+  background-color: #155a9c;
+}
+
+/* ===== Sponsor Logos ===== */
+.sponsors {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0.75rem;
+}
+.sponsors img {
+  height: 60px;
+  width: 100%;
+  object-fit: contain;
+  padding: 0.5rem;
+  background-color: #1c1c1c;
+  border-radius: 4px;
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+.sponsors img:hover {
+  opacity: 1;
+  transform: scale(1.05);
+}
+
+/* ===== Footer ===== */
+.footer {
+  background-color: #111;
+  color: #bbb;
+  padding: 1rem 0;
+  width: 100%;
+  text-align: center;
+  border-top: 1px solid #333;
+  flex-shrink: 0;
+}
+
+/* ===== Form Inputs ===== */
+form .form-control {
+  background-color: #1c1c1c;
+  border: 1px solid #444;
+  color: #fff !important;
+  padding: 0.4rem 0.75rem;
+  font-size: 0.95rem;
+}
+form .form-control:focus {
+  background-color: #111;
+  border-color: #f44336;
+  box-shadow: 0 0 5px rgba(244, 67, 54, 0.5);
+}
+form .form-control::placeholder {
+  color: #ccc !important;
+}
+
+/* ===== Date Picker ===== */
+input[type="date"]::-webkit-calendar-picker-indicator,
+input[type="datetime-local"]::-webkit-calendar-picker-indicator {
+  filter: invert(1);
+  cursor: pointer;
+}
+input[type="date"],
+input[type="datetime-local"] {
+  color-scheme: dark;
+}
+
+/* ===== Cards ===== */
+.card.form-card {
+  max-width: 500px;
+  margin: 1.5rem auto;
+  background-color: #000;
+  border: 2px solid #f44336;
+  padding: 1.5rem 1rem;
+}
+.prod-card {
+  position: relative;
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.prod-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(255, 255, 255, 0.1);
+}
+.overlay-buttons {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+.prod-card:hover .overlay-buttons {
+  opacity: 1;
+}
+
+/* ===== Comment Modal ===== */
+/* ===== Comment Modal ===== */
+#commentModal {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0,0,0,0.6);
+  z-index: 9999;
+  justify-content: center;
+  align-items: center;
+}
+
+.modal-content-fullscreen {
+  width: 90%;
+  max-width: 600px;
+  background-color: #fff;
+  color: #000;
+  border: 3px solid #f44336;
+  border-radius: 12px;
+  box-shadow: 0 0 30px rgba(0, 0, 0, 0.4);
+  padding: 2rem;
+  max-height: 90vh;
+  overflow-y: auto;
+  position: relative;
+  margin: 0 auto; /* Center horizontally */
+}
+
+#closeModalBtn {
+  position: absolute;
+  top: 15px;
+  right: 20px;
+  background: none;
+  border: none;
+  font-size: 36px;
+  font-weight: bold;
+  color: #f44336;
+  cursor: pointer;
+}
+#comments-scroll {
+  max-height: 600px;
+  overflow-y: auto;
+  margin-bottom: 1rem;
+}
+
+/* ===== Animation & Effects ===== */
+@keyframes fadeInRight {
+  from { opacity: 0; transform: translateX(30px); }
+  to { opacity: 1; transform: translateX(0); }
+}
+.animate__fadeInRight {
+  animation: fadeInRight 1.2s ease-out;
+}
+.glowing-text {
+  font-size: 2.2rem;
+  background: linear-gradient(90deg, #ff004f, #ffbe0b, #ff004f);
+  background-size: 200%;
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+  animation: glowPulse 3s ease-in-out infinite;
+  text-shadow: 0 0 10px rgba(255, 75, 75, 0.6);
+}
+@keyframes glowPulse {
+  0%, 100% { background-position: 0%; }
+  50% { background-position: 200%; }
+}
+.neon-flicker {
+  animation: flicker 2s infinite alternate;
+}
+@keyframes flicker {
+  0% { opacity: 1; text-shadow: 0 0 12px #ff0055, 0 0 20px #ff6600; }
+  50% { opacity: 0.8; text-shadow: 0 0 10px #ff3366, 0 0 18px #ff9900; }
+  100% { opacity: 1; text-shadow: 0 0 14px #ff0033, 0 0 22px #ffcc00; }
+}
+.tilt-box {
+  transition: transform 0.5s ease;
+  perspective: 1000px;
+}
+.tilt-box:hover {
+  transform: rotateY(6deg) rotateX(4deg) scale(1.05);
+}
+.theatre-banner {
+  margin-top: 120px;
+  padding: 50px 30px 40px 30px;
+  border-top: 4px solid #ff4b5c;
+  border-bottom: 2px solid #ffbe0b;
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.03);
+  box-shadow: 0 0 25px rgba(255, 75, 75, 0.2);
+  text-align: center;
+}
+
+/* ===== Auth Container ===== */
+.auth-container {
+  background-color: #000;
+  border: 2px solid #f44336;
+  padding: 2.5rem 2rem;
+  max-width: 600px;
+  margin: 3rem auto;
+  border-radius: 16px;
+  box-shadow: 0 0 15px rgba(255, 68, 68, 0.3);
+}
+.auth-container h2 {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #f44336;
+}
+.auth-container p {
+  font-size: 1rem;
+  color: #ccc;
+}
+.auth-container .form-control {
+  background-color: #1c1c1c;
+  border: 1px solid #444;
+  color: #fff;
+}
+.auth-container .form-control::placeholder {
+  color: #ccc;
+}
+.auth-container label {
+  color: #fff;
+}
+.auth-container button[type="submit"] {
+  background-color: #f44336;
+  border: none;
+  color: white;
+  padding: 0.6rem 1rem;
+  font-weight: 500;
+  font-size: 1rem;
+  border-radius: 6px;
+  transition: background-color 0.2s ease-in-out;
+}
+.auth-container button[type="submit"]:hover {
+  background-color: #c62828;
+}
+.auth-container a {
+  color: #f44336;
+}
+.auth-container a:hover {
+  color: #ff6b6b;
+  text-decoration: underline;
+}
+.btn {
+  font-weight: 500;
+  padding: 0.5rem 1.2rem;
+  font-size: 1rem;
+  border-radius: 6px;
+  transition: 0.2s ease-in-out;
+}
+.btn-outline-danger:hover {
+  background-color: #f44336;
+  color: white;
+}
+.btn-outline-light:hover {
+  background-color: #333;
+  color: white;
+}
+
+/* ===== Fix for Red Text in Production Details Card ===== */
+.card.bg-dark.text-white .card-title,
+.card.bg-dark.text-white .card-text {
+  color: #ffffff !important;
+}
+/* === Spotlight Cards === */
+.spotlight-card {
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+  cursor: pointer;
+  border-radius: 10px;
+}
+
+.spotlight-card:hover {
+  transform: scale(1.04);
+  box-shadow: 0 10px 25px rgba(255, 255, 255, 0.15);
+}
+
+/* Ensure images inside spotlight cards also scale smoothly */
+.spotlight-card .card-img-top {
+  transition: transform 0.3s ease;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+}
+
+/* === Sponsor Logos === */
+.sponsors img {
+  height: 60px;
+  width: 100%;
+  object-fit: contain;
+  padding: 0.5rem;
+  background-color: #1c1c1c;
+  border-radius: 6px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
+}
+
+.sponsors img:hover {
+  transform: scale(1.08);
+  box-shadow: 0 6px 20px rgba(255, 255, 255, 0.2);
+}
+
+/* === Consistent Button Hover === */
+.btn-outline-light:hover {
+  background-color: #f44336;
+  color: white;
+  border-color: #f44336;
+}===== ./wwwroot/js/comments.js =====
+document.addEventListener('DOMContentLoaded', function () {
+    let currentProductionId = null;
+
+    window.openCommentsModal = function (productionId) {
+        currentProductionId = productionId;
+        const modal = document.getElementById('commentModal');
+        const modalContent = document.getElementById('commentModalContent');
+
+        modal.style.display = 'flex';  // use flex to center the new bigger box
+        modalContent.innerHTML = `
+            <div class="text-center py-4">
+                <div class="spinner-border text-danger" role="status">
+                    <span class="visually-hidden">Loading...</span>
+                </div>
+            </div>
+        `;
+
+        fetch(`/Comments/GetCommentsPartial?productionId=${productionId}`)
+            .then(response => {
+                if (!response.ok) throw new Error('Failed to load comments');
+                return response.text();
+            })
+            .then(html => {
+                modalContent.innerHTML = html;
+                attachEventHandlers();
+            })
+            .catch(error => {
+                console.error('Error:', error);
+                modalContent.innerHTML = `
+                    <div class="alert alert-danger">
+                        Error loading comments.
+                        <button onclick="openCommentsModal(${productionId})" class="btn btn-sm btn-outline-danger">Retry</button>
+                    </div>
+                `;
+            });
+    };
+
+    function attachEventHandlers() {
+        const commentForm = document.getElementById('commentForm');
+        if (commentForm) {
+            commentForm.addEventListener('submit', handleCommentSubmit);
+        }
+
+        document.querySelectorAll('.delete-comment-form').forEach(form => {
+            form.addEventListener('submit', handleCommentDelete);
+        });
+
+        const commentsScroll = document.querySelector('#comments-scroll');
+        if (commentsScroll) {
+            commentsScroll.scrollTop = commentsScroll.scrollHeight;
+        }
+    }
+
+    function handleCommentSubmit(e) {
+        e.preventDefault();
+        const form = e.target;
+        const submitBtn = form.querySelector('button[type="submit"]');
+        const originalText = submitBtn.innerHTML;
+
+        submitBtn.disabled = true;
+        submitBtn.innerHTML = `
+            <span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>
+            Posting...
+        `;
+
+        fetch(form.action, {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/x-www-form-urlencoded',
+                'RequestVerificationToken': form.querySelector('input[name="__RequestVerificationToken"]').value
+            },
+            body: new URLSearchParams(new FormData(form))
+        })
+        .then(response => {
+            if (!response.ok) throw new Error('Failed to post comment');
+            return response.text();
+        })
+        .then(() => {
+            openCommentsModal(currentProductionId);
+            form.reset();
+        })
+        .catch(error => {
+            console.error('Error:', error);
+            alert('Failed to post comment. Please try again.');
+        })
+        .finally(() => {
+            submitBtn.disabled = false;
+            submitBtn.innerHTML = originalText;
+        });
+    }
+
+    function handleCommentDelete(e) {
+        e.preventDefault();
+        const form = e.target;
+        const submitBtn = form.querySelector('button[type="submit"]');
+        const originalText = submitBtn.innerHTML;
+
+        submitBtn.disabled = true;
+        submitBtn.innerHTML = `
+            <span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>
+            Deleting...
+        `;
+
+        fetch(form.action, {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/x-www-form-urlencoded',
+                'RequestVerificationToken': form.querySelector('input[name="__RequestVerificationToken"]').value
+            },
+            body: new URLSearchParams(new FormData(form))
+        })
+        .then(response => {
+            if (!response.ok) throw new Error('Failed to delete comment');
+            return response.text();
+        })
+        .then(() => {
+            openCommentsModal(currentProductionId);
+        })
+        .catch(error => {
+            console.error('Error:', error);
+            alert('Failed to delete comment. Please try again.');
+        })
+        .finally(() => {
+            submitBtn.disabled = false;
+            submitBtn.innerHTML = originalText;
+        });
+    }
+
+    // Close modal handlers
+    document.getElementById('closeModalBtn')?.addEventListener('click', () => {
+        document.getElementById('commentModal').style.display = 'none';
+    });
+
+    document.getElementById('commentModal').addEventListener('click', (event) => {
+        if (event.target.id === 'commentModal') {
+            document.getElementById('commentModal').style.display = 'none';
+        }
+    });
+
+    document.addEventListener('keydown', (event) => {
+        if (event.key === 'Escape') {
+            document.getElementById('commentModal').style.display = 'none';
+        }
+    });
+});
+===== ./wwwroot/js/site.js =====
+﻿// Please see documentation at https://learn.microsoft.com/aspnet/core/client-side/bundling-and-minification
+// for details on configuring this project to bundle and minify static web assets.
+
+// Write your JavaScript code.
+===== ./appsettings.json =====
+{
+  "Logging": {
+    "LogLevel": {
+      "Default": "Information",
+      "Microsoft.AspNetCore": "Warning"
+    }
+  },
+  "AllowedHosts": "*",
+  "ConnectionStrings": {
+    "DefaultConnection": "server=localhost;database=StageCraftDB;user=stagecraft;password=stagepass;"
+  }
+}
+===== ./Models/ProductionManager.cs =====
+using Microsoft.AspNetCore.Identity;
+
+namespace StageCraft.Models
+{
+    public class ProductionManager : ApplicationUser
+    {
+        // You can add Production Manager-specific fields here if needed.
+        // Example:
+        // public string Department { get; set; }
+    }
+}===== ./Models/ErrorViewModel.cs =====
+namespace StageCraft.Models;
+
+public class ErrorViewModel
+{
+    public string? RequestId { get; set; }
+
+    public bool ShowRequestId => !string.IsNullOrEmpty(RequestId);
+}
+===== ./Models/Comment.cs =====
+using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
+
+namespace StageCraft.Models
+{
+    public class Comment
+    {
+        public int Id { get; set; }
+
+        [Required(ErrorMessage = "Comment text is required.")]
+        [StringLength(1000, ErrorMessage = "Comment cannot exceed 1000 characters.")]
+        public string Text { get; set; } = string.Empty;
+
+        public DateTime CreatedAt { get; set; } = DateTime.UtcNow;  // Use UTC for consistency
+
+        public DateTime? UpdatedAt { get; set; }  // Nullable if edits are optional
+
+        // Production Foreign Key
+        [Required]
+        public int ProductionId { get; set; }
+
+        [ForeignKey("ProductionId")]
+        public Production Production { get; set; } = null!;  // Avoid nullable warnings
+
+        // User Foreign Key
+        [Required]
+        public string UserId { get; set; } = string.Empty;
+
+        [ForeignKey("UserId")]
+        public ApplicationUser User { get; set; } = null!;  // Avoid nullable warnings
+
+        //  Store username directly at creation to avoid navigation issues later
+        [Required]
+        [StringLength(100, ErrorMessage = "Username cannot exceed 100 characters.")]
+        public string Username { get; set; } = string.Empty;
+    }
+}
+===== ./Models/Production.cs =====
+namespace StageCraft.Models
+{
+    public class Production
+    {
+        public int Id { get; set; }
+        public string Title { get; set; } = string.Empty;
+        public string Description { get; set; } = string.Empty;
+        public string Playwright { get; set; } = string.Empty;
+        public int Runtime { get; set; }
+        public DateTime OpeningDay { get; set; }
+        public DateTime ClosingDay { get; set; }
+        public DateTime ShowTimeEve { get; set; }
+        public int Season { get; set; }
+        public bool IsWorldPremiere { get; set; }
+        public string TicketLink { get; set; } = string.Empty;
+        public string PosterImagePath { get; set; } = string.Empty;
+        public List<Comment> Comments { get; set; } = new List<Comment>();
+    }
+}
+===== ./Models/ActivityLog.cs =====
+namespace StageCraft.Models
+{
+    public class ActivityLog
+    {
+        public int Id { get; set; }
+        public string UserId { get; set; }
+        public string Action { get; set; }
+        public DateTime Timestamp { get; set; }
+    }
+}
+===== ./Models/ApplicationUser.cs =====
+using Microsoft.AspNetCore.Identity;
+
+namespace StageCraft.Models
+{
+    public class ApplicationUser : IdentityUser
+    {
+        public string FullName { get; set; } = string.Empty;  // Store user's full name
+        public DateTime? LastLoginTime { get; set; }
+
+    }
+}
+===== ./Models/LoginStatistic.cs =====
+namespace StageCraft.Models
+{
+    public class LoginStatistic
+    {
+        public int Id { get; set; }
+
+        public DateTime Date { get; set; }  // Date of the login
+
+        public int LoginCount { get; set; }  // Number of logins on that day
+    }
+}
+===== ./Properties/launchSettings.json =====
+﻿{
+  "$schema": "https://json.schemastore.org/launchsettings.json",
+  "profiles": {
+    "http": {
+      "commandName": "Project",
+      "dotnetRunMessages": true,
+      "launchBrowser": true,
+      "applicationUrl": "http://localhost:5234",
+      "environmentVariables": {
+        "ASPNETCORE_ENVIRONMENT": "Development"
+      }
+    },
+    "https": {
+      "commandName": "Project",
+      "dotnetRunMessages": true,
+      "launchBrowser": true,
+      "applicationUrl": "https://localhost:7002;http://localhost:5234",
+      "environmentVariables": {
+        "ASPNETCORE_ENVIRONMENT": "Development"
+      }
+    }
+  }
+}
+===== ./appsettings.Development.json =====
+{
+  "Logging": {
+    "LogLevel": {
+      "Default": "Information",
+      "Microsoft.AspNetCore": "Warning"
+    }
+  }
+}
+===== ./Controllers/AccountController.cs =====
+using Microsoft.AspNetCore.Identity;
+using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
+using StageCraft.Data;
+using StageCraft.Models;
+using StageCraft.ViewModels;
+
+namespace StageCraft.Controllers
+{
+    public class AccountController : Controller
+    {
+        private readonly SignInManager<ApplicationUser> _signInManager;
+        private readonly UserManager<ApplicationUser> _userManager;
+        private readonly AppDbContext _context;
+
+        public AccountController(SignInManager<ApplicationUser> signInManager, UserManager<ApplicationUser> userManager, AppDbContext context)
+        {
+            _signInManager = signInManager;
+            _userManager = userManager;
+            _context = context;
+        }
+
+        // GET: /Account/Login
+        [HttpGet]
+        public IActionResult Login()
+        {
+            return View();
+        }
+
+        // POST: /Account/Login
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> Login(LoginViewModel model)
+        {
+            if (!ModelState.IsValid)
+                return View(model);
+
+            var user = await _userManager.FindByEmailAsync(model.Email);
+            if (user != null)
+            {
+                var result = await _signInManager.PasswordSignInAsync(user, model.Password, model.RememberMe, lockoutOnFailure: false);
+                if (result.Succeeded)
+                {
+                    _context.ActivityLogs.Add(new ActivityLog
+                    {
+                        UserId = user.Id,
+                        Action = "Login",
+                        Timestamp = DateTime.UtcNow
+                    });
+
+                    var today = DateTime.UtcNow.Date;
+                    var stat = await _context.LoginStatistics.FirstOrDefaultAsync(s => s.Date == today);
+                    if (stat == null)
+                    {
+                        stat = new LoginStatistic { Date = today, LoginCount = 1 };
+                        _context.LoginStatistics.Add(stat);
+                    }
+                    else
+                    {
+                        stat.LoginCount++;
+                        _context.LoginStatistics.Update(stat);
+                    }
+
+                    await _context.SaveChangesAsync();
+
+                    var roles = await _userManager.GetRolesAsync(user);
+                    if (roles.Contains("Admin"))
+                        return RedirectToAction("AdminPanel", "Admin");
+                    else if (roles.Contains("ProductionManager"))
+                        return RedirectToAction("Index", "Productions");
+                    else
+                        return RedirectToAction("Index", "Home");
+                }
+            }
+
+            ModelState.AddModelError("", "Invalid login attempt.");
+            return View(model);
+        }
+
+        // GET: /Account/Register
+        [HttpGet]
+        public IActionResult Register()
+        {
+            return View();
+        }
+
+        // POST: /Account/Register
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> Register(RegisterViewModel model)
+        {
+            if (!ModelState.IsValid)
+                return View(model);
+
+            var user = new ApplicationUser
+            {
+                FullName = model.FullName,
+                UserName = model.UserName,
+                Email = model.Email
+            };
+
+            var result = await _userManager.CreateAsync(user, model.Password);
+
+            if (result.Succeeded)
+            {
+                await _userManager.AddToRoleAsync(user, "User");
+
+                _context.ActivityLogs.Add(new ActivityLog
+                {
+                    UserId = user.Id,
+                    Action = "Register",
+                    Timestamp = DateTime.UtcNow
+                });
+
+                await _context.SaveChangesAsync();
+
+                // ✅ Set success message and redirect to login (do NOT sign in)
+                TempData["SuccessMessage"] = "Registration successful! Please log in.";
+                return RedirectToAction("Login", "Account");
+            }
+
+            foreach (var error in result.Errors)
+            {
+                ModelState.AddModelError("", error.Description);
+            }
+
+            return View(model);
+        }
+
+        // POST: /Account/Logout
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> Logout()
+        {
+            var user = await _userManager.GetUserAsync(User);
+            if (user != null)
+            {
+                _context.ActivityLogs.Add(new ActivityLog
+                {
+                    UserId = user.Id,
+                    Action = "Logout",
+                    Timestamp = DateTime.UtcNow
+                });
+
+                await _context.SaveChangesAsync();
+            }
+
+            await _signInManager.SignOutAsync();
+            return RedirectToAction("Login", "Account");
+        }
+
+        // GET: /Account/AccessDenied
+        [HttpGet]
+        public IActionResult AccessDenied()
+        {
+            return View();
+        }
+    }
+}
+===== ./Controllers/ProductionsController.cs =====
+using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
+using StageCraft.Data;
+using StageCraft.Models;
+using X.PagedList;
+
+namespace StageCraft.Controllers
+{
+    public class ProductionsController : Controller
+    {
+        private readonly AppDbContext _context;
+        private readonly IWebHostEnvironment _environment;
+        private const int PageSize = 9;
+
+        public ProductionsController(AppDbContext context, IWebHostEnvironment environment)
+        {
+            _context = context;
+            _environment = environment;
+        }
+
+        [AllowAnonymous]
+        public async Task<IActionResult> Index(string searchString, int? page)
+        {
+            ViewBag.CurrentFilter = searchString;
+
+            var productions = _context.Productions.AsQueryable();
+
+            if (!string.IsNullOrEmpty(searchString))
+            {
+                productions = productions.Where(p => p.Title.Contains(searchString));
+            }
+
+            productions = productions.OrderByDescending(p => p.OpeningDay);
+
+            int pageNumber = page ?? 1;
+            var pagedProductions = await productions.ToPagedListAsync(pageNumber, PageSize);
+
+            return View(pagedProductions);
+        }
+
+        [AllowAnonymous]
+        public async Task<IActionResult> Details(int id, string? from)
+        {
+            var production = await _context.Productions.FindAsync(id);
+            if (production == null)
+            {
+                return NotFound();
+            }
+
+            // Load related comments
+            var comments = await _context.Comments
+                .Include(c => c.User)
+                .Where(c => c.ProductionId == id)
+                .OrderByDescending(c => c.CreatedAt)
+                .ToListAsync();
+
+            ViewBag.Comments = comments;
+            ViewBag.From = from ?? "productions"; // Default to productions if not passed
+
+            return View(production);
+        }
+
+        [Authorize(Roles = "Admin,ProductionManager")]
+        public IActionResult Create()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        [Authorize(Roles = "Admin,ProductionManager")]
+        public async Task<IActionResult> Create(Production production, IFormFile? posterFile)
+        {
+            if (!ModelState.IsValid)
+                return View(production);
+
+            if (posterFile != null && posterFile.Length > 0)
+            {
+                string uploadsFolder = Path.Combine(_environment.WebRootPath, "images");
+                string fileName = Guid.NewGuid().ToString() + Path.GetExtension(posterFile.FileName);
+                string filePath = Path.Combine(uploadsFolder, fileName);
+
+                using (var stream = new FileStream(filePath, FileMode.Create))
+                {
+                    await posterFile.CopyToAsync(stream);
+                }
+
+                production.PosterImagePath = "/images/" + fileName;
+            }
+
+            _context.Add(production);
+            await _context.SaveChangesAsync();
+            return RedirectToAction(nameof(Index));
+        }
+
+        [Authorize(Roles = "Admin,ProductionManager")]
+        public async Task<IActionResult> Edit(int id)
+        {
+            var production = await _context.Productions.FindAsync(id);
+            if (production == null)
+                return NotFound();
+
+            return View(production);
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        [Authorize(Roles = "Admin,ProductionManager")]
+        public async Task<IActionResult> Edit(int id, Production updated, IFormFile? posterFile)
+        {
+            if (id != updated.Id)
+                return NotFound();
+
+            var existing = await _context.Productions.FindAsync(id);
+            if (existing == null)
+                return NotFound();
+
+            if (!ModelState.IsValid)
+                return View(updated);
+
+            existing.Title = updated.Title;
+            existing.Description = updated.Description;
+            existing.Playwright = updated.Playwright;
+            existing.Runtime = updated.Runtime;
+            existing.OpeningDay = updated.OpeningDay;
+            existing.ClosingDay = updated.ClosingDay;
+            existing.ShowTimeEve = updated.ShowTimeEve;
+            existing.Season = updated.Season;
+            existing.IsWorldPremiere = updated.IsWorldPremiere;
+            existing.TicketLink = updated.TicketLink;
+
+            if (posterFile != null && posterFile.Length > 0)
+            {
+                string uploadsFolder = Path.Combine(_environment.WebRootPath, "images");
+                string fileName = Guid.NewGuid().ToString() + Path.GetExtension(posterFile.FileName);
+                string filePath = Path.Combine(uploadsFolder, fileName);
+
+                using (var stream = new FileStream(filePath, FileMode.Create))
+                {
+                    await posterFile.CopyToAsync(stream);
+                }
+
+                existing.PosterImagePath = "/images/" + fileName;
+            }
+
+            _context.Update(existing);
+            await _context.SaveChangesAsync();
+            return RedirectToAction(nameof(Index));
+        }
+
+        [Authorize(Roles = "Admin,ProductionManager")]
+        public async Task<IActionResult> Delete(int id)
+        {
+            var production = await _context.Productions.FindAsync(id);
+            if (production == null)
+                return NotFound();
+
+            return View(production);
+        }
+
+        [HttpPost, ActionName("Delete")]
+        [ValidateAntiForgeryToken]
+        [Authorize(Roles = "Admin,ProductionManager")]
+        public async Task<IActionResult> DeleteConfirmed(int id)
+        {
+            var production = await _context.Productions.FindAsync(id);
+            if (production != null)
+            {
+                _context.Productions.Remove(production);
+                await _context.SaveChangesAsync();
+            }
+            return RedirectToAction(nameof(Index));
+        }
+    }
+}
+===== ./Controllers/CommentsController.cs =====
+using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Identity;
+using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
+using StageCraft.Data;
+using StageCraft.Models;
+
+namespace StageCraft.Controllers
+{
+    [Authorize]
+    public class CommentsController : Controller
+    {
+        private readonly AppDbContext _context;
+        private readonly UserManager<ApplicationUser> _userManager;
+
+        public CommentsController(AppDbContext context, UserManager<ApplicationUser> userManager)
+        {
+            _context = context;
+            _userManager = userManager;
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> Create(int productionId, string text)
+        {
+            if (string.IsNullOrWhiteSpace(text))
+                return BadRequest("Comment text cannot be empty.");
+
+            var user = await _userManager.GetUserAsync(User);
+            if (user == null)
+                return Unauthorized();
+
+            var comment = new Comment
+            {
+                Text = text,
+                ProductionId = productionId,
+                UserId = user.Id,
+                Username = user.UserName,
+                CreatedAt = DateTime.UtcNow
+            };
+
+            _context.Comments.Add(comment);
+            await _context.SaveChangesAsync();
+
+            return await RenderCommentsPartial(productionId);
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> Delete(int id)
+        {
+            var comment = await _context.Comments.FindAsync(id);
+            if (comment == null)
+                return NotFound();
+
+            var userId = _userManager.GetUserId(User);
+            var isAdmin = User.IsInRole("Admin");
+            var isManager = User.IsInRole("ProductionManager");
+
+            if (comment.UserId != userId && !isAdmin && !isManager)
+                return Forbid();
+
+            int productionId = comment.ProductionId;
+
+            _context.Comments.Remove(comment);
+            await _context.SaveChangesAsync();
+
+            return await RenderCommentsPartial(productionId);
+        }
+
+        [AllowAnonymous]
+        [HttpGet]
+        public async Task<IActionResult> GetCommentsPartial(int productionId)
+        {
+            return await RenderCommentsPartial(productionId);
+        }
+
+        private async Task<IActionResult> RenderCommentsPartial(int productionId)
+        {
+            var comments = await _context.Comments
+                .AsNoTracking()
+                .Where(c => c.ProductionId == productionId)
+                .OrderByDescending(c => c.CreatedAt)
+                .ToListAsync();
+
+            var user = await _userManager.GetUserAsync(User);
+            ViewBag.CurrentUsername = user?.UserName;
+
+            ViewBag.ProductionId = productionId;
+            return PartialView("~/Views/Shared/_CommentModalPartial.cshtml", comments);
+        }
+    }
+}
+===== ./Controllers/HomeController.cs =====
+using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
+using StageCraft.Data;
+
+namespace StageCraft.Controllers
+{
+    [Authorize] //  Require login for all actions in HomeController
+    public class HomeController : Controller
+    {
+        private readonly AppDbContext _context;
+
+        public HomeController(AppDbContext context)
+        {
+            _context = context;
+        }
+
+        public async Task<IActionResult> Index()
+        {
+            var spotlightProductions = await _context.Productions
+                .OrderByDescending(p => p.OpeningDay)
+                .Take(9)
+                .ToListAsync();
+
+            return View(spotlightProductions);
+        }
+
+        public IActionResult Privacy()
+        {
+            return View();
+        }
+    }
+}
+===== ./Controllers/AdminController.cs =====
+using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Identity;
+using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
+using StageCraft.Data;
+using StageCraft.Models;
+using StageCraft.ViewModels;
+
+namespace StageCraft.Controllers
+{
+    [Authorize(Roles = "Admin")]
+    public class AdminController : Controller
+    {
+        private readonly UserManager<ApplicationUser> _userManager;
+        private readonly AppDbContext _context;
+        private readonly ILogger<AdminController> _logger;
+
+        public AdminController(UserManager<ApplicationUser> userManager, AppDbContext context, ILogger<AdminController> logger)
+        {
+            _userManager = userManager;
+            _context = context;
+            _logger = logger;
+        }
+
+        [HttpGet]
+        public IActionResult AdminPanel()
+        {
+            ViewBag.SuccessMessage = TempData["Success"];
+            ViewBag.ErrorMessage = TempData["Error"];
+            return View();
+        }
+
+        [HttpGet]
+        public IActionResult CreateProductionManager()
+        {
+            return View(new CreateProductionManagerViewModel());
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> CreateProductionManager(CreateProductionManagerViewModel model)
+        {
+            if (!ModelState.IsValid)
+            {
+                TempData["Error"] = "Please correct the form errors.";
+                return View(model);
+            }
+
+            var newManager = new ProductionManager
+            {
+                UserName = model.Email,
+                Email = model.Email
+            };
+
+            var result = await _userManager.CreateAsync(newManager, model.Password);
+            if (result.Succeeded)
+            {
+                await _userManager.AddToRoleAsync(newManager, "ProductionManager");
+                _context.ActivityLogs.Add(new ActivityLog
+                {
+                    UserId = newManager.Id,
+                    Action = "Created Production Manager",
+                    Timestamp = DateTime.UtcNow
+                });
+                await _context.SaveChangesAsync();
+
+                _logger.LogInformation($"Production Manager {model.Email} created.");
+                return RedirectToAction(nameof(CreateProductionManagerSuccess));
+            }
+            else
+            {
+                var errorMessages = string.Join("; ", result.Errors.Select(e => e.Description));
+                TempData["Error"] = $"Failed to create Production Manager: {errorMessages}";
+                _logger.LogWarning($"Failed to create Production Manager {model.Email}: {errorMessages}");
+                return View(model);
+            }
+        }
+
+        [HttpGet]
+        public IActionResult CreateProductionManagerSuccess()
+        {
+            return View();
+        }
+
+        [HttpGet]
+        public async Task<IActionResult> UsersList()
+        {
+            var users = await _userManager.Users.ToListAsync();
+            return View(users);
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> DeleteUser(string id)
+        {
+            var user = await _userManager.FindByIdAsync(id);
+            if (user != null)
+            {
+                var result = await _userManager.DeleteAsync(user);
+                if (result.Succeeded)
+                {
+                    _context.ActivityLogs.Add(new ActivityLog
+                    {
+                        UserId = user.Id,
+                        Action = "Deleted User",
+                        Timestamp = DateTime.UtcNow
+                    });
+                    await _context.SaveChangesAsync();
+
+                    TempData["Success"] = "✅ User deleted successfully.";
+                    _logger.LogInformation($"User {user.Email} deleted.");
+                }
+                else
+                {
+                    var errorMessages = string.Join("; ", result.Errors.Select(e => e.Description));
+                    TempData["Error"] = $"Failed to delete user: {errorMessages}";
+                    _logger.LogWarning($"Failed to delete user {user.Email}: {errorMessages}");
+                }
+            }
+            else
+            {
+                TempData["Error"] = "User not found.";
+                _logger.LogWarning($"DeleteUser: User with ID {id} not found.");
+            }
+
+            return RedirectToAction(nameof(UsersList));
+        }
+
+        [HttpGet]
+        public async Task<IActionResult> ProductionManagersList()
+        {
+            var managers = await _userManager.GetUsersInRoleAsync("ProductionManager");
+            return View(managers);
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> DeleteProductionManager(string id)
+        {
+            var manager = await _userManager.FindByIdAsync(id);
+            if (manager != null)
+            {
+                var result = await _userManager.DeleteAsync(manager);
+                if (result.Succeeded)
+                {
+                    _context.ActivityLogs.Add(new ActivityLog
+                    {
+                        UserId = manager.Id,
+                        Action = "Deleted Production Manager",
+                        Timestamp = DateTime.UtcNow
+                    });
+                    await _context.SaveChangesAsync();
+
+                    TempData["Success"] = "✅ Production Manager deleted successfully.";
+                    _logger.LogInformation($"Production Manager {manager.Email} deleted.");
+                }
+                else
+                {
+                    var errorMessages = string.Join("; ", result.Errors.Select(e => e.Description));
+                    TempData["Error"] = $"Failed to delete Production Manager: {errorMessages}";
+                    _logger.LogWarning($"Failed to delete Production Manager {manager.Email}: {errorMessages}");
+                }
+            }
+            else
+            {
+                TempData["Error"] = "Production Manager not found.";
+                _logger.LogWarning($"DeleteProductionManager: Manager with ID {id} not found.");
+            }
+
+            return RedirectToAction(nameof(ProductionManagersList));
+        }
+
+        [HttpGet]
+        public async Task<IActionResult> RecentActivityLogs()
+        {
+            var recentLogs = await _context.ActivityLogs
+                .OrderByDescending(l => l.Timestamp)
+                .Take(50)
+                .Join(_userManager.Users,
+                    log => log.UserId,
+                    user => user.Id,
+                    (log, user) => new ActivityLogViewModel
+                    {
+                        UserId = log.UserId,
+                        UserName = user.UserName,
+                        UserEmail = user.Email,
+                        Action = log.Action,
+                        Timestamp = log.Timestamp
+                    })
+                .ToListAsync();
+
+            return View(recentLogs);
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> ClearLogs()
+        {
+            var allLogs = _context.ActivityLogs;
+            _context.ActivityLogs.RemoveRange(allLogs);
+            await _context.SaveChangesAsync();
+
+            TempData["Success"] = "✅ All activity logs have been cleared.";
+            return RedirectToAction(nameof(RecentActivityLogs));
+        }
+
+
+        [HttpGet]
+        public async Task<IActionResult> LoginStatistics()
+        {
+            var totalAdmins = await _userManager.GetUsersInRoleAsync("Admin");
+            var totalManagers = await _userManager.GetUsersInRoleAsync("ProductionManager");
+            var totalUsers = await _userManager.GetUsersInRoleAsync("User");
+
+            var model = new LoginStatisticsViewModel
+            {
+                TotalAdmins = totalAdmins.Count,
+                TotalManagers = totalManagers.Count,
+                TotalUsers = totalUsers.Count,
+                RoleNames = new List<string> { "Admins", "Production Managers", "Users" },
+                RoleCounts = new List<int> { totalAdmins.Count, totalManagers.Count, totalUsers.Count }
+            };
+
+            return View(model);
+        }
+    }
+}
+===== ./Data/AppDbContext.cs =====
+using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore;
+using StageCraft.Models;
+
+namespace StageCraft.Data
+{
+    public class AppDbContext : IdentityDbContext<ApplicationUser>
+    {
+        public AppDbContext(DbContextOptions<AppDbContext> options)
+            : base(options)
+        {
+        }
+
+        public DbSet<Production> Productions { get; set; } = null!;
+        public DbSet<Comment> Comments { get; set; } = null!;
+        public DbSet<ActivityLog> ActivityLogs { get; set; } = null!;
+        public DbSet<LoginStatistic> LoginStatistics { get; set; } = null!;
+    }
+}
+===== ./Views/Home/Privacy.cshtml =====
+﻿@{
+    ViewData["Title"] = "Privacy Policy";
+}
+<h1>@ViewData["Title"]</h1>
+
+<p>Use this page to detail your site's privacy policy.</p>
+===== ./Views/Home/Index.cshtml =====
+﻿@model List<StageCraft.Models.Production>
+
+@{
+    ViewData["Title"] = "Home";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="container mt-4">
+    <div class="row">
+        <!-- LEFT COLUMN: Spotlight Posters -->
+        <div class="col-md-8">
+            <h3 class="text-white border-bottom pb-2">🎭 Spotlight</h3>
+
+            <div class="row row-cols-1 row-cols-md-3 g-4">
+                @foreach (var prod in Model.Take(9))
+                {
+                    <div class="col">
+                        <div class="card bg-dark text-white border-0 shadow-sm h-100 spotlight-card">
+                            <a asp-controller="Productions" asp-action="Details" asp-route-id="@prod.Id" asp-route-from="spotlight" class="text-decoration-none">
+                                @if (!string.IsNullOrEmpty(prod.PosterImagePath))
+                                {
+                                    <img src="@prod.PosterImagePath" class="card-img-top img-fluid rounded" alt="Poster for @prod.Title" style="height: 300px; object-fit: cover;" />
+                                }
+                                else
+                                {
+                                    <div class="card-img-top d-flex align-items-center justify-content-center bg-secondary" style="height: 300px;">
+                                        <span class="text-white">No Poster</span>
+                                    </div>
+                                }
+
+                                <div class="card-body text-center">
+                                    <h6 class="card-title text-white mb-2">
+                                        @prod.Title
+                                    </h6>
+                                    <small class="text-light d-block mb-1">
+                                        <strong>Opens:</strong> @prod.OpeningDay.ToShortDateString()<br />
+                                        <strong>Closes:</strong> @prod.ClosingDay.ToShortDateString()<br />
+                                        <strong>Runtime:</strong> @prod.Runtime mins
+                                    </small>
+
+                                    <div class="mt-2">
+                                        <button type="button" class="btn btn-outline-light btn-sm" onclick="event.preventDefault(); event.stopPropagation(); openCommentsModal(@prod.Id);">
+                                            💬 See Comments
+                                        </button>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                }
+            </div>
+        </div>
+
+
+        <!-- RIGHT COLUMN: Animated Theatre + Sponsors -->
+        <div class="col-md-4 d-flex flex-column gap-4 animate__animated animate__fadeInRight">
+            <!-- 🎭 Animated Theatre Banner -->
+            <div class="mt-5 pt-3 theatre-banner tilt-box neon-flicker text-center p-4">
+                <h2 class="display-6 fw-bold glowing-text">
+                    🎭 Love the <span class="highlight-red">Stage</span><br />
+                    ❤️ Embrace the <span class="highlight-gold">Drama</span>
+                </h2>
+                <p class="fst-italic text-light mt-2">Where every act is a story</p>
+            </div>
+
+            <!-- 🎟 Sponsors -->
+            <div>
+                <h5 class="text-white border-bottom pb-2"><i class="bi bi-ticket-fill text-warning"></i> Sponsors</h5>
+                <div class="row row-cols-3 g-3 text-center">
+                    @{
+                        var sponsors = new[] {
+                            "sponsor1.png", "sponsor2.png", "sponsor3.jpg", "sponsor4.jpg", "sponsor5.jpg",
+                            "sponsor6.png", "sponsor1.jpg", "sponsor8.png", "sponsor9.png", "sponsor10.jpg",
+                            "sponsor11.png", "sponsor12.jpg", "sponsor16.jpg", "sponsor17.jpg", "sponsor15.jpg"
+                        };
+                        foreach (var sponsor in sponsors)
+                        {
+                            <div class="col">
+                                <img src="/images/@sponsor" alt="Sponsor" class="img-fluid rounded shadow-sm" />
+                            </div>
+                        }
+                    }
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    <script src="~/js/comments.js"></script>
+}
+===== ./Views/_ViewImports.cshtml =====
+﻿@using StageCraft
+@using StageCraft.Models
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+===== ./Views/Admin/CreateProductionManager.cshtml =====
+@model StageCraft.ViewModels.CreateProductionManagerViewModel
+
+@{
+    ViewData["Title"] = "Create Production Manager";
+}
+
+<div class="container mt-5">
+    <div class="row justify-content-center">
+        <div class="col-md-6">
+            <div class="card bg-dark text-white shadow-lg p-4" style="border-radius: 20px;">
+                <div class="card-header bg-dark text-center mb-3 border-0">
+                    <h4 class="text-danger mb-0">Create a Production Manager 🎬</h4>
+                </div>
+                <div class="card-body">
+                    <p class="text-center text-light mb-4 fst-italic">
+                        Assign a new manager to help oversee theatre productions.
+                    </p>
+
+                    <form asp-action="CreateProductionManager" method="post">
+                        <div asp-validation-summary="ModelOnly" class="alert alert-danger text-center"></div>
+
+                        <div class="mb-4">
+                            <label asp-for="Email" class="form-label">Email</label>
+                            <input asp-for="Email" class="form-control rounded-pill px-3" placeholder="manager@example.com" />
+                            <span asp-validation-for="Email" class="text-danger small"></span>
+                        </div>
+
+                        <div class="mb-4">
+                            <label asp-for="Password" class="form-label">Password</label>
+                            <input asp-for="Password" type="password" class="form-control rounded-pill px-3" placeholder="Set a password" />
+                            <span asp-validation-for="Password" class="text-danger small"></span>
+                        </div>
+
+                        <button type="submit" class="btn btn-danger btn-lg w-100 rounded-pill mb-3">
+                            ➕ Create Manager
+                        </button>
+                    </form>
+
+                    <div class="text-center">
+                        <a asp-action="AdminPanel" class="btn btn-outline-light rounded-pill px-4 py-2">
+                            ⬅️ Back to Admin Panel
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
+===== ./Views/Admin/UsersList.cshtml =====
+@model IEnumerable<StageCraft.Models.ApplicationUser>
+
+<div class="container mt-5">
+    <h3 class="text-danger text-center mb-4">👥 All Users</h3>
+
+    @if (TempData["Success"] != null)
+    {
+        <div class="alert alert-success alert-dismissible fade show text-center" role="alert">
+            @TempData["Success"]
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        </div>
+    }
+    @if (TempData["Error"] != null)
+    {
+        <div class="alert alert-danger alert-dismissible fade show text-center" role="alert">
+            @TempData["Error"]
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        </div>
+    }
+
+    <div class="table-responsive">
+        <table class="table table-dark table-striped align-middle">
+            <thead>
+                <tr>
+                    <th>Email</th>
+                    <th>Username</th>
+                    <th class="text-center">Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var user in Model)
+                {
+                    <tr>
+                        <td>@user.Email</td>
+                        <td>@user.UserName</td>
+                        <td class="text-center">
+                            <form asp-action="DeleteUser" method="post" class="d-inline">
+                                <input type="hidden" name="id" value="@user.Id" />
+                                <button type="submit" class="btn btn-sm btn-danger" 
+                                        onclick="return confirm('Are you sure you want to delete this user?');">
+                                    🗑 Delete
+                                </button>
+                            </form>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+
+    <div class="text-center mt-4">
+        <a asp-action="AdminPanel" class="btn btn-secondary">
+            ⬅️ Back to Admin Panel
+        </a>
+    </div>
+</div>
+===== ./Views/Admin/AdminPanel.cshtml =====
+@{
+    ViewData["Title"] = "Admin Panel";
+}
+
+<div class="container mt-5">
+    <!-- Show TempData messages -->
+    @if (TempData["Success"] != null)
+    {
+        <div class="alert alert-success text-center">@TempData["Success"]</div>
+    }
+    @if (TempData["Error"] != null)
+    {
+        <div class="alert alert-danger text-center">@TempData["Error"]</div>
+    }
+
+    <div class="row justify-content-center">
+        <div class="col-md-8 mb-4">
+            <div class="card bg-dark text-white shadow-lg p-4" style="border-radius: 20px;">
+                <div class="card-header bg-dark text-center mb-3 border-0">
+                    <h4 class="text-danger mb-0">Manage Section ⚙️</h4>
+                </div>
+                <div class="card-body d-grid gap-3">
+                    <a asp-action="CreateProductionManager" class="btn btn-danger btn-lg rounded-pill">➕ Create Production Manager</a>
+                    <a asp-action="UsersList" class="btn btn-danger btn-lg rounded-pill">👥 All Users</a>
+                    <a asp-action="ProductionManagersList" class="btn btn-danger btn-lg rounded-pill">🎭 All Production Managers</a>
+                    <a asp-action="RecentActivityLogs" class="btn btn-danger btn-lg rounded-pill">🕒 Recent Activity Logs</a>
+                    <a asp-action="LoginStatistics" class="btn btn-danger btn-lg rounded-pill">📊 Login Statistics</a>
+                    <a asp-controller="Productions" asp-action="Index" class="btn btn-danger btn-lg rounded-pill">🎬 Manage Productions</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+===== ./Views/Admin/RecentActivityLogs.cshtml =====
+@model IEnumerable<StageCraft.ViewModels.ActivityLogViewModel>
+
+@{
+    ViewData["Title"] = "Recent Activity Logs";
+}
+
+<div class="container mt-5">
+    <h3 class="text-danger text-center mb-4">🕒 Recent Activity Logs</h3>
+
+    @if (TempData["Success"] != null)
+    {
+        <div class="alert alert-success alert-dismissible fade show text-center" role="alert">
+            @TempData["Success"]
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        </div>
+    }
+
+    @if (TempData["Error"] != null)
+    {
+        <div class="alert alert-danger alert-dismissible fade show text-center" role="alert">
+            @TempData["Error"]
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        </div>
+    }
+
+    <div class="table-responsive">
+        <table class="table table-dark table-striped align-middle">
+            <thead>
+                <tr>
+                    <th>User ID</th>
+                    <th>User Name</th>
+                    <th>User Email</th>
+                    <th>Action</th>
+                    <th>Timestamp (UTC)</th>
+                </tr>
+            </thead>
+            <tbody>
+                @if (Model.Any())
+                {
+                    foreach (var log in Model)
+                    {
+                        <tr>
+                            <td>@log.UserId</td>
+                            <td>@log.UserName</td>
+                            <td>@log.UserEmail</td>
+                            <td>@log.Action</td>
+                            <td>@log.Timestamp.ToString("yyyy-MM-dd HH:mm:ss")</td>
+                        </tr>
+                    }
+                }
+                else
+                {
+                    <tr>
+                        <td colspan="5" class="text-center text-warning">No recent activity logs found.</td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+
+    <div class="d-flex justify-content-between mt-4">
+        <a asp-action="AdminPanel" class="btn btn-secondary">
+            ⬅️ Back to Admin Panel
+        </a>
+        <form asp-action="ClearLogs" method="post" class="d-inline">
+            @Html.AntiForgeryToken()
+            <button type="submit" class="btn btn-danger">
+                🗑️ Clear Logs
+            </button>
+        </form>
+    </div>
+</div>
+===== ./Views/Admin/CreateProductionManagerSuccess.cshtml =====
+@{
+    ViewData["Title"] = "Success";
+}
+
+<div class="container my-5">
+    <div class="card bg-dark text-white border border-success rounded-4 shadow-lg mx-auto p-4" style="max-width: 700px;">
+        <h3 class="text-center text-success mb-3 fw-bold">
+            ✅ Production Manager Created Successfully!
+        </h3>
+
+        <div class="alert alert-success text-dark fw-medium rounded-3 text-center" role="alert">
+            The new Production Manager account has been created.
+        </div>
+
+        <div class="d-flex justify-content-center gap-3 mt-4">
+            <a asp-action="CreateProductionManager" asp-controller="Admin" class="btn btn-outline-success">
+                ➕ Create Another
+            </a>
+            <a asp-action="AdminPanel" asp-controller="Admin" class="btn btn-outline-light">
+                ⬅️ Back to Admin Panel
+            </a>
+        </div>
+    </div>
+</div>
+===== ./Views/Admin/ProductionManagersList.cshtml =====
+@model IEnumerable<StageCraft.Models.ApplicationUser>
+
+<div class="container mt-5">
+    <h3 class="text-danger text-center mb-4">🎭 All Production Managers</h3>
+
+    @if (TempData["Success"] != null)
+    {
+        <div class="alert alert-success alert-dismissible fade show text-center" role="alert">
+            @TempData["Success"]
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        </div>
+    }
+    @if (TempData["Error"] != null)
+    {
+        <div class="alert alert-danger alert-dismissible fade show text-center" role="alert">
+            @TempData["Error"]
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        </div>
+    }
+
+    <div class="table-responsive">
+        <table class="table table-dark table-striped align-middle">
+            <thead>
+                <tr>
+                    <th>Email</th>
+                    <th>Username</th>
+                    <th class="text-center">Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var manager in Model)
+                {
+                    <tr>
+                        <td>@manager.Email</td>
+                        <td>@manager.UserName</td>
+                        <td class="text-center">
+                            <form asp-action="DeleteProductionManager" method="post" class="d-inline">
+                                @Html.AntiForgeryToken()
+                                <input type="hidden" name="id" value="@manager.Id" />
+                                <button type="submit" class="btn btn-sm btn-danger" onclick="return confirm('Are you sure you want to delete this manager?');">
+                                    🗑 Delete
+                                </button>
+                            </form>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+
+    <div class="text-center mt-4">
+        <a asp-action="AdminPanel" class="btn btn-secondary">
+            ⬅️ Back to Admin Panel
+        </a>
+    </div>
+</div>
+===== ./Views/Admin/LoginStatistics.cshtml =====
+@model StageCraft.ViewModels.LoginStatisticsViewModel
+
+@{
+    ViewData["Title"] = "Role Statistics";
+}
+
+<div class="container mt-5">
+    <h3 class="text-danger text-center mb-4">📊 Role Statistics</h3>
+
+    <div class="row">
+        <!-- Left: Summary Card -->
+        <div class="col-md-4 mb-4">
+            <div class="card bg-dark text-white shadow-lg h-100">
+                <div class="card-body">
+                    <h5 class="text-center mb-4">System Overview</h5>
+
+                    <ul class="list-group list-group-flush">
+                        <li class="list-group-item bg-dark text-light d-flex justify-content-between">
+                            <span>Total Users</span>
+                            <span class="fw-bold">@Model.TotalUsers</span>
+                        </li>
+                        <li class="list-group-item bg-dark text-light d-flex justify-content-between">
+                            <span>Total Admins</span>
+                            <span class="fw-bold">@Model.TotalAdmins</span>
+                        </li>
+                        <li class="list-group-item bg-dark text-light d-flex justify-content-between">
+                            <span>Total Production Managers</span>
+                            <span class="fw-bold">@Model.TotalManagers</span>
+                        </li>
+                    </ul>
+
+                    <div class="text-center mt-4">
+                        <a asp-action="AdminPanel" class="btn btn-secondary">
+                            ⬅️ Back to Admin Panel
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Right: Role Bar Chart -->
+        <div class="col-md-8 mb-4">
+            <div class="card bg-dark text-white shadow-lg h-100">
+                <div class="card-body">
+                    <h5 class="text-center mb-4">User Role Comparison</h5>
+                    <canvas id="roleChart"></canvas>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script>
+        const ctx = document.getElementById('roleChart').getContext('2d');
+        const roleChart = new Chart(ctx, {
+            type: 'bar',
+            data: {
+                labels: ['Admins', 'Production Managers', 'Users'],
+                datasets: [{
+                    data: [@Model.TotalAdmins, @Model.TotalManagers, @Model.TotalUsers],
+                    backgroundColor: [
+                        'rgba(255, 99, 132, 0.7)',
+                        'rgba(54, 162, 235, 0.7)',
+                        'rgba(255, 206, 86, 0.7)'
+                    ],
+                    borderColor: [
+                        'rgba(255, 99, 132, 1)',
+                        'rgba(54, 162, 235, 1)',
+                        'rgba(255, 206, 86, 1)'
+                    ],
+                    borderWidth: 1
+                }]
+            },
+            options: {
+                plugins: {
+                    legend: {
+                        display: false  // ✅ Remove legend label
+                    },
+                    title: {
+                        display: true,
+                        text: 'User Role Counts'
+                    },
+                    tooltip: {
+                        callbacks: {
+                            label: function(context) {
+                                return context.parsed.y + ' users';
+                            }
+                        }
+                    },
+                    datalabels: {
+                        anchor: 'end',
+                        align: 'top',
+                        color: '#fff',
+                        formatter: Math.round
+                    }
+                },
+                scales: {
+                    y: {
+                        beginAtZero: true,
+                        title: {
+                            display: true,
+                            text: 'Number of Users'
+                        },
+                        ticks: { precision:0 }
+                    }
+                }
+            }
+        });
+    </script>
+}
+===== ./Views/Shared/_Layout.cshtml =====
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - StageCraft</title>
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/StageCraft.styles.css" asp-append-version="true" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <link rel="stylesheet" href="~/css/site.css?v=2" />
+
+
+</head>
+<body class="d-flex flex-column min-vh-100 bg-black text-white">
+
+    <!-- Navbar -->
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-dark">
+            <div class="container-fluid">
+                <a class="navbar-brand d-flex align-items-center" asp-controller="Home" asp-action="Index" style="padding: 10px 0;">
+                    <img src="/images/logo3.png" alt="StageCraft Logo" class="stagecraft-logo me-2 align-middle" />
+
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav" aria-controls="mainNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <div class="collapse navbar-collapse" id="mainNav">
+                    <ul class="navbar-nav ms-auto">
+                        @if (User.Identity.IsAuthenticated)
+                        {
+                            <li class="nav-item">
+                                <a class="nav-link text-white" asp-controller="Home" asp-action="Index">Home</a>
+                            </li>
+                            @if (User.IsInRole("Admin"))
+                            {
+                                <li class="nav-item">
+                                    <a class="nav-link text-white" asp-controller="Admin" asp-action="AdminPanel">Admin Panel</a>
+                                </li>
+                            }
+                            @if (User.IsInRole("ProductionManager") || User.IsInRole("Admin") || User.IsInRole("User"))
+                            {
+                                <li class="nav-item">
+                                    <a class="nav-link text-white" asp-controller="Productions" asp-action="Index">Productions</a>
+                                </li>
+                            }
+      
+                            <li class="nav-item">
+                                <form asp-controller="Account" asp-action="Logout" method="post" class="d-inline">
+                                    <button type="submit" class="btn btn-link nav-link text-white">Logout</button>
+                                </form>
+                            </li>
+                        }
+                        else
+                        {
+                            <li class="nav-item">
+                                <a class="nav-link text-white" asp-controller="Account" asp-action="Login">Login</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link text-white" asp-controller="Account" asp-action="Register">Register</a>
+                            </li>
+                        }
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Main Content -->
+    <main class="flex-grow-1 container mt-4 pb-5">
+        @RenderBody()
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer text-center">
+        <div class="container">
+            &copy; 2025 - StageCraft - Designed and Developed by Akshay Keerthi AS <a asp-controller="Home" asp-action="Privacy" class="text-light"></a>
+        </div>
+    </footer>
+
+    <!-- Corrected Comment Modal -->
+    <div id="commentModal" class="modal">
+        <div class="modal-content-fullscreen">
+            <button id="closeModalBtn" style="position:absolute; top:15px; right:20px; background:none; border:none; font-size:36px; color:#f44336; cursor:pointer;">&times;</button>
+            <div id="commentModalContent" class="text-dark">
+                <div class="text-center py-4">
+                    <div class="spinner-border text-danger" role="status">
+                        <span class="visually-hidden">Loading...</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+    <script src="~/js/comments.js" asp-append-version="true"></script>  
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>
+===== ./Views/Shared/Error.cshtml =====
+﻿@model ErrorViewModel
+@{
+    ViewData["Title"] = "Error";
+}
+
+<h1 class="text-danger">Error.</h1>
+<h2 class="text-danger">An error occurred while processing your request.</h2>
+
+@if (Model.ShowRequestId)
+{
+    <p>
+        <strong>Request ID:</strong> <code>@Model.RequestId</code>
+    </p>
+}
+
+<h3>Development Mode</h3>
+<p>
+    Swapping to <strong>Development</strong> environment will display more detailed information about the error that occurred.
+</p>
+<p>
+    <strong>The Development environment shouldn't be enabled for deployed applications.</strong>
+    It can result in displaying sensitive information from exceptions to end users.
+    For local debugging, enable the <strong>Development</strong> environment by setting the <strong>ASPNETCORE_ENVIRONMENT</strong> environment variable to <strong>Development</strong>
+    and restarting the app.
+</p>
+===== ./Views/Shared/_CommentModalPartial.cshtml =====
+@model List<StageCraft.Models.Comment>
+@inject Microsoft.AspNetCore.Antiforgery.IAntiforgery Antiforgery
+@using Microsoft.AspNetCore.Http
+
+@{
+    var productionId = ViewBag.ProductionId as int?;
+}
+
+<div id="comments-list" class="p-3">
+    <div class="mb-4 text-center">
+        <h4 class="text-danger fw-bold">Comments</h4>
+    </div>
+
+    <div id="comments-scroll" class="mb-4" style="max-height: 400px; overflow-y: auto;">
+        @if (Model != null && Model.Count > 0)
+        {
+            foreach (var comment in Model)
+            {
+                <div class="mb-4 pb-3 border-bottom border-light">
+                    <div class="d-flex justify-content-between align-items-center mb-1">
+                        <div>
+                            <strong class="text-danger me-2">@comment.Username</strong>
+                            <small class="text-secondary">@comment.CreatedAt.ToLocalTime().ToString("g")</small>
+                        </div>
+                        @if (User.Identity.IsAuthenticated &&
+                            (User.FindFirst(System.Security.Claims.ClaimTypes.NameIdentifier)?.Value == comment.UserId
+                             || User.IsInRole("Admin") || User.IsInRole("ProductionManager")))
+                        {
+                            <form class="delete-comment-form d-inline" method="post" action="/Comments/Delete">
+                                @Html.AntiForgeryToken()
+                                <input type="hidden" name="id" value="@comment.Id" />
+                                <button type="submit" class="btn btn-sm btn-outline-danger">
+                                    <i class="bi bi-trash"></i>
+                                </button>
+                            </form>
+                        }
+                    </div>
+                    <div class="mt-1">
+                        <p class="text-dark mb-2" style="white-space: pre-wrap;">@comment.Text</p>
+                    </div>
+                </div>
+            }
+        }
+        else
+        {
+            <div class="text-center py-4">
+                <i class="bi bi-chat-square-text text-muted" style="font-size: 2rem;"></i>
+                <p class="text-muted mt-2">No comments yet. Be the first to comment!</p>
+            </div>
+        }
+    </div>
+
+    @if (User.Identity.IsAuthenticated)
+    {
+        <div class="d-flex align-items-center mb-2">
+            <i class="bi bi-person-circle text-danger me-2"></i>
+            <span class="fw-bold text-danger">@User.Identity.Name</span>
+        </div>
+        <form id="commentForm" method="post" action="/Comments/Create" class="mt-2">
+            @Html.AntiForgeryToken()
+            <input type="hidden" name="productionId" value="@productionId" />
+            <div class="form-group mb-3">
+                <textarea name="text" class="form-control bg-dark text-light border-secondary"
+                          rows="3" placeholder="Write your comment here..." required
+                          style="resize: none;"></textarea>
+            </div>
+            <div class="d-flex justify-content-end">
+                <button type="submit" class="btn btn-danger px-4">
+                    <i class="bi bi-send-fill me-2"></i>Post
+                </button>
+            </div>
+        </form>
+    }
+    else
+    {
+        <div class="text-center mt-4 pt-3 border-top border-light">
+            <a asp-controller="Account" asp-action="Login" class="btn btn-outline-danger px-4">
+                <i class="bi bi-box-arrow-in-right me-2"></i>Login to comment
+            </a>
+        </div>
+    }
+</div>
+===== ./Views/Shared/_Layout.cshtml.css =====
+﻿/* Layout-wide anchor styles */
+a.navbar-brand {
+  white-space: normal;
+  text-align: center;
+  word-break: break-word;
+}
+
+/* Link styling */
+a {
+  color: #f44336;
+}
+a:hover {
+  text-decoration: underline;
+  color: #ff6b6b;
+}
+
+/* Button styling */
+.btn-primary {
+  color: #fff;
+  background-color: #1b6ec2;
+  border-color: #1861ac;
+}
+.btn-primary:hover {
+  background-color: #155a9c;
+  border-color: #124e88;
+}
+
+.btn-danger {
+  background-color: #f44336;
+  border: none;
+}
+.btn-danger:hover {
+  background-color: #c62828;
+}
+
+/* Active pill navigation */
+.nav-pills .nav-link.active,
+.nav-pills .show > .nav-link {
+  color: #fff;
+  background-color: #1b6ec2;
+  border-color: #1861ac;
+}
+
+/* Borders */
+.border-top {
+  border-top: 1px solid #e5e5e5 !important;
+}
+.border-bottom {
+  border-bottom: 1px solid #e5e5e5 !important;
+}
+
+/* Shadow utility */
+.box-shadow {
+  box-shadow: 0 .25rem .75rem rgba(0, 0, 0, 0.05);
+}
+
+/* Cookie / policy button */
+button.accept-policy {
+  font-size: 1rem;
+  line-height: inherit;
+}
+
+/* Footer layout fix */
+.footer {
+  background-color: #111;
+  color: #ccc;
+  padding: 1rem 0;
+  text-align: center;
+  position: relative;
+  width: 100%;
+  border-top: 1px solid #333;
+}
+
+/* Sticky footer config */
+html,
+body {
+  height: 100%;
+}
+body {
+  display: flex;
+  flex-direction: column;
+}
+main {
+  flex: 1 0 auto;
+}
+.footer {
+  flex-shrink: 0;
+}
+
+/* --- CUSTOM LAYOUT CLASSES --- */
+.poster-grid img {
+  width: 100%;
+  height: 300px;
+  object-fit: cover;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(255, 255, 255, 0.05);
+  transition: transform 0.3s ease;
+}
+.poster-grid img:hover {
+  transform: scale(1.03);
+}
+
+.sponsor-grid img {
+  max-width: 100%;
+  max-height: 60px;
+  object-fit: contain;
+  opacity: 0.85;
+  transition: opacity 0.2s ease;
+}
+.sponsor-grid img:hover {
+  opacity: 1;
+}
+
+/* Responsive tweaks */
+@media (max-width: 768px) {
+  .navbar-brand {
+    font-size: 1.1rem;
+  }
+
+  .footer {
+    line-height: 1.5rem;
+    padding: 0.75rem;
+  }
+
+  .poster-grid .col-md-4,
+  .sponsor-grid .col-4 {
+    flex: 0 0 100%;
+    max-width: 100%;
+  }
+}
+===== ./Views/Shared/_ValidationScriptsPartial.cshtml =====
+﻿<script src="~/lib/jquery-validation/dist/jquery.validate.min.js"></script>
+<script src="~/lib/jquery-validation-unobtrusive/dist/jquery.validate.unobtrusive.min.js"></script>
+===== ./Views/Shared/_CreateProductionManagerPartial.cshtml =====
+@model StageCraft.ViewModels.CreateProductionManagerViewModel
+
+<p class="text-center text-light mb-3 fst-italic">
+    Assign a new manager to help oversee theatre productions.
+</p>
+
+<form asp-action="CreateProductionManager" method="post">
+    <div asp-validation-summary="ModelOnly" class="alert alert-danger text-center"></div>
+
+    <div class="mb-3">
+        <label asp-for="Email" class="form-label">Email</label>
+        <input asp-for="Email" class="form-control" placeholder="manager@example.com" />
+        <span asp-validation-for="Email" class="text-danger small"></span>
+    </div>
+
+    <div class="mb-3">
+        <label asp-for="Password" class="form-label">Password</label>
+        <input asp-for="Password" type="password" class="form-control" placeholder="Set a password" />
+        <span asp-validation-for="Password" class="text-danger small"></span>
+    </div>
+
+    <button type="submit" class="btn btn-danger w-100 mb-2">Create Manager</button>
+</form>
+===== ./Views/Productions/Edit.cshtml =====
+@model StageCraft.Models.Production
+
+@{
+    ViewData["Title"] = "Edit Production";
+}
+
+<div class="card form-card text-white">
+    <h2 class="text-center border-bottom pb-3 text-white">Edit Production</h2>
+
+    <form asp-action="Edit" method="post" enctype="multipart/form-data">
+        <input type="hidden" asp-for="Id" />
+
+        <div class="form-group mb-3">
+            <label asp-for="Title" class="form-label">Title</label>
+            <input asp-for="Title" class="form-control" placeholder="Update title" />
+        </div>
+
+        <div class="form-group mb-3">
+            <label asp-for="Description" class="form-label">Description</label>
+            <textarea asp-for="Description" class="form-control" placeholder="Update description"></textarea>
+        </div>
+
+        <div class="form-group mb-3">
+            <label asp-for="Playwright" class="form-label">Playwright</label>
+            <input asp-for="Playwright" class="form-control" placeholder="Update playwright name" />
+        </div>
+
+        <div class="form-group mb-3">
+            <label asp-for="Runtime" class="form-label">Runtime (minutes)</label>
+            <input asp-for="Runtime" class="form-control" placeholder="e.g., 120" />
+        </div>
+
+        <div class="form-group mb-3">
+            <label asp-for="OpeningDay" class="form-label">Opening Day</label>
+            <input asp-for="OpeningDay" type="date" class="form-control" />
+        </div>
+
+        <div class="form-group mb-3">
+            <label asp-for="ClosingDay" class="form-label">Closing Day</label>
+            <input asp-for="ClosingDay" type="date" class="form-control" />
+        </div>
+
+        <div class="form-group mb-3">
+            <label asp-for="ShowTimeEve" class="form-label">Evening Show Time</label>
+            <input asp-for="ShowTimeEve" type="datetime-local" class="form-control" />
+        </div>
+
+        <div class="form-group mb-3">
+            <label asp-for="Season" class="form-label">Season</label>
+            <input asp-for="Season" class="form-control" placeholder="1=Spring, 2=Summer..." />
+        </div>
+
+        <div class="form-check mb-3">
+            <input asp-for="IsWorldPremiere" class="form-check-input" />
+            <label asp-for="IsWorldPremiere" class="form-check-label">World Premiere</label>
+        </div>
+
+        <div class="form-group mb-3">
+            <label asp-for="TicketLink" class="form-label">Ticket Link</label>
+            <input asp-for="TicketLink" class="form-control" placeholder="Update ticket URL" />
+        </div>
+
+        <!-- Existing Poster -->
+        @if (!string.IsNullOrEmpty(Model.PosterImagePath))
+        {
+            <div class="form-group text-center mt-4">
+                <label class="form-label">Current Poster</label><br />
+                <img src="@Model.PosterImagePath" id="currentPoster" alt="Poster for @Model.Title" class="img-fluid rounded shadow" style="max-height: 200px;" />
+            </div>
+        }
+
+        <!-- Upload New Poster + Preview -->
+        <div class="form-group mt-4 mb-4">
+            <label class="form-label">Upload New Poster (optional)</label>
+            <input type="file" id="posterFile" name="posterFile" class="form-control" onchange="previewPoster(event)" />
+        </div>
+
+        <div class="text-center mb-4">
+            <img id="posterPreview" style="display:none; max-height:200px; margin-top:10px;" class="rounded shadow" />
+        </div>
+
+        <div class="d-flex justify-content-between">
+            <button type="submit" class="btn btn-danger">Save Changes</button>
+            <a asp-action="Index" class="btn btn-secondary">Back to List</a>
+        </div>
+    </form>
+</div>
+
+@section Scripts {
+    <script>
+        function previewPoster(event) {
+            var reader = new FileReader();
+            reader.onload = function(){
+                var preview = document.getElementById('posterPreview');
+                var current = document.getElementById('currentPoster');
+                preview.src = reader.result;
+                preview.style.display = 'block';
+                if (current) {
+                    current.style.display = 'none'; // Hide old poster if new selected
+                }
+            };
+            reader.readAsDataURL(event.target.files[0]);
+        }
+    </script>
+}
+===== ./Views/Productions/Delete.cshtml =====
+@model StageCraft.Models.Production
+
+@{
+    ViewData["Title"] = "Delete Production";
+}
+
+<div class="card border-danger mt-5 mx-auto p-4 bg-black text-white" style="max-width: 700px;">
+    <h2 class="text-center text-danger border-bottom pb-3">
+        Are you sure you want to delete this production?
+    </h2>
+
+    <div class="mb-4">
+        <h4 class="fw-bold">@Model.Title</h4>
+        <p>@Model.Description</p>
+        <p><strong>Opening Day:</strong> @Model.OpeningDay.ToShortDateString()</p>
+        <p><strong>Closing Day:</strong> @Model.ClosingDay.ToShortDateString()</p>
+
+        @if (!string.IsNullOrEmpty(Model.PosterImagePath))
+        {
+            <div class="text-center mt-3">
+                <img src="@Model.PosterImagePath" alt="Poster for @Model.Title"
+                     class="img-fluid rounded shadow" style="max-height: 300px;" />
+            </div>
+        }
+    </div>
+
+    <form asp-action="Delete" method="post" class="d-flex justify-content-between align-items-center">
+        <input type="hidden" asp-for="Id" />
+        <button type="submit" class="btn btn-danger">Yes, Delete</button>
+        <a asp-action="Index" class="btn btn-outline-light">Cancel</a>
+    </form>
+</div>
+===== ./Views/Productions/Create.cshtml =====
+@model StageCraft.Models.Production
+
+@{
+    ViewData["Title"] = "Create Production";
+}
+
+<div class="card form-card text-white">
+    <h2 class="text-center border-bottom pb-3 text-white">Create Production</h2>
+
+    <form asp-action="Create" method="post" enctype="multipart/form-data">
+        <div class="form-group mb-3">
+            <label asp-for="Title" class="form-label">Title</label>
+            <input asp-for="Title" class="form-control" placeholder="Enter a title" />
+        </div>
+
+        <div class="form-group mb-3">
+            <label asp-for="Description" class="form-label">Description</label>
+            <textarea asp-for="Description" class="form-control" placeholder="Enter a short description"></textarea>
+        </div>
+
+        <div class="form-group mb-3">
+            <label asp-for="Playwright" class="form-label">Playwright</label>
+            <input asp-for="Playwright" class="form-control" placeholder="Enter playwright name" />
+        </div>
+
+        <div class="form-group mb-3">
+            <label asp-for="Runtime" class="form-label">Runtime (minutes)</label>
+            <input asp-for="Runtime" class="form-control" placeholder="e.g., 120" />
+        </div>
+
+        <div class="form-group mb-3">
+            <label asp-for="OpeningDay" class="form-label">Opening Day</label>
+            <input asp-for="OpeningDay" type="date" class="form-control" />
+        </div>
+
+        <div class="form-group mb-3">
+            <label asp-for="ClosingDay" class="form-label">Closing Day</label>
+            <input asp-for="ClosingDay" type="date" class="form-control" />
+        </div>
+
+        <div class="form-group mb-3">
+            <label asp-for="ShowTimeEve" class="form-label">Evening Show Time</label>
+            <input asp-for="ShowTimeEve" type="datetime-local" class="form-control" />
+        </div>
+
+        <div class="form-group mb-3">
+            <label asp-for="Season" class="form-label">Season</label>
+            <input asp-for="Season" class="form-control" placeholder="e.g., 1 = Spring, 2 = Summer..." />
+        </div>
+
+        <div class="form-group form-check mb-3">
+            <input asp-for="IsWorldPremiere" class="form-check-input" />
+            <label asp-for="IsWorldPremiere" class="form-check-label">World Premiere?</label>
+        </div>
+
+        <div class="form-group mb-3">
+            <label asp-for="TicketLink" class="form-label">Ticket Link</label>
+            <input asp-for="TicketLink" class="form-control" placeholder="https://tickets.example.com" />
+        </div>
+
+        <div class="form-group mb-4">
+            <label class="form-label">Upload Poster</label>
+            <input type="file" id="posterFile" name="posterFile" class="form-control" onchange="previewPoster(event)" />
+        </div>
+
+
+        <div class="text-center mb-4">
+            <img id="posterPreview" style="display:none; max-height:200px; margin-top:10px;" class="rounded shadow" />
+        </div>
+
+        <div class="d-flex justify-content-between">
+            <button type="submit" class="btn btn-danger">Create</button>
+            <a asp-action="Index" class="btn btn-warning text-dark">Back to List</a>
+        </div>
+    </form>
+</div>
+
+@section Scripts {
+    <script>
+        function previewPoster(event) {
+            var reader = new FileReader();
+            reader.onload = function(){
+                var output = document.getElementById('posterPreview');
+                output.src = reader.result;
+                output.style.display = 'block';
+            };
+            reader.readAsDataURL(event.target.files[0]);
+        }
+    </script>
+}
+===== ./Views/Productions/Index.cshtml =====
+@using X.PagedList.Mvc.Core
+@using X.PagedList.Web.Common
+@model X.PagedList.IPagedList<StageCraft.Models.Production>
+
+@{
+    ViewData["Title"] = "All Productions";
+}
+
+<div class="container mt-5">
+    <h2 class="text-glow mb-4 text-center">🌟 All Productions</h2>
+
+    @if (User.IsInRole("Admin") || User.IsInRole("ProductionManager"))
+    {
+        <div class="text-center mb-4">
+            <a class="btn btn-danger" asp-controller="Productions" asp-action="Create">
+                <i class="bi bi-plus-circle"></i> Add New Production
+            </a>
+        </div>
+    }
+
+    <div class="row mb-4">
+        <div class="col-md-6 offset-md-3">
+            <form asp-action="Index" method="get" class="d-flex">
+                <input type="text" name="searchString" value="@ViewBag.CurrentFilter" class="form-control me-2" placeholder="Search by title..." />
+                <button type="submit" class="btn btn-outline-light">Search</button>
+                @if (!string.IsNullOrEmpty(ViewBag.CurrentFilter))
+                {
+                    <a asp-action="Index" class="btn btn-outline-secondary ms-2">Clear</a>
+                }
+            </form>
+        </div>
+    </div>
+
+    <p class="text-light text-end">
+        @if (Model.TotalItemCount > 0)
+        {
+            <span>Showing @Model.FirstItemOnPage to @Model.LastItemOnPage of @Model.TotalItemCount production@(Model.TotalItemCount == 1 ? "" : "s")</span>
+        }
+        else
+        {
+            <span>No productions found</span>
+        }
+    </p>
+
+    @if (Model.Count > 0)
+    {
+        <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
+            @foreach (var item in Model)
+            {
+                <div class="col">
+                    <a asp-controller="Productions" asp-action="Details" asp-route-id="@item.Id" asp-route-from="productions" class="text-decoration-none">
+                        <div class="card bg-dark text-white border border-danger h-100 shadow tilt-box">
+                            @if (!string.IsNullOrEmpty(item.PosterImagePath))
+                            {
+                                <img src="@item.PosterImagePath" class="card-img-top" alt="Poster for @item.Title" style="height: 280px; object-fit: cover;" />
+                            }
+                            else
+                            {
+                                <div class="card-img-top d-flex align-items-center justify-content-center bg-secondary" style="height: 280px;">
+                                    <span class="text-light">No Poster</span>
+                                </div>
+                            }
+
+                            <div class="card-body text-center">
+                                <h5 class="card-title">@item.Title</h5>
+                                <p class="card-text text-truncate" style="max-height: 60px;">@item.Description</p>
+                                <p class="card-text">
+                                    <small class="text-light">
+                                        <strong>Opening:</strong> @item.OpeningDay.ToShortDateString()<br />
+                                        <strong>Closing:</strong> @item.ClosingDay.ToShortDateString()<br />
+                                        <strong>Runtime:</strong> @item.Runtime mins
+                                    </small>
+                                </p>
+
+                                <button type="button" class="btn btn-outline-light btn-sm mt-2"
+                                        onclick="event.stopPropagation(); openCommentsModal(@item.Id)">
+                                    💬 See Comments
+                                </button>
+                            </div>
+
+                            @if (User.IsInRole("Admin") || User.IsInRole("ProductionManager"))
+                            {
+                                <div class="card-footer bg-transparent text-center">
+                                    <div class="d-flex justify-content-center gap-3">
+                                        <a asp-action="Edit" asp-route-id="@item.Id" class="btn btn-sm btn-warning"
+                                           onclick="event.stopPropagation();">✏️ Edit</a>
+                                        <a asp-action="Delete" asp-route-id="@item.Id" class="btn btn-sm btn-danger"
+                                           onclick="event.stopPropagation();">🗑 Delete</a>
+                                    </div>
+                                </div>
+                            }
+                        </div>
+                    </a>
+                </div>
+            }
+        </div>
+
+        @if (Model.PageCount > 1)
+        {
+            <div class="row mt-4">
+                <div class="col-md-12 d-flex justify-content-center">
+                    @Html.PagedListPager(
+                        Model,
+                        page => Url.Action("Index", new { page, searchString = ViewBag.CurrentFilter }),
+                        new PagedListRenderOptions
+                        {
+                            LiElementClasses = new[] { "page-item" },
+                            PageClasses = new[] { "page-link" },
+                            Display = PagedListDisplayMode.IfNeeded,
+                            DisplayLinkToFirstPage = PagedListDisplayMode.IfNeeded,
+                            DisplayLinkToLastPage = PagedListDisplayMode.IfNeeded,
+                            DisplayLinkToPreviousPage = PagedListDisplayMode.Always,
+                            DisplayLinkToNextPage = PagedListDisplayMode.Always,
+                            MaximumPageNumbersToDisplay = 5,
+                            ContainerDivClasses = new[] { "pagination" }
+                        }
+                    )
+                </div>
+            </div>
+        }
+    }
+    else
+    {
+        <div class="alert alert-info text-center mt-4">
+            No productions found.
+            @if (User.IsInRole("Admin") || User.IsInRole("ProductionManager"))
+            {
+                <a asp-action="Create" class="alert-link">Create a new production</a>
+            }
+        </div>
+    }
+</div>
+
+@section Scripts {
+    <script src="~/js/comments.js"></script>
+}
+===== ./Views/Productions/Details.cshtml =====
+@model StageCraft.Models.Production
+@{
+    ViewData["Title"] = "Production Details";
+    var source = Context.Request.Query["from"].ToString();
+}
+
+<div class="container mt-5">
+    <div class="card bg-dark text-white border border-danger shadow-sm mx-auto" style="max-width: 700px;">
+        @if (!string.IsNullOrEmpty(Model.PosterImagePath))
+        {
+            <img src="@Model.PosterImagePath" class="card-img-top rounded" alt="Poster for @Model.Title" style="height: 400px; object-fit: cover;" />
+        }
+        else
+        {
+            <div class="d-flex align-items-center justify-content-center bg-secondary" style="height: 400px;">
+                <span class="text-light">No Poster Available</span>
+            </div>
+        }
+
+        <div class="card-body text-white">
+            <h2 class="card-title text-center mb-4 text-white">@Model.Title</h2>
+
+            <p class="card-text text-white"><strong>Description:</strong> @Model.Description</p>
+            <p class="card-text text-white"><strong>Playwright:</strong> @Model.Playwright</p>
+            <p class="card-text text-white"><strong>Runtime:</strong> @Model.Runtime minutes</p>
+            <p class="card-text text-white"><strong>Opening Day:</strong> @Model.OpeningDay.ToShortDateString()</p>
+            <p class="card-text text-white"><strong>Closing Day:</strong> @Model.ClosingDay.ToShortDateString()</p>
+            <p class="card-text text-white"><strong>Evening Show Time:</strong> @Model.ShowTimeEve.ToString("f")</p>
+            <p class="card-text text-white"><strong>Season:</strong> @Model.Season</p>
+            <p class="card-text text-white"><strong>World Premiere:</strong> @(Model.IsWorldPremiere ? "Yes" : "No")</p>
+
+            @if (!string.IsNullOrEmpty(Model.TicketLink))
+            {
+                <div class="text-center mt-3">
+                    <a href="@Model.TicketLink" target="_blank" rel="noopener noreferrer" class="btn btn-danger btn-sm">
+                        🎟 Buy Tickets
+                    </a>
+                </div>
+            }
+        </div>
+
+        <div class="card-footer bg-transparent text-center d-flex justify-content-center gap-2 flex-wrap">
+            <button class="btn btn-outline-light btn-sm" onclick="openCommentsModal(@Model.Id)">💬 See Comments</button>
+
+            @* Edit/Delete removed *@
+
+            @if (source == "spotlight")
+            {
+                <a asp-controller="Home" asp-action="Index" class="btn btn-outline-light btn-sm">⬅ Back to Spotlight</a>
+            }
+            else
+            {
+                <a asp-action="Index" class="btn btn-outline-light btn-sm">⬅ Back to Productions</a>
+            }
+        </div>
+    </div>
+</div>
+
+<!-- Red & White Comments Modal -->
+<div id="commentModal" class="modal">
+    <div class="modal-content-fullscreen">
+        <button id="closeModalBtn" style="position:absolute; top:15px; right:20px; background:none; border:none; font-size:36px; color:#f44336; cursor:pointer;">&times;</button>
+        <div id="commentModalContent" class="text-dark">
+            <div class="text-center py-4">
+                <div class="spinner-border text-danger" role="status">
+                    <span class="visually-hidden">Loading...</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    <script src="~/js/comments.js" asp-append-version="true"></script>
+}
+===== ./Views/Account/Register.cshtml =====
+@model StageCraft.ViewModels.RegisterViewModel
+
+@{
+    ViewData["Title"] = "Register";
+}
+
+<div class="auth-container card form-card shadow-lg">
+    <h2 class="text-center text-danger mb-3">Join StageCraft 🎭</h2>
+    <p class="text-center text-light mb-4 fst-italic">Register now to follow shows, post comments, and experience theatre like never before.</p>
+
+    <form asp-action="Register" method="post">
+        <div asp-validation-summary="ModelOnly" class="text-danger mb-3"></div>
+
+        <div class="mb-3">
+            <label asp-for="FullName" class="form-label">Full Name</label>
+            <input asp-for="FullName" class="form-control" placeholder="Enter your full name" />
+            <span asp-validation-for="FullName" class="text-danger"></span>
+        </div>
+
+        <div class="mb-3">
+            <label asp-for="UserName" class="form-label">Username</label>
+            <input asp-for="UserName" class="form-control" placeholder="Choose a username" />
+            <span asp-validation-for="UserName" class="text-danger"></span>
+        </div>
+
+        <div class="mb-3">
+            <label asp-for="Email" class="form-label">Email</label>
+            <input asp-for="Email" class="form-control" placeholder="Enter your email" />
+            <span asp-validation-for="Email" class="text-danger"></span>
+        </div>
+
+        <div class="mb-3">
+            <label asp-for="Password" class="form-label">Password</label>
+            <input asp-for="Password" class="form-control" type="password" placeholder="Create a password" />
+            <span asp-validation-for="Password" class="text-danger"></span>
+        </div>
+
+        <div class="mb-4">
+            <label asp-for="ConfirmPassword" class="form-label">Confirm Password</label>
+            <input asp-for="ConfirmPassword" class="form-control" type="password" placeholder="Confirm your password" />
+            <span asp-validation-for="ConfirmPassword" class="text-danger"></span>
+        </div>
+
+        <button type="submit" class="btn btn-primary w-100">Register</button>
+    </form>
+
+    <div class="mt-3 text-center">
+        <p class="text-light">Already have an account? <a asp-action="Login" class="text-danger">Login here</a></p>
+    </div>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
+===== ./Views/Account/Login.cshtml =====
+@model StageCraft.ViewModels.LoginViewModel
+
+@{
+    ViewData["Title"] = "Login";
+}
+
+@*  Success message OUTSIDE the card, centered, and limited width *@
+@if (TempData["SuccessMessage"] != null)
+{
+    <div class="d-flex justify-content-center">
+        <div class="alert alert-success alert-dismissible fade show mb-4 w-100" style="max-width: 550px;" role="alert">
+            @TempData["SuccessMessage"]
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        </div>
+    </div>
+}
+
+<div class="auth-container card form-card shadow-lg">
+    <h2 class="text-center text-danger mb-3">Welcome to StageCraft 🎭</h2>
+    <p class="text-center text-light mb-4 fst-italic">Log in to discover the StageCraft productions!</p>
+
+    <form asp-action="Login" method="post">
+        <div asp-validation-summary="ModelOnly" class="text-danger mb-3"></div>
+
+        <div class="mb-3">
+            <label asp-for="Email" class="form-label">Email</label>
+            <input asp-for="Email" class="form-control" />
+            <span asp-validation-for="Email" class="text-danger"></span>
+        </div>
+
+        <div class="mb-3">
+            <label asp-for="Password" class="form-label">Password</label>
+            <input asp-for="Password" type="password" class="form-control" />
+            <span asp-validation-for="Password" class="text-danger"></span>
+        </div>
+
+        <button type="submit" class="btn btn-primary w-100">Login</button>
+    </form>
+
+    <div class="mt-3 text-center">
+        <p class="text-light">Don't have an account? <a asp-action="Register" class="text-danger">Register here</a></p>
+    </div>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
+===== ./Views/Account/AccessDenied.cshtml =====
+@{
+    ViewData["Title"] = "Access Denied";
+}
+
+<h2>Access Denied</h2>
+
+<div class="alert alert-danger">
+    You do not have permission to access this page.
+</div>
+
+<div>
+    <a asp-controller="Home" asp-action="Index" class="btn btn-primary">Return to Home</a>
+</div>
+===== ./Views/_ViewStart.cshtml =====
+﻿@{
+    Layout = "_Layout";
+}
+===== ./Program.cs =====
+using Microsoft.AspNetCore.Identity;
+using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore;
+using StageCraft.Data;
+using StageCraft.Models;
+using DotNetEnv;
+
+var builder = WebApplication.CreateBuilder(args);
+
+// Load environment variables from .env
+Env.Load();
+
+// Configure DB
+builder.Services.AddDbContext<AppDbContext>(options =>
+    options.UseMySql(
+        builder.Configuration.GetConnectionString("DefaultConnection"),
+        new MySqlServerVersion(new Version(8, 0, 32))
+    ));
+
+builder.Services.AddIdentity<ApplicationUser, IdentityRole>()
+    .AddEntityFrameworkStores<AppDbContext>()
+    .AddDefaultTokenProviders();
+
+builder.Services.ConfigureApplicationCookie(options =>
+{
+    options.LoginPath = "/Account/Login";
+    options.AccessDeniedPath = "/Account/AccessDenied";
+});
+
+builder.Services.AddControllersWithViews();
+
+var app = builder.Build();
+
+// Seed roles & users
+using (var scope = app.Services.CreateScope())
+{
+    var services = scope.ServiceProvider;
+    var roleManager = services.GetRequiredService<RoleManager<IdentityRole>>();
+    var userManager = services.GetRequiredService<UserManager<ApplicationUser>>();
+    var context = services.GetRequiredService<AppDbContext>();
+
+    string[] roles = { "Admin", "ProductionManager", "User" };
+    foreach (var role in roles)
+    {
+        if (!await roleManager.RoleExistsAsync(role))
+        {
+            await roleManager.CreateAsync(new IdentityRole(role));
+        }
+    }
+
+    // Load from env
+    string adminEmail = Environment.GetEnvironmentVariable("ADMIN_EMAIL") ?? "admin@fallback.com";
+    string adminPassword = Environment.GetEnvironmentVariable("ADMIN_PASSWORD") ?? "Fallback@123";
+
+    var adminUser = await userManager.FindByEmailAsync(adminEmail);
+    if (adminUser == null)
+    {
+        var newAdmin = new ApplicationUser
+        {
+            UserName = adminEmail,
+            Email = adminEmail
+        };
+        var result = await userManager.CreateAsync(newAdmin, adminPassword);
+        if (result.Succeeded)
+        {
+            await userManager.AddToRoleAsync(newAdmin, "Admin");
+        }
+    }
+
+    var rnd = new Random();
+    var today = DateTime.UtcNow;
+
+    for (int i = 1; i <= 30; i++)
+    {
+        var userEmail = $"user{i}@example.com";
+        var user = await userManager.FindByEmailAsync(userEmail);
+        if (user == null)
+        {
+            user = new ApplicationUser
+            {
+                UserName = userEmail,
+                Email = userEmail,
+                FullName = $"User {i}"
+            };
+            await userManager.CreateAsync(user, "Password@123");
+            await userManager.AddToRoleAsync(user, "User");
+        }
+
+        var daysAgo = rnd.Next(1, 30);
+        var loginTime = today.AddDays(-daysAgo);
+
+        context.ActivityLogs.AddRange(new[]
+        {
+            new ActivityLog { UserId = user.Id, Action = "Register", Timestamp = loginTime.AddMinutes(-10) },
+            new ActivityLog { UserId = user.Id, Action = "Login", Timestamp = loginTime }
+        });
+
+        var managerEmail = $"manager{i}@example.com";
+        var manager = await userManager.FindByEmailAsync(managerEmail);
+        if (manager == null)
+        {
+            manager = new ProductionManager
+            {
+                UserName = managerEmail,
+                Email = managerEmail,
+                FullName = $"Manager {i}"
+            };
+            await userManager.CreateAsync(manager, "Password@123");
+            await userManager.AddToRoleAsync(manager, "ProductionManager");
+        }
+
+        var mgrDaysAgo = rnd.Next(1, 30);
+        var mgrLoginTime = today.AddDays(-mgrDaysAgo);
+
+        context.ActivityLogs.AddRange(new[]
+        {
+            new ActivityLog { UserId = manager.Id, Action = "Register", Timestamp = mgrLoginTime.AddMinutes(-10) },
+            new ActivityLog { UserId = manager.Id, Action = "Login", Timestamp = mgrLoginTime }
+        });
+    }
+
+    await context.SaveChangesAsync();
+}
+
+// Middleware
+if (!app.Environment.IsDevelopment())
+{
+    app.UseExceptionHandler("/Home/Error");
+    app.UseHsts();
+}
+
+app.UseHttpsRedirection();
+app.UseStaticFiles();
+app.UseRouting();
+app.UseAuthentication();
+app.UseAuthorization();
+
+app.MapControllerRoute(
+    name: "default",
+    pattern: "{controller=Account}/{action=Login}/{id?}");
+
+app.Run();
