@@ -1,6 +1,6 @@
 # StageCraft – Theatre Management Platform 🎭
 
-**Live Demo:** [https://stagecraft-8mjt.onrender.com](Demo!)
+**Live Demo:** [Demo!](https://stagecraft-8mjt.onrender.com)
 
 > Built with C#, ASP.NET Core MVC (.NET 9), Entity Framework Core, MySQL, and X.PagedList
 
